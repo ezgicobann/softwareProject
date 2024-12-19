@@ -1,5 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from voiceshow import VoiceShow  # VoiceShow sınıfını import ettik
+from voiceshow import VoiceShow   #pip install PyQt5
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -56,21 +57,21 @@ class AdminLogin(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        # Giriş butonuna tıklama olayı
+       
         self.ui.pushButton.clicked.connect(self.open_voice_show)
     
     def open_voice_show(self):
-        password = self.ui.lineEdit.text()  # Correctly reference lineEdit
+        password = self.ui.lineEdit.text()  
         if password == "enes123":
-            # VoiceShow penceresini aç
-            self.voice_window = VoiceShow()  # Create an instance of the VoiceShow window
+           
+            self.voice_window = VoiceShow() 
             self.voice_window.show()
-            self.close()  # Admin login penceresini kapat
+            self.close()  
         else:
-            # Yanlış giriş mesajı göster
+           
             QtWidgets.QMessageBox.warning(self, "Hata", "Geçersiz şifre")
 
-class VoiceCommand3(QtWidgets.QMainWindow):  # Inherit from QMainWindow
+class VoiceCommand3(QtWidgets.QMainWindow):  
     def __init__(self, parent=None):
         super(VoiceCommand3, self).__init__(parent)
         self.ui = Ui_MainWindow()
@@ -78,15 +79,15 @@ class VoiceCommand3(QtWidgets.QMainWindow):  # Inherit from QMainWindow
         self.ui.pushButton.clicked.connect(self.open_admin_login)
 
     def open_admin_login(self):
-        # Eğer AdminLogin penceresi zaten açıksa, tekrar açma
+        
         if not hasattr(self, 'admin_window') or not self.admin_window.isVisible():
-            self.admin_window = AdminLogin()  # AdminLogin penceresini aç
+            self.admin_window = AdminLogin()  
             self.admin_window.show()
-            self.close()  # VoiceCommand3 penceresini kapat
+            self.close()  
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    window = VoiceCommand3()  # VoiceCommand3 penceresinden başlat
+    window = VoiceCommand3() 
     window.show()
     sys.exit(app.exec_())
