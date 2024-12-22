@@ -1,12 +1,12 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtWidgets
-from admin_login import AdminLogin  # AdminLogin sınıfını içe aktar
+from admin_login import AdminLogin  
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(664, 455)
+        MainWindow.resize(664, 448)
         MainWindow.setMaximumSize(QtCore.QSize(1126, 832))
         MainWindow.setLayoutDirection(QtCore.Qt.LeftToRight)
         MainWindow.setIconSize(QtCore.QSize(30, 30))
@@ -62,10 +62,10 @@ class Ui_MainWindow(object):
         self.lineEdit_.setGeometry(QtCore.QRect(280, 80, 315, 22))
         self.lineEdit_.setObjectName("lineEdit_")
         self.pushButton_admin_giris = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_admin_giris.setGeometry(QtCore.QRect(320, 365, 93, 28))
+        self.pushButton_admin_giris.setGeometry(QtCore.QRect(350, 365, 93, 28))
         self.pushButton_admin_giris.setObjectName("pushButton_admin_giris")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(210, 370, 108, 16))
+        self.label_4.setGeometry(QtCore.QRect(210, 370, 151, 16))
         self.label_4.setObjectName("label_4")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -88,7 +88,6 @@ class Ui_MainWindow(object):
         self.pushButton_admin_giris.setText(_translate("MainWindow", "Giriş"))
         self.label_4.setText(_translate("MainWindow", "Admin girişi için tıklayın "))
         self.actionadmin.setText(_translate("MainWindow", "admin"))
-
      
         self.pushButton_admin_giris.clicked.connect(self.open_admin_login)
 
