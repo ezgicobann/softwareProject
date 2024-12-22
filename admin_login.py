@@ -15,6 +15,7 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName("gridLayout")
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit.setEnabled(True)
+        self.lineEdit.setEchoMode(QtWidgets.QLineEdit.Password)
         self.lineEdit.setObjectName("lineEdit")
         self.gridLayout.addWidget(self.lineEdit, 2, 1, 1, 1)
         self.label = QtWidgets.QLabel(self.centralwidget)
