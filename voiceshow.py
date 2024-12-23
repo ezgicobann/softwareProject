@@ -21,19 +21,19 @@ class Ui_MainWindow(object):
         self.label_toplam_kayit.setGeometry(QtCore.QRect(100, 50, 101, 16))
         self.label_toplam_kayit.setObjectName("label_toplam_kayit")
         self.label_kiz_kayit = QtWidgets.QLabel(self.centralwidget)
-        self.label_kiz_kayit.setGeometry(QtCore.QRect(120, 90, 81, 16))
+        self.label_kiz_kayit.setGeometry(QtCore.QRect(145, 90, 81, 16))
         self.label_kiz_kayit.setObjectName("label_kiz_kayit")
         self.label_erkek_kayit = QtWidgets.QLabel(self.centralwidget)
-        self.label_erkek_kayit.setGeometry(QtCore.QRect(140, 130, 111, 16))
+        self.label_erkek_kayit.setGeometry(QtCore.QRect(130, 130, 111, 16))
         self.label_erkek_kayit.setObjectName("label_erkek_kayit")
         self.pushButton_kelime_ekle = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_kelime_ekle.setGeometry(QtCore.QRect(240, 12, 71, 21))
+        self.pushButton_kelime_ekle.setGeometry(QtCore.QRect(240, 13, 71, 21))
         self.pushButton_kelime_ekle.setObjectName("pushButton_kelime_ekle")
         self.pushButton_kelime_sil = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_kelime_sil.setGeometry(QtCore.QRect(610, 12, 71, 21))
+        self.pushButton_kelime_sil.setGeometry(QtCore.QRect(630, 13, 71, 21))
         self.pushButton_kelime_sil.setObjectName("pushButton_kelime_sil")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(390, 12, 65, 16))
+        self.label.setGeometry(QtCore.QRect(390, 14, 81, 16))
         self.label.setObjectName("label")
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
         self.label_5.setGeometry(QtCore.QRect(10, 130, 114, 16))
@@ -45,7 +45,7 @@ class Ui_MainWindow(object):
         self.lineEdit.setGeometry(QtCore.QRect(90, 12, 137, 22))
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(460, 12, 137, 22))
+        self.lineEdit_2.setGeometry(QtCore.QRect(480, 12, 137, 22))
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.treeWidget = QtWidgets.QTreeWidget(self.centralwidget)
         self.treeWidget.setGeometry(QtCore.QRect(10, 170, 891, 241))
@@ -59,11 +59,20 @@ class Ui_MainWindow(object):
         self.label_6.setText("")
         self.label_6.setObjectName("label_6")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(12, 12, 70, 16))
+        self.label_2.setGeometry(QtCore.QRect(12, 14, 70, 16))
         self.label_2.setObjectName("label_2")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(10, 90, 99, 16))
+        self.label_4.setGeometry(QtCore.QRect(10, 90, 131, 16))
         self.label_4.setObjectName("label_4")
+        self.label_7 = QtWidgets.QLabel(self.centralwidget)
+        self.label_7.setGeometry(QtCore.QRect(390, 73, 71, 16))
+        self.label_7.setObjectName("label_7")
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_3.setGeometry(QtCore.QRect(465, 70, 137, 22))
+        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.pushButton_base_path = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_base_path.setGeometry(QtCore.QRect(617, 70, 71, 22))
+        self.pushButton_base_path.setObjectName("pushButton_base_path")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 917, 26))
@@ -82,11 +91,11 @@ class Ui_MainWindow(object):
         self.label_toplam_kayit.setText(_translate("MainWindow", "TextLabel"))
         self.label_kiz_kayit.setText(_translate("MainWindow", "TextLabel"))
         self.label_erkek_kayit.setText(_translate("MainWindow", "TextLabel"))
-        self.pushButton_kelime_ekle.setText(_translate("MainWindow", "Ekle"))
-        self.pushButton_kelime_sil.setText(_translate("MainWindow", "Sil"))
-        self.label.setText(_translate("MainWindow", "Kelime Sil :"))
-        self.label_5.setText(_translate("MainWindow", "Erkek Toplam Kayıt:"))
-        self.label_3.setText(_translate("MainWindow", "Toplam Kayıt:"))
+        self.pushButton_kelime_ekle.setText(_translate("MainWindow", "Add"))
+        self.pushButton_kelime_sil.setText(_translate("MainWindow", "Delete"))
+        self.label.setText(_translate("MainWindow", "Delete Word:"))
+        self.label_5.setText(_translate("MainWindow", "Total Male Record:"))
+        self.label_3.setText(_translate("MainWindow", "Total Record:"))
         self.treeWidget.headerItem().setText(0, _translate("MainWindow", "Işığı"))
         self.treeWidget.headerItem().setText(1, _translate("MainWindow", "Alarmı"))
         self.treeWidget.headerItem().setText(2, _translate("MainWindow", "Multimedyayı"))
@@ -97,8 +106,11 @@ class Ui_MainWindow(object):
         self.treeWidget.headerItem().setText(7, _translate("MainWindow", "Fanı"))
         self.treeWidget.headerItem().setText(8, _translate("MainWindow", "Isıtmayı"))
         self.treeWidget.headerItem().setText(9, _translate("MainWindow", "Sıcaklığı"))
-        self.label_2.setText(_translate("MainWindow", "Kelime Ekle:"))
-        self.label_4.setText(_translate("MainWindow", "Kız Toplam Kayıt:"))
+        self.label_2.setText(_translate("MainWindow", "Add Word:"))
+        self.label_4.setText(_translate("MainWindow", "Total Female Record:"))
+        self.label_7.setText(_translate("MainWindow", "Base Path:"))
+        self.pushButton_base_path.setText(_translate("MainWindow", "Select"))
+        
 
 class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -106,10 +118,20 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.initialize_ui()
 
+    def select_base_path(self):
+                directory = QtWidgets.QFileDialog.getExistingDirectory(self, "Base Path Seç")
+                if directory:
+                 self.lineEdit_3.setText(directory)
+                else:
+                 QtWidgets.QMessageBox.warning(self, "Uyarı", "Base Path seçilmedi!")
+
+
     def initialize_ui(self):
       
         self.pushButton_kelime_ekle.clicked.connect(self.add_word)
         self.pushButton_kelime_sil.clicked.connect(self.delete_word)
+        self.pushButton_base_path.clicked.connect(self.select_base_path)
+
 
     def add_word(self):
       
@@ -122,6 +144,7 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             QtWidgets.QMessageBox.warning(self, "Uyarı", "Kelime alanı boş olamaz!")
 
+
     def delete_word(self):
      
         selected_items = self.treeWidget.selectedItems()
@@ -131,6 +154,9 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.treeWidget.takeTopLevelItem(index)
         else:
             QtWidgets.QMessageBox.warning(self, "Uyarı", "Lütfen silmek için bir kelime seçin!")
+
+
+           
 
 
 if __name__ == "__main__":
