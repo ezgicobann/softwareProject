@@ -42,7 +42,12 @@ class MainWindow(QWidget):
         self.setLayout(layout)
 
     def car_valuation(self):
-        print("Second-hand Car Valuation project started!")
+        from CarMain import CarFilterApp  
+        self.CarFilter_window = QtWidgets.QMainWindow()  
+        self.ui = CarFilterApp()  
+        self.ui.show()  
+
+
 
     def football_prediction(self):
        

@@ -4,7 +4,8 @@ from voiceshow import VoiceShow
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(426, 217)
+        MainWindow.resize(456, 243)
+        MainWindow.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -34,7 +35,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addLayout(self.gridLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 426, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 456, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -46,10 +47,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Admin Login"))
-        self.label.setText(_translate("MainWindow", "Şifre:"))
-        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Admin Girişi</span></p></body></html>"))
-        self.pushButton.setText(_translate("MainWindow", "Giriş"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label.setText(_translate("MainWindow", "Password:"))
+        self.label_2.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt; font-weight:600;\">Admin Login</span></p></body></html>"))
+        self.pushButton.setText(_translate("MainWindow", "Login"))
 
 class AdminLogin(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
@@ -89,3 +90,6 @@ if __name__ == "__main__":
     window = VoiceCommand3()  
     window.show()
     sys.exit(app.exec_())
+
+
+
