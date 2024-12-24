@@ -10,6 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import json
+import os
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -118,7 +119,9 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.json_file = "words.json"
         self.initialize_ui()
-        self.load_words()
+        self.word_list = self.load_words()
+        self.show_counts(base_dir="VoiceRecords")
+        
 
     def select_base_path(self):
         directory = QtWidgets.QFileDialog.getExistingDirectory(self, "Base Path Seç")
@@ -127,6 +130,36 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             QtWidgets.QMessageBox.warning(self, "Uyarı", "Base Path seçilmedi!")
 
+
+    def show_counts(self, base_dir):
+        audio_extensions = ['.wav']
+
+        # Male ve Female klasörlerinin ses dosyalarını saymak
+        male_count = 0
+        female_count = 0
+
+        # base_dir içinde male ve female klasörlerinin bulunduğuna emin olun
+        for gender_folder in ['Male', 'Female']:
+            gender_dir = os.path.join(base_dir, gender_folder)
+            
+            # Eğer bu dizin varsa, içeriğini kontrol et
+            if os.path.isdir(gender_dir):
+                for word in self.word_list:
+                    word_dir = os.path.join(gender_dir, word)
+
+                    if os.path.isdir(word_dir):
+                        for root, dirs, files in os.walk(word_dir):
+                            for file in files:
+                                if any(file.lower().endswith(ext) for ext in audio_extensions):
+                                    if gender_folder == "Male":
+                                        male_count += 1
+                                    elif gender_folder == "Female":
+                                        female_count += 1
+
+        self.label_kiz_kayit.setText(str(female_count))
+        self.label_erkek_kayit.setText(str(male_count))
+        self.total_record = female_count + male_count
+        self.label_toplam_kayit.setText(str(self.total_record))
 
     def initialize_ui(self):
       
@@ -212,7 +245,6 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
             # Her satırda sütunu kaldır
             if column_name in data:
                 data.remove(column_name)
-                print("hiiiiiii")
 
             # JSON'u kaydet
             with open("words.json", "w", encoding="utf-8") as file:
@@ -253,8 +285,8 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
             pass
         except Exception as e:
             QtWidgets.QMessageBox.critical(self, "Hata", f"Kelimeler yüklenirken bir hata oluştu: {e}")
-
             
+        return headers
 
 if __name__ == "__main__":
     import sys

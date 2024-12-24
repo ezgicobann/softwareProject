@@ -101,6 +101,7 @@ class Ui_MainWindow(object):
         self.pushButton_basla.clicked.connect(self.start_progress)
         self.radioButton_kiz.toggled.connect(self.show_gender)
         self.radioButton_erkek.toggled.connect(self.show_gender)
+
     
     def show_gender(self):
         if self.radioButton_kiz.isChecked():
@@ -166,7 +167,7 @@ class Ui_MainWindow(object):
                     frame = recorder.read()
                     audio.extend(frame)
 
-                    if time.time() - start_time >= 2.5:
+                    if time.time() - start_time >= 0.5:
                         print("2.5 seconds passed. Stopping")
                         break
             
