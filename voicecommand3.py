@@ -12,6 +12,7 @@ from noisereduce import reduce_noise
 import time
 import os
 import random
+import json
 
 
 class Ui_MainWindow(object):
@@ -81,8 +82,21 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        """
+        try:
+            with open("words.json", "r", encoding="utf-8") as file:
+                self.word_list = json.load(file)
+                print(self.word_list)
 
-        self.word_list = ["Işığı", "Alarmı", "Multimedyayı", "Aydınlatmayı", "Parlaklığı", "İklimlendirmeyi", "Odayı", "Fanı", "Isıtmayı", "Sıcaklığı"]
+        except FileNotFoundError:
+            print("JSON dosyası bulunamadı!")
+        except json.JSONDecodeError:
+            print("JSON dosyasını okurken bir hata oluştu!")
+        except Exception as e:
+            print(f"Bir hata oluştu: {str(e)}")
+        """
+
+        ## self.word_list = ["Işığı", "Alarmı", "Multimedyayı", "Aydınlatmayı", "Parlaklığı", "İklimlendirmeyi", "Odayı", "Fanı", "Isıtmayı", "Sıcaklığı"]
 
         self.pushButton_basla.clicked.connect(self.start_progress)
         self.radioButton_kiz.toggled.connect(self.show_gender)
@@ -107,6 +121,18 @@ class Ui_MainWindow(object):
             self.msg.setStandardButtons(QMessageBox.Ok)
             self.msg.exec_()
             return
+        
+        try:
+            with open("words.json", "r", encoding="utf-8") as file:
+                self.word_list = json.load(file)
+                print(self.word_list)
+
+        except FileNotFoundError:
+            print("JSON dosyası bulunamadı!")
+        except json.JSONDecodeError:
+            print("JSON dosyasını okurken bir hata oluştu!")
+        except Exception as e:
+            print(f"Bir hata oluştu: {str(e)}")
         
         self.edge = len(self.word_list)
         random_num_list = []
