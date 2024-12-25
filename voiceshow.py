@@ -134,14 +134,16 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
     def show_counts(self, base_dir):
         audio_extensions = ['.wav']
 
-        # Male ve Female klasörlerinin ses dosyalarını saymak
         male_count = 0
         female_count = 0
 
-        # base_dir içinde male ve female klasörlerinin bulunduğuna emin olun
+        # Kelimeler için sayım işlemi
+        word_counts = {word: 0 for word in self.word_list}
+
+        # Klasör yapısı içinde gezin
         for gender_folder in ['Male', 'Female']:
             gender_dir = os.path.join(base_dir, gender_folder)
-            
+
             # Eğer bu dizin varsa, içeriğini kontrol et
             if os.path.isdir(gender_dir):
                 for word in self.word_list:
@@ -155,11 +157,37 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
                                         male_count += 1
                                     elif gender_folder == "Female":
                                         female_count += 1
+                                    word_counts[word] += 1  # Kelime sayısını artır
 
         self.label_kiz_kayit.setText(str(female_count))
         self.label_erkek_kayit.setText(str(male_count))
         self.total_record = female_count + male_count
         self.label_toplam_kayit.setText(str(self.total_record))
+
+        # Sonuçları yazdır
+        """
+        print("Kelime Sayımları:")
+        for word, count in word_counts.items():
+            print(f"Kelime: {word}, Sayı: {count}")
+        """
+        # TreeWidget'ta göstermek için sayıları ekle
+        self.treeWidget.clear()  # Önceki verileri temizle
+        header = self.word_list  # Başlık olarak kelimeleri kullan
+        self.treeWidget.setColumnCount(len(header))
+        self.treeWidget.setHeaderLabels(header)
+
+        # Yeni bir satır ekle
+        row = QtWidgets.QTreeWidgetItem(self.treeWidget)
+
+        for i, word in enumerate(self.word_list):
+            row.setText(i, str(word_counts[word]))  # Kelimenin sayısını ilgili sütuna ekle
+
+        # Toplam kayıtları göster
+        total_count = sum(word_counts.values())
+        self.label_toplam_kayit.setText(str(total_count))
+        
+
+
 
     def initialize_ui(self):
       
