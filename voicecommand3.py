@@ -82,25 +82,14 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        """
-        try:
-            with open("words.json", "r", encoding="utf-8") as file:
-                self.word_list = json.load(file)
-                print(self.word_list)
 
-        except FileNotFoundError:
-            print("JSON dosyası bulunamadı!")
-        except json.JSONDecodeError:
-            print("JSON dosyasını okurken bir hata oluştu!")
-        except Exception as e:
-            print(f"Bir hata oluştu: {str(e)}")
-        """
 
         ## self.word_list = ["Işığı", "Alarmı", "Multimedyayı", "Aydınlatmayı", "Parlaklığı", "İklimlendirmeyi", "Odayı", "Fanı", "Isıtmayı", "Sıcaklığı"]
 
         self.pushButton_basla.clicked.connect(self.start_progress)
         self.radioButton_kiz.toggled.connect(self.show_gender)
         self.radioButton_erkek.toggled.connect(self.show_gender)
+        self.json_random_num = "unique_id.json"
 
     
     def show_gender(self):
@@ -136,19 +125,34 @@ class Ui_MainWindow(object):
             print(f"Bir hata oluştu: {str(e)}")
         
         self.edge = len(self.word_list)
-        random_num_list = []
 
-        def create_random_num_and_add_list(self, random_num_list):
+        def create_random_num_and_add_list(self):
             random_num = str(random.randint(1000000, 9999999))
 
-            for i in random_num_list:
-                if i == random_num:
-                    create_random_num_and_add_list()
+            try:
 
-            random_num_list.append(random_num)
+                with open("unique_id.json", "r", encoding="utf-8") as file:
+                    try:
+                        data = json.load(file)
+
+                    except FileNotFoundError:
+                        data = []
+                    
+            except FileNotFoundError:
+                data = []
+
+            while random_num in data:
+                random_num = str(random.randint(1000000, 9999999))
+
+            data.append(random_num)  # Yeni numarayı ekle
+
+
+            with open("unique_id.json", "w", encoding="utf-8") as file:
+                json.dump(data, file, indent=4, ensure_ascii=False)
+
             return random_num
         
-        random_num = create_random_num_and_add_list(self, random_num_list)
+        random_num = create_random_num_and_add_list(self)
         for i in range(self.edge):
             self.label_kelime.setText(self.word_list[i])
 
