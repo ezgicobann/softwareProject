@@ -161,8 +161,7 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.label_kiz_kayit.setText(str(female_count))
         self.label_erkek_kayit.setText(str(male_count))
-        self.total_record = female_count + male_count
-        self.label_toplam_kayit.setText(str(self.total_record))
+        
 
         # Sonuçları yazdır
         """
