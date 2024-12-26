@@ -176,7 +176,7 @@ class Ui_MainWindow(object):
                     frame = recorder.read()
                     audio.extend(frame)
 
-                    if time.time() - start_time >= 0.5:
+                    if time.time() - start_time >= 2.5:
                         print("2.5 seconds passed. Stopping")
                         break
             
