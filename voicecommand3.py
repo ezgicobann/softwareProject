@@ -3,6 +3,7 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5 import QtCore, QtGui, QtWidgets
+from voiceshow import VoiceShow
 from admin_login import AdminLogin  
 from pvrecorder import PvRecorder
 import wave
@@ -90,6 +91,10 @@ class Ui_MainWindow(object):
         self.radioButton_kiz.toggled.connect(self.show_gender)
         self.radioButton_erkek.toggled.connect(self.show_gender)
         self.json_random_num = "unique_id.json"
+        
+        with open("base_path.json", "r", encoding="utf-8") as file:
+            self.base_paths = json.load(file)
+            self.base_path = self.base_paths[-1]
 
     
     def show_gender(self):
@@ -186,7 +191,7 @@ class Ui_MainWindow(object):
 
                 if gender == "Female":
 
-                    target_dir = os.path.join("VoiceRecords\Female", self.word_list[i])
+                    target_dir = os.path.join(f"{self.base_path}\Female", self.word_list[i])
                     os.makedirs(target_dir, exist_ok=True)
 
                     file_path = os.path.join(target_dir, f"{random_num}_Female_{self.word_list[i]}.wav")
@@ -199,7 +204,7 @@ class Ui_MainWindow(object):
                 
                 elif gender == "Male":
 
-                    target_dir = os.path.join("VoiceRecords\Male", self.word_list[i])
+                    target_dir = os.path.join(f"{self.base_path}\Male", self.word_list[i])
                     os.makedirs(target_dir, exist_ok=True)
 
                     file_path = os.path.join(target_dir, f"{random_num}_Male_{self.word_list[i]}.wav")
@@ -220,6 +225,7 @@ class Ui_MainWindow(object):
 
         self.save_button = msg.addButton("Save", QMessageBox.AcceptRole)
         self.delete_button = msg.addButton("Delete", QMessageBox.RejectRole)
+        self.rerecord_button = msg.addButton("Re-record", QMessageBox.DestructiveRole)
 
         msg.exec_()
 
@@ -229,12 +235,18 @@ class Ui_MainWindow(object):
         elif msg.clickedButton() == self.delete_button:
             self.delete_files_by_unique_id(unique_id)
 
+        elif msg.clickedButton() == self.rerecord_button:
+            self.delete_files_by_unique_id(unique_id)
+            QMessageBox.information(None, "Re-record", "Starting Record in 3 Seconds After This Page is Closed !!.")
+            time.sleep(3)
+            self.start_progress()
+
     def save_files(self):
         QMessageBox.information(None, "Save", "Audio files have been saved successfully!")
     
 
     def delete_files_by_unique_id(self, unique_id):
-        base_dir = "VoiceRecords"
+        base_dir = f"{self.base_path}"
         subfolders = ["Female", "Male"]
         for subfolder in subfolders:
             target_dir = os.path.join(base_dir, subfolder)
@@ -253,9 +265,6 @@ class Ui_MainWindow(object):
         
         QMessageBox.information(None, "Delete", "All audio files have been deleted!")
 
-            
-
-            
 
 
     def retranslateUi(self, MainWindow):
