@@ -71,6 +71,20 @@ class Ui_MainWindow(object):
         self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit_3.setGeometry(QtCore.QRect(465, 70, 137, 22))
         self.lineEdit_3.setObjectName("lineEdit_3")
+        try:
+            with open("base_path.json", "r", encoding="utf-8") as file:
+                self.base_paths = json.load(file)
+                if isinstance(self.base_paths, list) and self.base_paths:  
+                    self.base = self.base_paths[-1] 
+                    self.lineEdit_3.setText(self.base_paths[-1])
+                else:
+                    print("JSON dosyası boş veya yanlış formatta!")
+        except FileNotFoundError:
+            print("JSON dosyası bulunamadı!")
+        except json.JSONDecodeError:
+            print("JSON dosyasını okurken bir hata oluştu!")
+        except Exception as e:
+            print(f"Bir hata oluştu: {str(e)}")        
         self.pushButton_base_path = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_base_path.setGeometry(QtCore.QRect(617, 70, 71, 22))
         self.pushButton_base_path.setObjectName("pushButton_base_path")
@@ -120,13 +134,32 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.json_file = "words.json"
         self.initialize_ui()
         self.word_list = self.load_words()
-        self.show_counts(base_dir="VoiceRecords")
+        self.show_counts(base_dir=f"{self.base}")
         
 
     def select_base_path(self):
-        directory = QtWidgets.QFileDialog.getExistingDirectory(self, "Base Path Seç")
+        directory = self.lineEdit_3.text()
+
         if directory:
             self.lineEdit_3.setText(directory)
+            QtWidgets.QMessageBox.information(self, "Information", "Path chosen successfully!\n\nPlease restart the MainWindow to apply changes!!!")
+
+            try:
+                # Mevcut JSON dosyasını oku
+                with open("base_path.json", "r", encoding="utf-8") as file:
+                    base_paths = json.load(file)
+                    if not isinstance(base_paths, list):  # Eğer dosya liste değilse, listeye dönüştür
+                        base_paths = []
+            except (FileNotFoundError, json.JSONDecodeError):
+                base_paths = []  # Eğer dosya yoksa veya bozuksa, boş liste başlat
+
+            # Yeni dizini ekle (aynı dizin zaten listede yoksa)
+            if directory not in base_paths:
+                base_paths.append(directory)
+
+            # Güncellenmiş listeyi dosyaya yaz
+            with open("base_path.json", "w", encoding="utf-8") as file:
+                json.dump(base_paths, file, indent=4, ensure_ascii=False)
         else:
             QtWidgets.QMessageBox.warning(self, "Uyarı", "Base Path seçilmedi!")
 
@@ -193,6 +226,7 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_kelime_ekle.clicked.connect(self.add_word)
         self.pushButton_kelime_sil.clicked.connect(self.delete_word)
         self.pushButton_base_path.clicked.connect(self.select_base_path)
+
 
 
     def add_word(self):
