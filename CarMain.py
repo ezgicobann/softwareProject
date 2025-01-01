@@ -6,7 +6,11 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import Qt, QDate
 from graph_selection import GraphSelectionDialog  
+from car_data_collector import (Car, CarScraper)
+from time import sleep
+import threading
 
+collector = CarScraper()
 
 # main app
 class CarFilterApp(QMainWindow):
@@ -33,8 +37,14 @@ class CarFilterApp(QMainWindow):
 
         self.filter_button = QPushButton("Filter")
         self.filter_button.clicked.connect(self.filter_table)
-
+ 
         self.search_button = QPushButton("Search")
+
+        def search():
+            collector.scrapeInBackground()
+            thread = threading.Thread(target=self.continuous_Check_Of_Cars)
+            thread.start()
+        self.search_button.clicked.connect(search)
         
         self.dynamic_widget = QWidget()
         self.dynamic_layout = QHBoxLayout()
@@ -54,16 +64,16 @@ class CarFilterApp(QMainWindow):
         self.save_csv_button.clicked.connect(self.save_as_csv)  # csv connection
         self.get_graph_button = QPushButton("Get Graph")
         self.get_graph_button.clicked.connect(self.open_graph_dialog)
-
+        
         button_layout.addWidget(self.save_csv_button)
         button_layout.addWidget(self.get_graph_button)
         main_layout.addLayout(button_layout)
 
         # table
         self.table = QTableWidget()
-        self.table.setColumnCount(12)
+        self.table.setColumnCount(17)
         self.table.setHorizontalHeaderLabels([
-            "Brand","Series","Model","Year","Price","Fuel","Gear","Kilometer","Bodytype","Horsepower","Engine Size","Colour"
+            "Brand","Series","Model","Year","Price","Kilometer","Fuel","Gear","Bodytype","Colour","Horsepower","Engine Size","Traction","Fuel Consumption","Fuel Tank","Paint and Change","From Who"   
         ])
         main_layout.addWidget(self.table)
 
@@ -76,11 +86,23 @@ class CarFilterApp(QMainWindow):
         # Resize the window to fit the table content
         self.resize(self.table.horizontalHeader().length() + 50, self.table.verticalHeader().length() + 800)
 
-    def load_data(self, filtered_data=None):
-        self.table.setRowCount(0)  
-        data_to_display = filtered_data if filtered_data else self.car_data
+        
 
-        for row_data in data_to_display:
+    def load_data(self, filtered_data=None):
+        self.table.setRowCount(0) 
+
+        data_to_display = filtered_data if filtered_data else collector.cars
+        
+        for car in data_to_display:
+            # Extract the attributes from the Car object in the correct order
+            row_data = [
+                car.brand, car.series, car.model, car.year, car.price, car.kilometer,
+                car.fuel, car.gear, car.bodytype, car.colour, car.horsepower,
+                car.enginesize, car.traction, car.fuelConsumption, car.fuelTank,
+                car.paintChange, car.fromWho
+            ]
+
+            # Add a new row to the table and populate it
             row_index = self.table.rowCount()
             self.table.insertRow(row_index)
             for col_index, cell_data in enumerate(row_data):
@@ -184,6 +206,14 @@ class CarFilterApp(QMainWindow):
     def open_graph_dialog(self):
         dialog = GraphSelectionDialog()
         dialog.exec_()
+
+    def continuous_Check_Of_Cars(self):
+        previous_lenght=0
+        while True:
+            if previous_lenght<len(collector.cars):
+                previous_lenght=len(collector.cars)
+                self.load_data()
+            sleep(10)
 
 # main program
 if __name__ == "__main__":
