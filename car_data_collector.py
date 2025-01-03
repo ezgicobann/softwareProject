@@ -337,7 +337,7 @@ class CarScraper:
         url_batches = [self.urls[i:i + batch_size] for i in range(0, len(self.urls), batch_size)]
         print(f"Divided URLs into {len(url_batches)} batches")
 
-        with ThreadPoolExecutor(max_workers=7) as executor:
+        with ThreadPoolExecutor(max_workers=5) as executor:
             # Map each batch of URLs to a thread
             results = executor.map(self.scrape_car_details, url_batches)
 
