@@ -41,8 +41,8 @@ class CarScraper:
         self.base_url = 'https://www.arabam.com/ikinci-el/otomobil?view=Box'
         self.cars = []
         self.urls = []
-
-    
+        self.stopThread = False
+        self.urlsFetched = False
 
     def setup_driver(self):
         driver_lock = threading.Lock()
@@ -57,7 +57,7 @@ class CarScraper:
         options.add_argument("--useAutomationExtension=false")
         options.add_argument('--blink-settings=imagesEnabled=false') 
         options.page_load_strategy = 'eager'
-        #options.add_argument("--headless=new")  # Enable headless mode
+        options.add_argument("--headless=new")  # Enable headless mode
         options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
@@ -189,7 +189,8 @@ class CarScraper:
         car_urls = []
         for page in range(1, 22):  # Iterate through 21 pages
             print(urls[page-1])
-            
+            if self.stopThread:
+                break
             driver.get(urls[page-1])
             print(f"Scraping page {page}")
             WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'content-container')))
@@ -229,51 +230,31 @@ class CarScraper:
         driver.quit()
         car_urls.remove(None)
         self.urls = car_urls
+        self.urlsFetched = True
 
     def scrape_car_details(self, urls_batch):
-          # Add a delay to avoid getting blocked
         driver = self.setup_driver()
         driver.maximize_window()
-        #driver.set_window_rect(x=300, y=200, width=200, height=300)
-        car = None  # Initialize the car variable to ensure it's always defined
-        #driver.get(self.base_url)
+        car = None  
         cars = []
-        #try:
-        #    try:
-        #        WebDriverWait(driver, 10).until(
-        #            EC.element_to_be_clickable((By.ID, 'onetrust-accept-btn-handler'))
-        #        ).click()
-        #    except Exception as e:    
-        #        WebDriverWait(driver, 10).until(
-        #            EC.element_to_be_clickable((By.ID, 'onetrust-accept-btn-handler'))
-        #        ).click()
-        #except Exception as e:
-        #    print(f"Error clicking cookie: {e}")    
-        
-
+          
         for url in urls_batch:
+            if self.stopThread:
+                break
             driver.get(url)
-            
             try:
                 attributes = WebDriverWait(driver, 10).until(
                     EC.presence_of_all_elements_located((By.XPATH, '//*[@id="wrapper"]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div[2]/div[2]/div[*]/div[2]'))
                 )
-                # Parse the attributes into car data
                 
                 del attributes[0]  # Remove irrelevant elements
-                
                 del attributes[13]
                 
-                
-                
-                #attributes.append(driver.find_element(By.XPATH, '//*[@id="wrapper"]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div'))  # Add price
                 attributes.append(
                     WebDriverWait(driver, 10).until(
                     EC.presence_of_element_located((By.XPATH, '//*[@id="wrapper"]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div'))
                 )
                 )
-                
-
                 
                 
                 # Extract the car details
@@ -290,13 +271,17 @@ class CarScraper:
                 enginesize = attributes[10].text
                 horsepower = attributes[11].text
                 traction = attributes[12].text
+                
+                
+                attributes = [attr for attr in attributes if attr.text != "Evet"]        
+                    
 
                 if 'lt' in attributes[13].text:
                     if 'lt' in attributes[14].text:
                         fuelConsumption = attributes[13].text
                         fuelTank = attributes[14].text
                         paintChange = attributes[15].text
-                        if 'Takasa' in attributes[16].text:
+                        if 'Takasa' in attributes[16].text or '-' in attributes[16].text:
                             fromWho = attributes[17].text
                         else:
                             fromWho = attributes[16].text    
@@ -304,7 +289,7 @@ class CarScraper:
                         fuelTank = attributes[13].text 
                         fuelConsumption = "belirtilmemiş"
                         paintChange = attributes[14].text
-                        if 'Takasa' in attributes[15].text:
+                        if 'Takasa' in attributes[15].text or '-' in attributes[15].text:
                             fromWho = attributes[16].text     
                         else:
                             fromWho = attributes[15].text
@@ -312,10 +297,16 @@ class CarScraper:
                     fuelConsumption = "belirtilmemiş"
                     fuelTank = "belirtilmemiş"
                     paintChange = attributes[13].text  
-                    if 'Takasa' in attributes[14].text:
+                    if 'Takasa' in attributes[14].text or '-' in attributes[14].text:
                         fromWho = attributes[15].text  
                     else:
                         fromWho = attributes[14].text
+
+                if not 'HP' in horsepower and not 'hp' in horsepower:
+                    raise Exception("Horsepower not found")
+                if 'İkinci El' in traction:
+                    raise Exception("Traction not found")
+
 
                 price = float(attributes[len(attributes)-1].text.replace(' TL', '').replace('.', '').replace(',', ''))
 
@@ -329,9 +320,7 @@ class CarScraper:
             except Exception as e:
                 print(f"Error scraping {url}: {e}")
                 
-                
-                
-        
+
         driver.quit()
         return cars  # Return None if scraping failed
 
@@ -339,7 +328,8 @@ class CarScraper:
 
 
     def run(self):
-        self.scrape_listings()
+        if not self.urlsFetched:
+            self.scrape_listings()
         print(f"Total car URLs fetched: {len(self.urls)}")
 
         # Divide the URLs into batches of 20
@@ -355,7 +345,11 @@ class CarScraper:
             for batch_cars in results:
                 self.cars.extend(batch_cars)  # Add the cars of the current batch to self.cars
                 print(f"Batch completed! Cars scraped so far: {len(self.cars)}")
-
+                
+        if self.stopThread:
+            print("Scraping stopped!")
+            return   
+        self.cars = list(set(self.cars))  # Remove duplicates
         print("Scraping completed!")
         print(f"Total cars successfully scraped: {len(self.cars)}")
 
