@@ -12,13 +12,15 @@ import threading
 
 collector = CarScraper()
 
+
+
 # main app
 class CarFilterApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Car Filtering App")
         self.setGeometry(100, 100, 1000, 600)
-
+        self.pushedAgain = False
         # data
         self.car_data = []
 
@@ -40,10 +42,21 @@ class CarFilterApp(QMainWindow):
  
         self.search_button = QPushButton("Search")
 
+        
         def search():
-            collector.scrapeInBackground()
-            thread = threading.Thread(target=self.continuous_Check_Of_Cars)
-            thread.start()
+            if not self.pushedAgain:
+                collector.stopThread = False
+                
+                collector.scrapeInBackground()
+                thread = threading.Thread(target=self.continuous_Check_Of_Cars)
+                thread.start()
+                self.pushedAgain = True
+                self.search_button.setText("Stop")
+            else:
+                collector.stopThread = True
+                self.pushedAgain = False   
+                self.search_button.setText("Search")
+
         self.search_button.clicked.connect(search)
         
         self.dynamic_widget = QWidget()
@@ -71,9 +84,9 @@ class CarFilterApp(QMainWindow):
 
         # table
         self.table = QTableWidget()
-        self.table.setColumnCount(17)
+        self.table.setColumnCount(18)
         self.table.setHorizontalHeaderLabels([
-            "Brand","Series","Model","Year","Price","Kilometer","Fuel","Gear","Bodytype","Colour","Horsepower","Engine Size","Traction","Fuel Consumption","Fuel Tank","Paint and Change","From Who"   
+            "Brand","Series","Model","Year","Price","Kilometer","Fuel","Gear","Bodytype","Colour","Horsepower","Engine Size","Traction","Fuel Consumption","Fuel Tank","Paint and Change","From Who","Ad Date"   
         ])
         main_layout.addWidget(self.table)
 
@@ -99,7 +112,7 @@ class CarFilterApp(QMainWindow):
                 car.brand, car.series, car.model, car.year, car.price, car.kilometer,
                 car.fuel, car.gear, car.bodytype, car.colour, car.horsepower,
                 car.enginesize, car.traction, car.fuelConsumption, car.fuelTank,
-                car.paintChange, car.fromWho
+                car.paintChange, car.fromWho, car.addate
             ]
 
             # Add a new row to the table and populate it
