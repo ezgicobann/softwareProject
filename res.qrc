@@ -1,0 +1,29 @@
+<RCC>
+  <qresource prefix="login">
+    <file>login.ico</file>
+  </qresource>
+  <qresource prefix="software">
+    <file>software.png</file>
+  </qresource>
+  <qresource prefix="top">
+    <file>top.ico</file>
+  </qresource>
+  <qresource prefix="car">
+    <file>car.ico</file>
+  </qresource>
+  <qresource prefix="voice">
+    <file>voice.png</file>
+  </qresource>
+  <qresource prefix="password">
+    <file>passworrd.ico</file>
+  </qresource>
+  <qresource prefix="mikrofon">
+    <file>mikrofon.ico</file>
+  </qresource>
+  <qresource prefix="user">
+    <file>user.ico</file>
+  </qresource>
+  <qresource prefix="football">
+    <file>football.png</file>
+  </qresource>
+</RCC>

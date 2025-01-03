@@ -9,7 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import json
+import os
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -70,6 +71,20 @@ class Ui_MainWindow(object):
         self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit_3.setGeometry(QtCore.QRect(465, 70, 137, 22))
         self.lineEdit_3.setObjectName("lineEdit_3")
+        try:
+            with open("base_path.json", "r", encoding="utf-8") as file:
+                self.base_paths = json.load(file)
+                if isinstance(self.base_paths, list) and self.base_paths:  
+                    self.base = self.base_paths[-1] 
+                    self.lineEdit_3.setText(self.base_paths[-1])
+                else:
+                    print("JSON dosyası boş veya yanlış formatta!")
+        except FileNotFoundError:
+            print("JSON dosyası bulunamadı!")
+        except json.JSONDecodeError:
+            print("JSON dosyasını okurken bir hata oluştu!")
+        except Exception as e:
+            print(f"Bir hata oluştu: {str(e)}")        
         self.pushButton_base_path = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_base_path.setGeometry(QtCore.QRect(617, 70, 71, 22))
         self.pushButton_base_path.setObjectName("pushButton_base_path")
@@ -116,14 +131,94 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(VoiceShow, self).__init__()
         self.setupUi(self)
+        self.json_file = "words.json"
         self.initialize_ui()
+        self.word_list = self.load_words()
+        self.show_counts(base_dir=f"{self.base}")
+        
 
     def select_base_path(self):
-                directory = QtWidgets.QFileDialog.getExistingDirectory(self, "Base Path Seç")
-                if directory:
-                 self.lineEdit_3.setText(directory)
-                else:
-                 QtWidgets.QMessageBox.warning(self, "Uyarı", "Base Path seçilmedi!")
+        directory = self.lineEdit_3.text()
+
+        if directory:
+            self.lineEdit_3.setText(directory)
+            QtWidgets.QMessageBox.information(self, "Information", "Path chosen successfully!\n\nPlease restart the MainWindow to apply changes!!!")
+
+            try:
+                # Mevcut JSON dosyasını oku
+                with open("base_path.json", "r", encoding="utf-8") as file:
+                    base_paths = json.load(file)
+                    if not isinstance(base_paths, list):  # Eğer dosya liste değilse, listeye dönüştür
+                        base_paths = []
+            except (FileNotFoundError, json.JSONDecodeError):
+                base_paths = []  # Eğer dosya yoksa veya bozuksa, boş liste başlat
+
+            # Yeni dizini ekle (aynı dizin zaten listede yoksa)
+            if directory not in base_paths:
+                base_paths.append(directory)
+
+            # Güncellenmiş listeyi dosyaya yaz
+            with open("base_path.json", "w", encoding="utf-8") as file:
+                json.dump(base_paths, file, indent=4, ensure_ascii=False)
+        else:
+            QtWidgets.QMessageBox.warning(self, "Uyarı", "Base Path seçilmedi!")
+
+
+    def show_counts(self, base_dir):
+        audio_extensions = ['.wav']
+
+        male_count = 0
+        female_count = 0
+
+        # Kelimeler için sayım işlemi
+        word_counts = {word: 0 for word in self.word_list}
+
+        # Klasör yapısı içinde gezin
+        for gender_folder in ['Male', 'Female']:
+            gender_dir = os.path.join(base_dir, gender_folder)
+
+            # Eğer bu dizin varsa, içeriğini kontrol et
+            if os.path.isdir(gender_dir):
+                for word in self.word_list:
+                    word_dir = os.path.join(gender_dir, word)
+
+                    if os.path.isdir(word_dir):
+                        for root, dirs, files in os.walk(word_dir):
+                            for file in files:
+                                if any(file.lower().endswith(ext) for ext in audio_extensions):
+                                    if gender_folder == "Male":
+                                        male_count += 1
+                                    elif gender_folder == "Female":
+                                        female_count += 1
+                                    word_counts[word] += 1  # Kelime sayısını artır
+
+        self.label_kiz_kayit.setText(str(female_count))
+        self.label_erkek_kayit.setText(str(male_count))
+        
+
+        # Sonuçları yazdır
+        """
+        print("Kelime Sayımları:")
+        for word, count in word_counts.items():
+            print(f"Kelime: {word}, Sayı: {count}")
+        """
+        # TreeWidget'ta göstermek için sayıları ekle
+        self.treeWidget.clear()  # Önceki verileri temizle
+        header = self.word_list  # Başlık olarak kelimeleri kullan
+        self.treeWidget.setColumnCount(len(header))
+        self.treeWidget.setHeaderLabels(header)
+
+        # Yeni bir satır ekle
+        row = QtWidgets.QTreeWidgetItem(self.treeWidget)
+
+        for i, word in enumerate(self.word_list):
+            row.setText(i, str(word_counts[word]))  # Kelimenin sayısını ilgili sütuna ekle
+
+        # Toplam kayıtları göster
+        total_count = sum(word_counts.values())
+        self.label_toplam_kayit.setText(str(total_count))
+        
+
 
 
     def initialize_ui(self):
@@ -133,31 +228,126 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_base_path.clicked.connect(self.select_base_path)
 
 
+
     def add_word(self):
-      
         kelime = self.lineEdit.text()
         if kelime:
-           
-            item = QtWidgets.QTreeWidgetItem([kelime])
-            self.treeWidget.addTopLevelItem(item)
-            self.lineEdit.clear()
+            current_column_count = self.treeWidget.columnCount()
+            self.treeWidget.setColumnCount(current_column_count + 1)
+
+            headers = self.treeWidget.headerItem()
+            headers.setText(current_column_count, kelime)
+
+            for i in range(self.treeWidget.topLevelItemCount()):
+                item = self.treeWidget.topLevelItem(i)
+                item.setText(current_column_count, f"Yeni Veri {i+1}")  # Örnek veri ekle          
+            
+            self.save_words()
+
         else:
             QtWidgets.QMessageBox.warning(self, "Uyarı", "Kelime alanı boş olamaz!")
 
 
     def delete_word(self):
-     
-        selected_items = self.treeWidget.selectedItems()
-        if selected_items:
-            for item in selected_items:
-                index = self.treeWidget.indexOfTopLevelItem(item)
-                self.treeWidget.takeTopLevelItem(index)
+        column_name = self.lineEdit_2.text()
+
+        if not column_name:
+            QtWidgets.QMessageBox.warning(self, "Uyarı", "Lütfen silmek istediğiniz sütun adını girin!")
+            return
+        
+        headers = [self.treeWidget.headerItem().text(i) for i in range(self.treeWidget.columnCount())]
+
+        if column_name not in headers:
+            QtWidgets.QMessageBox.warning(self, "Uyarı", f"'{column_name}' adlı bir sütun bulunamadı!")
+            return
+        
+        column_index = headers.index(column_name)  # Sütunun indeksini bul
+
+        # Kullanıcıdan onay al
+        reply = QtWidgets.QMessageBox.question(
+            self,
+            "Emin misiniz?",
+            f"'{column_name}' sütununu silmek istediğinize emin misiniz?",
+            QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No
+        )
+
+        if reply == QtWidgets.QMessageBox.Yes:
+            # Sütunu kaldır
+            current_column_count = self.treeWidget.columnCount()
+            if current_column_count > 1:  # En az bir sütun kalmasını sağla
+                for i in range(self.treeWidget.topLevelItemCount()):
+                    item = self.treeWidget.topLevelItem(i)
+                    for col in range(column_index, current_column_count - 1):
+                        item.setText(col, item.text(col + 1))  # Sağdaki sütunları sola kaydır
+                    item.setText(current_column_count - 1, "")  # Son sütunu boşalt
+
+                # Sütun başlıklarını güncelle
+            for col in range(column_index, current_column_count - 1):
+                self.treeWidget.headerItem().setText(col, headers[col + 1])
+            self.treeWidget.headerItem().setText(current_column_count - 1, "")
+
+            self.treeWidget.setColumnCount(current_column_count - 1)  # Sütun sayısını azalt
+
+            # JSON dosyasını güncelle
+            self.update_json_after_column_delete(column_name)
+
         else:
-            QtWidgets.QMessageBox.warning(self, "Uyarı", "Lütfen silmek için bir kelime seçin!")
+            QtWidgets.QMessageBox.warning(self, "Uyarı", "En az bir sütun kalmalıdır!")
 
 
-           
 
+
+    def update_json_after_column_delete(self, column_name):
+        try:
+            # JSON dosyasını yükle
+            with open("words.json", "r", encoding="utf-8") as file:
+                data = json.load(file)
+
+            # Her satırda sütunu kaldır
+            if column_name in data:
+                data.remove(column_name)
+
+            # JSON'u kaydet
+            with open("words.json", "w", encoding="utf-8") as file:
+                json.dump(data, file, indent=4, ensure_ascii=False)
+
+            QtWidgets.QMessageBox.information(self, "Başarılı", f"'{column_name}' sütunu başarıyla silindi!")
+        
+        except FileNotFoundError:
+            QtWidgets.QMessageBox.warning(self, "Hata", "JSON dosyası bulunamadı!")
+        except Exception as e:
+            QtWidgets.QMessageBox.warning(self, "Hata", f"Bir hata oluştu: {str(e)}")
+
+
+
+    def save_words(self):
+        headers = []
+        for col in range(self.treeWidget.columnCount()):
+            headers.append(self.treeWidget.headerItem().text(col))
+
+        try:
+            with open(self.json_file, "w", encoding = "utf-8") as file:
+                json.dump(headers, file, ensure_ascii=False, indent=4)
+
+        except Exception as e:
+            QtWidgets.QMessageBox.critical(self, "Hata", f"Kelimeler kaydedilirken bir hata oluştu: {e}")
+
+    def load_words(self):
+        """JSON dosyasından kelimeleri yükler ve TreeWidget'i günceller."""
+        try:
+            with open(self.json_file, "r", encoding="utf-8") as file:
+                headers = json.load(file)
+
+            self.treeWidget.setColumnCount(len(headers))
+            for col, header in enumerate(headers):
+                self.treeWidget.headerItem().setText(col, header)
+        except FileNotFoundError:
+            # Eğer JSON dosyası yoksa, hiçbir şey yapma
+            pass
+        except Exception as e:
+            QtWidgets.QMessageBox.critical(self, "Hata", f"Kelimeler yüklenirken bir hata oluştu: {e}")
+            
+        return headers
 
 if __name__ == "__main__":
     import sys
