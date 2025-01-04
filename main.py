@@ -1,14 +1,14 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from page1 import Ui_MainWindow  # Import Ui_MainWindow from page1.py
+from page1 import Ui_MainWindow  
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)  # Initialize the application
+    app = QApplication(sys.argv)  
 
-    # Create the main window instance
+   
     MainWindow = QMainWindow()  
-    ui = Ui_MainWindow()  # Instantiate the Ui_MainWindow class from page1.py
-    ui.setupUi(MainWindow)  # Setup the UI
+    ui = Ui_MainWindow()  
+    ui.setupUi(MainWindow)  
 
-    MainWindow.show()  # Show the main window
-    sys.exit(app.exec_())  # Start the application event loop
+    MainWindow.show() 
+    sys.exit(app.exec_())
