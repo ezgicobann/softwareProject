@@ -1,0 +1,1239 @@
+
+  No.    Date    Venue           Opponent          Score     Competition
+
+   1  30-11-1872 Glasgow         Scotland           0- 0
+
+   2   8- 3-1873 London          Scotland           4- 2
+
+   3   7- 3-1874 Glasgow         Scotland           1- 2
+
+   4   6- 3-1875 London          Scotland           2- 2
+
+   5   4- 3-1876 Glasgow         Scotland           0- 3
+
+   6   3- 3-1877 London          Scotland           1- 3
+
+   7   2- 3-1878 Glasgow         Scotland           2- 7
+
+   8  18- 1-1879 London          Wales              2- 1
+   9   5- 4-1879 London          Scotland           5- 4
+
+  10  13- 3-1880 Glasgow         Scotland           4- 5
+  11  15- 3-1880 Wrexham         Wales              3- 2
+
+  12  26- 2-1881 Blackburn       Wales              0- 1
+  13  12- 3-1881 London          Scotland           1- 6
+
+  14  18- 2-1882 Belfast         Ireland           13- 0
+  15  11- 3-1882 Glasgow         Scotland           1- 5
+  16  13- 3-1882 Wrexham         Wales              3- 5
+
+  17   3- 2-1883 London          Wales              5- 0
+  18  24- 2-1883 Liverpool       Ireland            7- 0
+  19  10- 3-1883 Sheffield       Scotland           2- 3
+
+  20  23- 2-1884 Belfast         Ireland            8- 1     British Home Championship
+  21  15- 3-1884 Glasgow         Scotland           0- 1     British Home Championship
+  22  17- 3-1884 Wrexham         Wales              4- 0     British Home Championship
+
+  23  28- 2-1885 Manchester      Ireland            4- 0     British Home Championship
+  24  14- 3-1885 Blackburn       Wales              1- 1     British Home Championship
+  25  21- 3-1885 London          Scotland           1- 1     British Home Championship
+
+  26  13- 3-1886 Belfast         Ireland            6- 1     British Home Championship
+  27  29- 3-1886 Wrexham         Wales              3- 1     British Home Championship
+  28  27- 3-1886 Glasgow         Scotland           1- 1     British Home Championship
+
+  29   5- 2-1887 Sheffield       Ireland            7- 0     British Home Championship
+  30  26- 2-1887 London          Wales              4- 0     British Home Championship
+  31  19- 3-1887 Blackburn       Scotland           2- 3     British Home Championship
+
+  32   4- 2-1888 Crewe           Wales              5- 1     British Home Championship
+  33  17- 3-1888 Glasgow         Scotland           5- 0     British Home Championship
+  34   7- 4-1888 Belfast         Ireland            5- 1     British Home Championship
+
+  35  23- 2-1889 Stoke           Wales              4- 1     British Home Championship
+  36   2- 3-1889 Liverpool       Ireland            6- 1     British Home Championship
+  37  13- 4-1889 London          Scotland           2- 3     British Home Championship
+
+  38  15- 3-1890 Wrexham         Wales              3- 1     British Home Championship
+  39  15- 3-1890 Belfast         Ireland            9- 1     British Home Championship
+  40   5- 4-1890 Glasgow         Scotland           1- 1     British Home Championship
+
+  41   7- 3-1891 Wolverhampton   Ireland            6- 1     British Home Championship
+  42   7- 3-1891 Sunderland      Wales              4- 1     British Home Championship
+  43   4- 4-1891 Blackburn       Scotland           2- 1     British Home Championship
+
+  44   5- 3-1892 Wrexham         Wales              2- 0     British Home Championship
+  45   5- 3-1892 Belfast         Ireland            2- 0     British Home Championship
+  46   2- 4-1892 Glasgow         Scotland           4- 1     British Home Championship
+
+  47  25- 2-1893 Birmingham      Ireland            6- 1     British Home Championship
+  48  13- 3-1893 Stoke           Wales              6- 0     British Home Championship
+  49   1- 4-1893 London          Scotland           5- 2     British Home Championship
+
+  50   3- 3-1894 Belfast         Ireland            2- 2     British Home Championship  
+  51  12- 3-1894 Wrexham         Wales              5- 1     British Home Championship
+  52   7- 4-1894 Glasgow         Scotland           2- 2     British Home Championship
+
+  53   9- 3-1895 Derby           Ireland            9- 0     British Home Championship
+  54  18- 3-1895 London          Wales              1- 1     British Home Championship
+  55   6- 4-1895 Liverpool       Scotland           3- 0     British Home Championship
+
+  56   7- 3-1896 Belfast         Ireland            2- 0     British Home Championship
+  57  16- 3-1896 Cardiff         Wales              9- 1     British Home Championship
+  58   4- 4-1896 Glasgow         Scotland           1- 2     British Home Championship
+
+  59  20- 2-1897 Nottingham      Ireland            6- 0     British Home Championship
+  60  29- 3-1897 Sheffield       Wales              4- 0     British Home Championship
+  61   3- 4-1897 London          Scotland           1- 2     British Home Championship
+
+  62   5- 3-1898 Belfast         Ireland            3- 2     British Home Championship
+  63  28- 3-1898 Wrexham         Wales              3- 0     British Home Championship
+  64   2- 4-1898 Glasgow         Scotland           3- 1     British Home Championship
+
+  65  18- 2-1899 Sunderland      Ireland           13- 2     British Home Championship
+  66  20- 3-1899 Bristol         Wales              4- 0     British Home Championship
+  67   8- 4-1899 Birmingham      Scotland           2- 1     British Home Championship
+ 
+  68  17- 3-1900 Dublin          Ireland            2- 0     British Home Championship
+  69  26- 3-1900 Cardiff         Wales              1- 1     British Home Championship
+  70   7- 4-1900 Glasgow         Scotland           1- 4     British Home Championship
+
+  71   9- 3-1901 Southampton     Ireland            3- 0     British Home Championship
+  72  18- 3-1901 Newcastle       Wales              6- 0     British Home Championship
+  73  30- 3-1901 London          Scotland           2- 2     British Home Championship
+
+  74   3- 3-1902 Wrexham         Wales              0- 0     British Home Championship
+  75  22- 3-1902 Belfast         Ireland            1- 0     British Home Championship
+   *   5- 4-1902 Glasgow         Scotland           1- 1 [a] British Home Championship
+  76   3- 5-1902 Birmingham      Scotland           2- 2     British Home Championship
+
+  77  13- 2-1903 Wolverhampton   Ireland            4- 0     British Home Championship
+  78   2- 3-1903 Portsmouth      Wales              2- 1     British Home Championship
+  79   4- 4-1903 Sheffield       Scotland           1- 2     British Home Championship
+
+  80  29- 2-1904 Wrexham         Wales              2- 2     British Home Championship
+  81  12- 3-1904 Belfast         Ireland            3- 1     British Home Championship
+  82   9- 4-1904 Glasgow         Scotland           1- 0     British Home Championship
+
+  83  25- 2-1905 Middlesbrough   Ireland            1- 1     British Home Championship
+  84  27- 3-1905 Liverpool       Wales              3- 1     British Home Championship
+  85   1- 4-1905 London          Scotland           1- 0     British Home Championship
+
+  86  17- 2-1906 Belfast         Ireland            5- 0     British Home Championship
+  87  19- 3-1906 Cardiff         Wales              1- 0     British Home Championship
+  88   7- 4-1906 Glasgow         Scotland           1- 2     British Home Championship
+
+  89  16- 2-1907 Liverpool       Ireland            1- 0     British Home Championship
+  90  18- 3-1907 London          Wales              1- 1     British Home Championship
+  91   6- 4-1907 Newcastle       Scotland           1- 1     British Home Championship
+
+  92  15- 2-1908 Belfast         Ireland            3- 1     British Home Championship
+  93  16- 3-1908 Wrexham         Wales              7- 1     British Home Championship
+  94   4- 4-1908 Glasgow         Scotland           1- 1     British Home Championship
+  95   6- 6-1908 Wien            Austria            6- 1 
+  96   8- 6-1908 Wien            Austria           11- 1
+  97  10- 6-1908 Budapest        Hungary            7- 0
+  98  13- 6-1908 Praha           Bohemia            4- 0
+
+  99  13- 2-1909 Bradford        Ireland            4- 0     British Home Championship
+ 100  15- 3-1909 Nottingham      Wales              2- 0     British Home Championship
+ 101   3- 4-1909 London          Scotland           2- 0     British Home Championship  
+ 102  29- 5-1909 Budapest        Hungary            4- 2
+ 103  31- 5-1909 Budapest        Hungary            8- 2
+ 104   1- 6-1909 Wien            Austria            8- 1
+ 
+ 105  12- 2-1910 Belfast         Ireland            1- 1     British Home Championship
+ 106  14- 3-1910 Cardiff         Wales              1- 0     British Home Championship
+ 107   2- 4-1910 Glasgow         Scotland           0- 2     British Home Championship
+
+ 108  11- 2-1911 Derby           Ireland            2- 1     British Home Championship
+ 109  13- 3-1911 London          Wales              3- 0     British Home Championship
+ 110   1- 4-1911 Liverpool       Scotland           1- 1     British Home Championship
+
+ 111  10- 2-1912 Dublin          Ireland            6- 1     British Home Championship
+ 112  11- 3-1912 Wrexham         Wales              2- 0     British Home Championship
+ 113  23- 3-1912 Glasgow         Scotland           1- 1     British Home Championship
+
+ 114  15- 2-1913 Belfast         Ireland            1- 2     British Home Championship
+ 115  17- 3-1913 Bristol         Wales              4- 3     British Home Championship
+ 116   5- 4-1913 London          Scotland           1- 0     British Home Championship
+
+ 117  14- 2-1914 Middlesbrough   Ireland            0- 3     British Home Championship
+ 118  16- 3-1914 Cardiff         Wales              2- 0     British Home Championship
+ 119  14- 4-1914 Glasgow         Scotland           1- 3     British Home Championship
+
+ 120  25-10-1919 Belfast         Ireland            1- 1     British Home Championship
+ 
+ 121  15- 3-1920 London          Wales              1- 2     British Home Championship
+ 122  10- 4-1920 Sheffield       Scotland           5- 4     British Home Championship
+ 123  23-10-1920 Sunderland      Ireland            2- 0     British Home Championship
+
+ 124  14- 3-1921 Cardiff         Wales              0- 0     British Home Championship
+ 125   9- 4-1921 Glasgow         Scotland           0- 3     British Home Championship
+ 126  21- 5-1921 Brussel         Belgium            2- 0
+ 127  22-10-1921 Belfast         Northern Ireland   1- 1     British Home Championship
+
+ 128  13- 3-1922 Liverpool       Wales              1- 0     British Home Championship
+ 129   8- 4-1922 Birmingham      Scotland           0- 1     British Home Championship
+ 130  21-10-1922 West Bromwich   Northern Ireland   2- 0     British Home Championship
+
+ 131   5- 3-1923 Cardiff         Wales              2- 2     British Home Championship
+ 132  19- 3-1923 London          Belgium            6- 1
+ 133  14- 4-1923 Glasgow         Scotland           2- 2     British Home Championship
+ 134  10- 5-1923 Paris           France             4- 1
+ 135  21- 5-1923 Stockholm       Sweden             4- 2
+ 136  24- 5-1923 Stockholm       Sweden             3- 1 [*]
+ 137  20-10-1923 Belfast         Northern Ireland   1- 2     British Home Championship
+ 138   1-11-1923 Antwerpen       Belgium            2- 2
+
+ 139   3- 3-1924 Blackburn       Wales              1- 2     British Home Championship
+ 140  12- 4-1924 London          Scotland           1- 1     British Home Championship
+ 141  17- 5-1924 Paris           France             3- 1
+ 142  22-10-1924 Liverpool       Northern Ireland   3- 1     British Home Championship
+ 143   8-12-1924 West Bromwich   Belgium            4- 0
+ 
+ 144  28- 2-1925 Swansea         Wales              2- 1     British Home Championship
+ 145   4- 4-1925 Glasgow         Scotland           0- 2     British Home Championship
+ 146  21- 5-1925 Paris           France             3- 2
+ 147  24-10-1925 Belfast         Northern Ireland   0- 0     British Home Championship
+
+ 148   1- 3-1926 London          Wales              1- 3     British Home Championship
+ 149  17- 4-1926 Manchester      Scotland           0- 1     British Home Championship
+ 150  24- 5-1926 Antwerpen       Belgium            5- 3   
+ 151  20-10-1926 Liverpool       Northern Ireland   3- 3     British Home Championship
+
+ 152  12- 2-1927 Wrexham         Wales              3- 3     British Home Championship
+ 153   2- 4-1927 Glasgow         Scotland           2- 1     British Home Championship
+ 154  11- 5-1927 Brussel         Belgium            9- 1
+ 155  21- 5-1927 Luxembourg      Luxembourg         5- 2
+ 156  26- 5-1927 Paris           France             6- 0
+ 157  22-10-1927 Belfast         Northern Ireland   0- 2     British Home Championship
+ 158  18-11-1927 Burnley         Wales              1- 2     British Home Championship
+
+ 159  31- 3-1928 London          Scotland           1- 5     British Home Championship
+ 160  17- 5-1928 Paris           France             5- 1
+ 161  19- 5-1928 Antwerpen       Belgium            3- 1
+ 162  22-10-1928 Liverpool       Northern Ireland   2- 1     British Home Championship
+ 163  17-11-1928 Swansea         Wales              3- 2     British Home Championship
+
+ 164  13- 4-1929 Glasgow         Scotland           0- 1     British Home Championship
+ 165   9- 5-1929 Paris           France             4- 1
+ 166  11- 5-1929 Brussel         Belgium            5- 1
+ 167  15- 5-1929 Madrid          Spain              3- 4
+ 168  19-10-1929 Belfast         Northern Ireland   3- 0     British Home Championship
+ 169  20-11-1929 London          Wales              6- 0     British Home Championship
+
+ 170   5- 4-1930 London          Scotland           5- 2     British Home Championship
+ 171  10- 5-1930 Berlin          Germany            3- 3
+ 172  14- 5-1930 Wien            Austria            0- 0
+ 173  20-10-1930 Sheffield       Northern Ireland   5- 1     British Home Championship
+ 174  22-11-1930 Wrexham         Wales              4- 0     British Home Championship
+
+ 175  28- 3-1931 Glasgow         Scotland           0- 2     British Home Championship
+ 176  14- 5-1931 Paris           France             2- 5
+ 177  16- 5-1931 Brussel         Belgium            4- 1
+ 178  17-10-1931 Belfast         Northern Ireland   6- 2     British Home Championship
+ 179  18-11-1931 Liverpool       Wales              3- 1     British Home Championship
+ 180   9-12-1931 London          Spain              7- 1
+
+ 181   9- 4-1932 London          Scotland           3- 0     British Home Championship
+ 182  17-10-1932 Blackpool       Northern Ireland   1- 0     British Home Championship
+ 183  16-11-1932 Wrexham         Wales              0- 0     British Home Championship
+ 184   7-12-1932 London          Austria            4- 3
+
+ 185   1- 4-1933 Glasgow         Scotland           1- 2     British Home Championship
+ 186  13- 5-1933 Roma            Italy              1- 1
+ 187  20- 5-1933 Bern            Switzerland        4- 0
+ 188  14-10-1933 Belfast         Northern Ireland   3- 0     British Home Championship
+ 189  15-11-1933 Newcastle       Wales              1- 2     British Home Championship
+ 190   6-12-1933 London          France             4- 1
+
+ 191  14- 4-1934 London          Scotland           3- 0     British Home Championship
+ 192  10- 5-1934 Budapest        Hungary            1- 2
+ 193  16- 5-1934 Praha           Czechoslovakia     1- 2
+ 194  29- 9-1934 Cardiff         Wales              4- 0     British Home Championship
+ 195  14-11-1934 London          Italy              3- 2 
+
+ 196   6- 2-1935 Liverpool       Northern Ireland   2- 1     British Home Championship
+ 197   6- 4-1935 Glasgow         Scotland           0- 2     British Home Championship
+ 198  18- 5-1935 Amsterdam       Netherlands        1- 0
+ 199  19-10-1935 Belfast         Northern Ireland   3- 1     British Home Championship
+ 200   4-12-1935 London          Germany            3- 0   
+
+ 201   5- 2-1936 Wolverhampton   Wales              1- 2     British Home Championship
+ 202   4- 4-1936 London          Scotland           1- 1     British Home Championship
+ 203   6- 5-1936 Wien            Austria            1- 2
+ 204   9- 5-1936 Brussel         Belgium            2- 3
+ 205  17-10-1936 Cardiff         Wales              1- 2     British Home Championship
+ 206  18-11-1936 Stoke           Northern Ireland   3- 1     British Home Championship
+ 207   2-12-1936 London          Hungary            6- 2
+
+ 208  17- 4-1937 Glasgow         Scotland           1- 3     British Home Championship
+ 209  14- 5-1937 Oslo            Norway             6- 0
+ 210  17- 5-1937 Stockholm       Sweden             4- 0
+ 211  20- 5-1937 Helsinki        Finland            8- 0
+ 212  23-10-1937 Belfast         Northern Ireland   5- 1     British Home Championship
+ 213  17-11-1937 Middlesbrough   Wales              2- 1     British Home Championship
+ 214   1-12-1937 London          Czechoslovakia     5- 4
+
+ 215   9- 4-1938 London          Scotland           0- 1     British Home Championship
+ 216  14- 5-1938 Berlin          Germany            6- 3
+ 217  21- 5-1938 Zürich          Switzerland        1- 2
+ 218  26- 5-1938 Paris           France             4- 2
+ 219  22-10-1938 Cardiff         Wales              2- 4     British Home Championship
+ 220  26-10-1938 London          Rest of Europe     3- 0 [!]
+ 221   9-11-1938 Newcastle       Norway             4- 0
+ 222  16-11-1938 Manchester      Northern Ireland   7- 0     British Home Championship
+
+ 223  15- 4-1939 Glasgow         Scotland           2- 1     British Home Championship
+ 224  13- 5-1939 Milano          Italy              2- 2
+ 225  18- 5-1939 Beograd         Yugoslavia         1- 2
+ 226  24- 5-1939 Bucureşti       Romania            2- 0
+
+ 227  28- 9-1946 Belfast         Northern Ireland   7- 2     British Home Championship
+ 228  30- 9-1946 Dublin          Rep. of Ireland    1- 0
+ 229  13-11-1946 Manchester      Wales              3- 0     British Home Championship
+ 230  27-11-1946 Huddersfield    Netherlands        8- 2
+
+ 231  12- 4-1947 London          Scotland           1- 1     British Home Championship
+ 232   3- 5-1947 London          France             3- 0
+ 233  18- 5-1947 Zürich          Switzerland        0- 1
+ 234  25- 5-1947 Lisboa          Portugal          10- 0
+ 235  21- 9-1947 Brussel         Belgium            5- 2
+ 236  18-10-1947 Cardiff         Wales              3- 0     British Home Championship
+ 237   5-11-1947 Liverpool       Northern Ireland   2- 2     British Home Championship
+ 238  19-11-1947 London          Sweden             4- 2
+
+ 239  10- 4-1948 Glasgow         Scotland           2- 0     British Home Championship
+ 240  16- 5-1948 Torino          Italy              4- 0
+ 241  26- 9-1948 København       Denmark            0- 0
+ 242   9-10-1948 Belfast         Northern Ireland   6- 2     British Home Championship
+ 243  10-11-1948 Birmingham      Wales              1- 0     British Home Championship
+ 244   2-12-1948 London          Switzerland        6- 0
+
+ 245   9- 4-1949 London          Scotland           1- 3     British Home Championship
+ 246  13- 5-1949 Stockholm       Sweden             1- 3
+ 247  18- 5-1949 Oslo            Norway             4- 1
+ 248  22- 5-1949 Paris           France             3- 1
+ 249  21- 9-1949 Liverpool       Rep. of Ireland    0- 2
+ 250  15-10-1949 Cardiff         Wales              4- 1 [1] World Cup Q./Br. Home Ch.
+ 251  16-11-1949 Manchester      Northern Ireland   9- 2 [1] World Cup Q./Br. Home Ch.
+ 252  30-11-1949 London          Italy              2- 0
+
+ 253  15- 4-1950 Glasgow         Scotland           1- 0 [1] World Cup Q./Br. Home Ch.
+ 254  14- 5-1950 Lisboa          Portugal           5- 3
+ 255  18- 5-1950 Brussel         Belgium            4- 1
+ 256  25- 6-1950 Rio de Janeiro  Chile              2- 0     World Cup
+ 257  29- 6-1950 Belo Horizonte  United States      0- 1     World Cup
+ 258   2- 7-1950 Rio de Janeiro  Spain              0- 1     World Cup
+ 259   7-10-1950 Belfast         Northern Ireland   4- 1     British Home Championship
+ 260  15-11-1950 Sunderland      Wales              4- 2     British Home Championship
+ 261  22-11-1950 London          Yugoslavia         2- 2
+
+ 262  14- 4-1951 London          Scotland           2- 3     British Home Championship
+ 263   9- 5-1951 London          Argentina          2- 1
+ 264  19- 5-1951 Liverpool       Portugal           5- 2
+ 265   3-10-1951 London          France             2- 2
+ 266  20-10-1951 Cardiff         Wales              1- 1     British Home Championship
+ 267  14-11-1951 Birmingham      Northern Ireland   2- 0     British Home Championship
+ 268  28-11-1951 London          Austria            2- 2
+
+ 269   5- 4-1952 Glasgow         Scotland           2- 1     British Home Championship
+ 270  18- 5-1952 Firenze         Italy              1- 1
+ 271  25- 5-1952 Wien            Austria            3- 2
+ 272  28- 5-1952 Zürich          Switzerland        3- 0
+ 273   4-10-1952 Belfast         Northern Ireland   2- 2     British Home Championship
+ 274  12-11-1952 London          Wales              5- 2     British Home Championship
+ 275  26-11-1952 London          Belgium            5- 0
+
+ 276  18- 4-1953 London          Scotland           2- 2     British Home Championship
+ 277  17- 5-1953 Buenos Aires    Argentina          0- 0 [b]
+ 278  24- 5-1953 Santiago        Chile              2- 1
+ 279  31- 5-1953 Montevideo      Uruguay            1- 2
+ 280   8- 6-1953 New York        United States      6- 3
+ 281  10-10-1953 Cardiff         Wales              4- 1 [1] World Cup Q./Br. Home Ch.
+ 282  21-10-1953 London          FIFA XI            4- 4 [!]
+ 283  11-11-1953 Liverpool       Northern Ireland   3- 1 [1] World Cup Q./Br. Home Ch.
+ 284  25-11-1953 London          Hungary            3- 6
+
+ 285   3- 4-1954 Glasgow         Scotland           4- 2 [1] World Cup Q./Br. Home Ch.
+ 286  16- 5-1954 Beograd         Yugoslavia         0- 1
+ 287  23- 5-1954 Budapest        Hungary            1- 7
+ 288  17- 6-1954 Basel           Belgium            4- 4 aet World Cup
+ 289  20- 6-1954 Bern            Switzerland        2- 0     World Cup
+ 290  26- 6-1954 Basel           Uruguay            2- 4     World Cup
+ 291   2-10-1954 Belfast         Northern Ireland   2- 0     British Home Championship
+ 292  10-11-1954 London          Wales              3- 2     British Home Championship
+ 293   1-12-1954 London          West Germany       3- 1
+
+ 294   2- 4-1955 London          Scotland           7- 2     British Home Championship
+ 295  15- 5-1955 Paris           France             0- 1
+ 296  18- 5-1955 Madrid          Spain              1- 1
+ 297  22- 5-1955 Oporto          Portugal           1- 3
+ 298   2-10-1955 København       Denmark            5- 1
+ 299  27-10-1955 Cardiff         Wales              1- 2     British Home Championship
+ 300   2-11-1955 London          Northern Ireland   3- 0     British Home Championship
+ 301  30-11-1955 London          Spain              4- 1   
+
+ 302  14- 4-1956 Glasgow         Scotland           1- 1     British Home Championship
+ 303   9- 5-1956 London          Brazil             4- 2
+ 304  16- 5-1956 Stockholm       Sweden             0- 0   
+ 305  20- 5-1956 Helsinki        Finland            5- 1
+ 306  26- 5-1956 Berlin          West Germany       3- 1
+ 307  10-10-1956 Belfast         Northern Ireland   1- 1     British Home Championship
+ 308  14-11-1956 London          Wales              3- 1     British Home Championship
+ 309  28-11-1956 London          Yugoslavia         3- 0   
+ 310   5-12-1956 Wolverhampton   Denmark            5- 2     World Cup Qualifier
+
+ 311   6- 4-1957 London          Scotland           2- 1     British Home Championship
+ 312   8- 5-1957 London          Rep. of Ireland    5- 1     World Cup Qualifier
+ 313  15- 5-1957 København       Denmark            4- 1     World Cup Qualifier
+ 314  19- 5-1957 Dublin          Rep. of Ireland    1- 1     World Cup Qualifier
+ 315  19-10-1957 Cardiff         Wales              4- 0     British Home Championship
+ 316   6-11-1957 London          Northern Ireland   2- 3     British Home Championship
+ 317  27-11-1957 London          France             4- 0
+
+ 318  19- 4-1958 Glasgow         Scotland           4- 0     British Home Championship
+ 319   7- 5-1958 London          Portugal           2- 1
+ 320  11- 5-1958 Beograd         Yugoslavia         0- 5
+ 321  18- 5-1958 Moskva          Soviet Union       1- 1
+ 322   8- 6-1958 Göteborg        Soviet Union       2- 2     World Cup
+ 323  11- 6-1958 Göteborg        Brazil             0- 0     World Cup
+ 324  15- 6-1958 Borås           Austria            2- 2     World Cup
+ 325  17- 6-1958 Göteborg        Soviet Union       0- 1     World Cup
+ 326   4-10-1958 Belfast         Northern Ireland   3- 3     British Home Championship
+ 327  22-10-1958 London          Soviet Union       5- 0
+ 328  26-11-1958 Birmingham      Wales              2- 2     British Home Championship
+
+ 329  11- 4-1959 London          Scotland           1- 0     British Home Championship
+ 330   6- 5-1959 London          Italy              2- 2
+ 331  13- 5-1959 Rio de Janeiro  Brazil             0- 2
+ 332  17- 5-1959 Lima            Peru               1- 4   
+ 333  24- 5-1959 Cdad. de México Mexico             1- 2
+ 334  28- 5-1959 Los Angeles     United States      8- 1   
+ 335  17-10-1959 Cardiff         Wales              1- 1     British Home Championship
+ 336  28-10-1959 London          Sweden             2- 3   
+ 337  18-11-1959 London          Northern Ireland   2- 1     British Home Championship
+
+ 338  19- 4-1960 Glasgow         Scotland           1- 1     British Home Championship
+ 339  11- 5-1960 London          Yugoslavia         3- 3   
+ 340  15- 5-1960 Madrid          Spain              0- 3   
+ 341  22- 5-1960 Budapest        Hungary            0- 2
+ 342   8-10-1960 Belfast         Northern Ireland   5- 2     British Home Championship
+ 343  19-10-1960 Luxembourg      Luxembourg         9- 0     World Cup Qualifier
+ 344  26-10-1960 London          Spain              4- 2
+ 345  23-11-1960 London          Wales              5- 1     British Home Championship
+
+ 346  15- 4-1961 London          Scotland           9- 3     British Home Championship
+ 347  10- 5-1961 London          Mexico             8- 0
+ 348  21- 5-1961 Lisboa          Portugal           1- 1     World Cup Qualifier
+ 349  24- 5-1961 Roma            Italy              3- 2
+ 350  27- 5-1961 Wien            Austria            1- 3   
+ 351  28- 9-1961 London          Luxembourg         4- 1     World Cup Qualifier
+ 352  14-10-1961 Cardiff         Wales              1- 1     British Home Championship
+ 353  25-10-1961 London          Portugal           2- 0     World Cup Qualifier
+ 354  22-11-1961 London          Northern Ireland   1- 1     British Home Championship  
+
+ 355   4- 4-1962 London          Austria            3- 1
+ 356  14- 4-1962 Glasgow         Scotland           0- 2     British Home Championship 
+ 357   9- 5-1962 London          Switzerland        3- 1   
+ 358  20- 5-1962 Lima            Peru               4- 0   
+ 359  31- 5-1962 Rancagua        Hungary            1- 2     World Cup 
+ 360   2- 6-1962 Rancagua        Argentina          3- 1     World Cup
+ 361   7- 6-1962 Rancagua        Bulgaria           0- 0     World Cup 
+ 362  10- 6-1962 Viña del Mar    Brazil             1- 3     World Cup 
+ 363   3-10-1962 Sheffield       France             1- 1     European Champ. Qual.
+ 364  20-10-1962 Belfast         Northern Ireland   3- 1     British Home Championship
+ 365  21-10-1962 London          Wales              4- 0     British Home Championship
+
+ 366  27- 2-1963 Paris           France             2- 5     European Champ. Qual.
+ 367   6- 4-1963 London          Scotland           1- 2     British Home Championship
+ 368   8- 5-1963 London          Brazil             1- 1
+ 369  29- 5-1963 Bratislava      Czechoslovakia     4- 2
+ 370   2- 6-1963 Leipzig         East Germany       2- 1
+ 371   5- 6-1963 Basel           Switzerland        8- 1   
+ 372  12-10-1963 Cardiff         Wales              4- 0     British Home Championship
+ 373  23-10-1963 London          FIFA XI            2- 1 [!]
+ 374  20-11-1963 London          Northern Ireland   8- 3     British Home Championship
+
+ 375  11- 4-1964 Glasgow         Scotland           0- 1     British Home Championship
+ 376   6- 5-1964 London          Uruguay            2- 1
+ 377  17- 5-1964 Lisboa          Portugal           4- 3
+ 378  24- 5-1964 Dublin          Rep. of Ireland    3- 1   
+ 379  27- 5-1964 New York        United States     10- 0
+ 380  30- 5-1964 Rio de Janeiro  Brazil             1- 5   
+ 381   4- 6-1964 São Paulo       Portugal           1- 1
+ 382   6- 6-1964 Rio de Janeiro  Argentina          0- 1 
+ 383   3-10-1964 Belfast         Northern Ireland   4- 3     British Home Championship
+ 384  21-10-1964 London          Belgium            2- 2
+ 385  18-11-1964 London          Wales              2- 1     British Home Championship
+ 386   9-12-1964 Amsterdam       Netherlands        1- 1 
+
+ 387  10- 4-1965 London          Scotland           2- 2     British Home Championship 
+ 388   5- 5-1965 London          Hungary            1- 0
+ 389   9- 5-1965 Beograd         Yugoslavia         1- 1
+ 390  12- 5-1965 Nürnberg        West Germany       1- 0   
+ 391  16- 5-1965 Göteborg        Sweden             2- 1
+ 392   2-10-1965 Cardiff         Wales              0- 0     British Home Championship
+ 393  20-10-1965 London          Austria            2- 3
+ 394  10-11-1965 London          Northern Ireland   2- 1     British Home Championship
+ 395   8-12-1965 Madrid          Spain              2- 0
+
+ 396   5- 1-1966 Liverpool       Poland             1- 1
+ 397  23- 2-1966 London          West Germany       1- 0   
+ 398   2- 4-1966 Glasgow         Scotland           4- 3     British Home Championship
+ 399   4- 5-1966 London          Yugoslavia         2- 0
+ 400  26- 6-1966 Helsinki        Finland            3- 0   
+ 401  29- 6-1966 Oslo            Norway             6- 1   
+ 402   3- 7-1966 København       Denmark            2- 0
+ 403   5- 7-1966 Chorzów         Poland             1- 0
+ 404  11- 7-1966 London          Uruguay            0- 0     World Cup
+ 405  16- 7-1966 London          Mexico             2- 0     World Cup
+ 406  20- 7-1966 London          France             2- 0     World Cup
+ 407  23- 7-1966 London          Argentina          1- 0     World Cup 
+ 408  26- 7-1966 London          Portugal           2- 1     World Cup
+ 409  30- 7-1966 London          West Germany       4- 2 aet World Cup
+ 410  22-10-1966 Belfast         Northern Ireland   2- 0 [2] Eur. Champ. Q./Br. Home Ch.
+ 411   2-11-1966 London          Czechoslovakia     0- 0   
+ 412  16-11-1966 London          Wales              5- 1 [2] Eur. Champ. Q./Br. Home Ch.
+
+ 413  15- 4-1967 London          Scotland           2- 3 [2] Eur. Champ. Q./Br. Home Ch.
+ 414  24- 5-1967 London          Spain              2- 0   
+ 415  27- 5-1967 Wien            Austria            1- 0
+ 416  21-10-1967 Cardiff         Wales              3- 0 [2] Eur. Champ. Q./Br. Home Ch.
+ 417  22-11-1967 London          Northern Ireland   2- 0 [2] Eur. Champ. Q./Br. Home Ch.
+ 418   6-12-1967 London          Soviet Union       2- 2
+
+ 419  24- 2-1968 Glasgow         Scotland           1- 1 [2] Eur. Champ. Q./Br. Home Ch.
+ 420   3- 4-1968 London          Spain              1- 0     European Champ. Qual.
+ 421   8- 5-1968 Madrid          Spain              2- 1     European Champ. Qual.
+ 422  22- 5-1968 London          Sweden             3- 1
+ 423   1- 6-1968 Hannover        West Germany       0- 1 
+ 424   5- 6-1968 Firenze         Yugoslavia         0- 1     European Championship
+ 425   8- 6-1968 Roma            Soviet Union       2- 0     European Championship
+ 426   6-11-1968 Bucureşti       Romania            0- 0
+ 427  11-12-1968 London          Bulgaria           1- 1   
+
+ 428  15- 1-1969 London          Romania            1- 1   
+ 429  12- 3-1969 London          France             5- 0
+ 430   3- 5-1969 Belfast         Northern Ireland   3- 1     British Home Championship  
+ 431   7- 5-1969 London          Wales              2- 1     British Home Championship
+ 432  10- 5-1969 London          Scotland           4- 1     British Home Championship
+ 433   1- 6-1969 Cdad. de México Mexico             0- 0 
+ 434   8- 6-1969 Montevideo      Uruguay            2- 1
+ 435  12- 6-1969 Rio de Janeiro  Brazil             1- 2   
+ 436   5-11-1969 Amsterdam       Netherlands        1- 0
+ 437  10-12-1969 London          Portugal           1- 0
+
+ 438  14- 1-1970 London          Netherlands        0- 0   
+ 439  25- 2-1970 Brussel         Belgium            3- 1
+ 440  18- 4-1970 Cardiff         Wales              1- 1     British Home Championship
+ 441  21- 4-1970 London          Northern Ireland   3- 1     British Home Championship
+ 442  25- 4-1970 Glasgow         Scotland           0- 0     British Home Championship
+ 443  20- 5-1970 Bogotá          Colombia           4- 0
+ 444  24- 5-1970 Quito           Ecuador            2- 0
+ 445   2- 6-1970 Guadalajara     Romania            1- 0     World Cup
+ 446   7- 6-1970 Guadalajara     Brazil             0- 1     World Cup
+ 447  11- 6-1970 Guadalajara     Czechoslovakia     1- 0     World Cup
+ 448  14- 6-1970 León            West Germany       2- 3 aet World Cup
+ 449  25-11-1970 London          East Germany       3- 1   
+
+ 450   3- 2-1971 Valletta        Malta              1- 0     European Champ. Qual.
+ 451  21- 4-1971 London          Greece             3- 0     European Champ. Qual.
+ 452  12- 5-1971 London          Malta              5- 0     European Champ. Qual.
+ 453  15- 5-1971 Belfast         Northern Ireland   1- 0     British Home Championship
+ 454  19- 5-1971 London          Wales              0- 0     British Home Championship
+ 455  22- 5-1971 London          Scotland           3- 1     British Home Championship
+ 456  13-10-1971 Basel           Switzerland        3- 2     European Champ. Qual.
+ 457  10-11-1971 London          Switzerland        1- 1     European Champ. Qual.
+ 458   1-12-1971 Athinai         Greece             2- 0     European Champ. Qual.
+
+ 459  29- 4-1972 London          West Germany       1- 3     European Champ. Qual.
+ 460  13- 5-1972 Berlin          West Germany       0- 0     European Champ. Qual.
+ 461  20- 5-1972 Cardiff         Wales              3- 0     British Home Championship
+ 462  23- 5-1972 London          Northern Ireland   0- 1     British Home Championship
+ 463  27- 5-1972 Glasgow         Scotland           1- 0     British Home Championship
+ 464  11-10-1972 London          Yugoslavia         1- 1   
+ 465  15-11-1972 Cardiff         Wales              1- 0     World Cup Qualifier
+
+ 466  24- 1-1973 London          Wales              1- 1     World Cup Qualifier
+ 467  14- 2-1973 Glasgow         Scotland           5- 0   
+ 468  12- 5-1973 Liverpool       Northern Ireland   2- 1     British Home Championship  
+ 469  15- 5-1973 London          Wales              3- 0     British Home Championship
+ 470  19- 5-1973 London          Scotland           1- 0     British Home Championship
+ 471  27- 5-1973 Praha           Czechoslovakia     1- 1
+ 472   6- 6-1973 Chorzów         Poland             0- 2     World Cup Qualifier
+ 473  10- 6-1973 Moskva          Soviet Union       2- 1
+ 474  14- 6-1973 Torino          Italy              0- 2   
+ 475  26- 9-1973 London          Austria            7- 0
+ 476  17-10-1973 London          Poland             1- 1     World Cup Qualifier
+ 477  14-11-1973 London          Italy              0- 1
+
+ 478   3- 4-1974 Lisboa          Portugal           0- 0
+ 479  11- 5-1974 Cardiff         Wales              2- 0     British Home Championship
+ 480  15- 5-1974 London          Northern Ireland   1- 0     British Home Championship
+ 481  18- 5-1974 London          Scotland           0- 2     British Home Championship
+ 482  22- 5-1974 London          Argentina          2- 2   
+ 483  29- 5-1974 Leipzig         East Germany       1- 1
+ 484   1- 6-1974 Sofia           Bulgaria           1- 0
+ 485   5- 6-1974 Beograd         Yugoslavia         2- 2
+ 486  30-10-1974 London          Czechoslovakia     3- 0     European Champ. Qual.
+ 487  20-11-1974 London          Portugal           0- 0     European Champ. Qual.
+
+ 488  12- 3-1975 London          West Germany       2- 0
+ 489  16- 4-1975 London          Cyprus             5- 0     European Champ. Qual.
+ 490  11- 5-1975 Lemesos         Cyprus             1- 0     European Champ. Qual.
+ 491  17- 5-1975 Belfast         Northern Ireland   0- 0     British Home Championship   
+ 492  21- 5-1975 London          Wales              2- 2     British Home Championship   
+ 493  24- 5-1975 London          Scotland           5- 1     British Home Championship  
+ 494   3- 9-1975 Basel           Switzerland        2- 1 
+ 495  30-10-1975 Bratislava      Czechoslovakia     1- 2     European Champ. Qual.
+ 496  19-11-1975 Lisboa          Portugal           1- 1     European Champ. Qual.
+
+ 497  24- 3-1976 Wrexham         Wales              2- 1   
+ 498   8- 5-1976 Cardiff         Wales              1- 0     British Home Championship
+ 499  11- 5-1976 London          Northern Ireland   4- 0     British Home Championship
+ 500  15- 5-1976 Glasgow         Scotland           1- 2     British Home Championship
+ 501  23- 5-1976 Los Angeles     Brazil             0- 1   
+ 502  28- 5-1976 New York        Italy              3- 2
+ 503  13- 6-1976 Helsinki        Finland            4- 1     World Cup Qualifier
+ 504   8- 9-1976 London          Rep. of Ireland    1- 1   
+ 505  13-10-1976 London          Finland            2- 1     World Cup Qualifier
+ 506  17-11-1976 Roma            Italy              0- 2     World Cup Qualifier
+
+ 507   9- 2-1977 London          Netherlands        0- 2   
+ 508  30- 3-1977 London          Luxembourg         5- 0     World Cup Qualifier
+ 509  28- 5-1977 Belfast         Northern Ireland   2- 1     British Home Championship
+ 510  31- 5-1977 London          Wales              0- 1     British Home Championship 
+ 511   4- 6-1977 London          Scotland           1- 2     British Home Championship 
+ 512   8- 6-1977 Rio de Janeiro  Brazil             0- 0   
+ 513  12- 6-1977 Buenos Aires    Argentina          1- 1
+ 514  15- 6-1977 Montevideo      Uruguay            0- 0   
+ 515   7- 9-1977 London          Switzerland        0- 0   
+ 516  12-10-1977 Luxembourg      Luxembourg         2- 0     World Cup Qualifier
+ 517  16-11-1977 London          Italy              2- 0     World Cup Qualifier
+
+ 518  22- 2-1978 München         West Germany       1- 2
+ 519  19- 4-1978 London          Brazil             1- 1   
+ 520   3- 5-1978 Cardiff         Wales              3- 1     British Home Championship
+ 521  16- 5-1978 London          Northern Ireland   1- 0     British Home Championship
+ 522  20- 5-1978 Glasgow         Scotland           1- 0     British Home Championship
+ 523  24- 5-1978 London          Hungary            4- 1   
+ 524  20- 9-1978 København       Denmark            4- 3     European Champ. Qual.
+ 525  25-10-1978 Dublin          Rep. of Ireland    1- 1     European Champ. Qual.
+ 526  29-11-1978 London          Czechoslovakia     1- 0
+
+ 527   7- 2-1979 London          Northern Ireland   4- 0     European Champ. Qual.
+ 528  19- 5-1979 Belfast         Northern Ireland   2- 0     British Home Championship
+ 529  23- 5-1979 London          Wales              0- 0     British Home Championship
+ 530  26- 5-1979 London          Scotland           3- 1     British Home Championship
+ 531   6- 6-1979 Sofia           Bulgaria           3- 0     European Champ. Qual.
+ 532  10- 6-1979 Stockholm       Sweden             0- 0
+ 533  13- 6-1979 Wien            Austria            3- 4   
+ 534  12- 9-1979 London          Denmark            1- 0     European Champ. Qual.
+ 535  17-10-1979 Belfast         Northern Ireland   5- 1     European Champ. Qual.
+ 536  22-11-1979 London          Bulgaria           2- 0     European Champ. Qual.
+
+ 537   6- 2-1980 London          Rep. of Ireland    2- 0     European Champ. Qual.
+ 538  26- 3-1980 Barcelona       Spain              2- 0   
+ 539  13- 5-1980 London          Argentina          3- 1   
+ 540  17- 5-1980 Wrexham         Wales              1- 4     British Home Championship
+ 541  20- 5-1980 London          Northern Ireland   1- 1     British Home Championship
+ 542  24- 5-1980 Glasgow         Scotland           2- 0     British Home Championship
+ 543  31- 5-1980 Sydney          Australia          2- 1   
+ 544  12- 6-1980 Torino          Belgium            1- 1     European Championship
+ 545  15- 6-1980 Torino          Italy              0- 1     European Championship
+ 546  18- 6-1980 Napoli          Spain              2- 1     European Championship
+ 547  10- 9-1980 London          Norway             4- 0     World Cup Qualifier
+ 548  15-10-1980 Bucureşti       Romania            1- 2     World Cup Qualifier
+ 549  19-11-1980 London          Switzerland        2- 1     World Cup Qualifier
+
+ 550  25- 3-1981 London          Spain              1- 2   
+ 551  29- 4-1981 London          Romania            0- 0     World Cup Qualifier
+ 552  12- 5-1981 London          Brazil             0- 1   
+ 553  20- 5-1981 London          Wales              0- 0     British Home Championship   
+ 554  23- 5-1981 London          Scotland           0- 1     British Home Championship
+ 555  30- 5-1981 Basel           Switzerland        1- 2     World Cup Qualifier
+ 556   6- 6-1981 Budapest        Hungary            3- 1     World Cup Qualifier
+ 557   9- 9-1981 Oslo            Norway             1- 2     World Cup Qualifier
+ 558  18-11-1981 London          Hungary            1- 0     World Cup Qualifier
+
+ 559  23- 2-1982 London          Northern Ireland   4- 0     British Home Championship
+ 560  27- 4-1982 Cardiff         Wales              1- 0     British Home Championship
+ 561  25- 5-1982 London          Netherlands        2- 0
+ 562  29- 5-1982 Glasgow         Scotland           1- 0     British Home Championship
+ 563   2- 6-1982 Reykjavík       Iceland            1- 1
+ 564   3- 6-1982 Helsinki        Finland            4- 1   
+ 565  16- 6-1982 Bilbao          France             3- 1     World Cup 
+ 566  20- 6-1982 Bilbao          Czechoslovakia     2- 0     World Cup
+ 567  25- 6-1982 Bilbao          Kuwait             1- 0     World Cup
+ 568  29- 6-1982 Madrid          West Germany       0- 0     World Cup
+ 569   5- 7-1982 Madrid          Spain              0- 0     World Cup
+ 570  22- 9-1982 København       Denmark            2- 2     European Champ. Qual.
+ 571  13-10-1982 London          West Germany       1- 2
+ 572  17-11-1982 Thessaloniki    Greece             3- 0     European Champ. Qual.
+ 573  15-12-1982 London          Luxembourg         9- 0     European Champ. Qual.
+
+ 574  23- 2-1983 London          Wales              2- 1     British Home Championship
+ 575  30- 3-1983 London          Greece             0- 0     European Champ. Qual.
+ 576  27- 4-1983 London          Hungary            2- 0     European Champ. Qual.
+ 577  28- 5-1983 Belfast         Northern Ireland   0- 0     British Home Championship
+ 578   1- 6-1983 London          Scotland           2- 0     British Home Championship
+ 579  11- 6-1983 Sydney          Australia          0- 0
+ 580  15- 6-1983 Brisbane        Australia          1- 0
+ 581  18- 6-1983 Melbourne       Australia          1- 1   
+ 582  21- 9-1983 London          Denmark            0- 1     European Champ. Qual.
+ 583  12-10-1983 Budapest        Hungary            3- 0     European Champ. Qual.
+ 584  16-11-1983 Luxembourg      Luxembourg         4- 0     European Champ. Qual.
+
+ 585  29- 2-1984 Paris           France             0- 2   
+ 586  24- 4-1984 London          Northern Ireland   1- 0     British Home Championship
+ 587   2- 5-1984 Wrexham         Wales              0- 1     British Home Championship
+ 588  26- 5-1984 Glasgow         Scotland           1- 1     British Home Championship
+ 589   2- 6-1984 London          Soviet Union       0- 2 
+ 590  10- 6-1984 Rio de Janeiro  Brazil             2- 0   
+ 591  13- 6-1984 Montevideo      Uruguay            0- 2   
+ 592  17- 6-1984 Santiago        Chile              0- 0   
+ 593  12- 9-1984 London          East Germany       1- 0   
+ 594  17-10-1984 London          Finland            5- 0     World Cup Qualifier
+ 595  14-11-1984 İstanbul        Turkey             8- 0     World Cup Qualifier
+
+ 596  27- 2-1985 Belfast         Northern Ireland   1- 0     World Cup Qualifier
+ 597  26- 3-1985 London          Rep. of Ireland    2- 1
+ 598   1- 5-1985 Bucureşti       Romania            0- 0     World Cup Qualifier
+ 599  22- 5-1985 Helsinki        Finland            1- 1     World Cup Qualifier
+ 600  25- 5-1985 Glasgow         Scotland           0- 1     Rous Cup
+ 601   6- 6-1985 Cdad. de México Italy              1- 2   
+ 602   9- 6-1985 Cdad. de México Mexico             0- 1
+ 603  12- 6-1985 Cdad. de México West Germany       3- 0   
+ 604  16- 6-1985 Los Angeles     United States      5- 0   
+ 605  11- 9-1985 London          Romania            1- 1     World Cup Qualifier
+ 606  16-10-1985 London          Turkey             5- 0     World Cup Qualifier
+ 607  13-11-1985 London          Northern Ireland   0- 0     World Cup Qualifier
+
+ 608  29- 1-1986 Cairo           Egypt              4- 0
+ 609  26- 2-1986 Ramat-Gan       Israel             2- 1   
+ 610  26- 3-1986 Tbilisi         Soviet Union       1- 0
+ 611  23- 4-1986 London          Scotland           2- 1     Rous Cup
+ 612  17- 5-1986 Los Angeles     Mexico             3- 0   
+ 613  24- 5-1986 Burnaby         Canada             1- 0   
+ 614   3- 6-1986 Monterrey       Portugal           0- 1     World Cup
+ 615   6- 6-1986 Monterrey       Morocco            0- 0     World Cup
+ 616  11- 6-1986 Monterrey       Poland             3- 0     World Cup
+ 617  18- 6-1986 Cdad. de México Paraguay           3- 0     World Cup 
+ 618  22- 6-1986 Cdad. de México Argentina          1- 2     World Cup
+ 619  10- 9-1986 Stockholm       Sweden             0- 1   
+ 620  15-10-1986 London          Northern Ireland   3- 0     European Champ. Qual.
+ 621  12-11-1986 London          Yugoslavia         2- 0     European Champ. Qual.
+
+ 622  18- 2-1987 Madrid          Spain              4- 2
+ 623   1- 4-1987 Belfast         Northern Ireland   2- 0     European Champ. Qual.
+ 624  29- 4-1987 İzmir           Turkey             0- 0     European Champ. Qual.
+ 625  19- 5-1987 London          Brazil             1- 1     Rous Cup
+ 626  23- 5-1987 Glasgow         Scotland           0- 0     Rous Cup
+ 627   9- 9-1987 Düsseldorf      West Germany       1- 3
+ 628  14-10-1987 London          Turkey             8- 0     European Champ. Qual.
+ 629  11-11-1987 Beograd         Yugoslavia         4- 1     European Champ. Qual.
+
+ 630  17- 2-1988 Tel-Aviv        Israel             0- 0   
+ 631  23- 3-1988 London          Netherlands        2- 2   
+ 632  27- 4-1988 Budapest        Hungary            0- 0
+ 633  21- 5-1988 London          Scotland           1- 0     Rous Cup
+ 634  24- 5-1988 London          Colombia           1- 1     Rous Cup
+ 635  28- 5-1988 Lausanne        Switzerland        1- 0   
+ 636  12- 6-1988 Stuttgart       Rep. of Ireland    0- 1     European Championship
+ 637  15- 6-1988 Düsseldorf      Netherlands        1- 3     European Championship
+ 638  18- 6-1988 Frankfurt       Soviet Union       1- 3     European Championship
+ 639  14- 9-1988 London          Denmark            1- 0   
+ 640  19-10-1988 London          Sweden             0- 0     World Cup Qualifier
+ 641  16-11-1988 Riyadh          Saudi Arabia       1- 1   
+
+ 642   8- 2-1989 Athinai         Greece             2- 1   
+ 643   8- 3-1989 Tiranë          Albania            2- 0     World Cup Qualifier
+ 644  26- 4-1989 London          Albania            5- 0     World Cup Qualifier
+ 645  23- 5-1989 London          Chile              0- 0     Rous Cup
+ 646  27- 5-1989 Glasgow         Scotland           2- 0     Rous Cup
+ 647   3- 6-1989 London          Poland             3- 0     World Cup Qualifier
+ 648   7- 6-1989 København       Denmark            1- 1   
+ 649   6- 9-1989 Stockholm       Sweden             0- 0     World Cup Qualifier
+ 650  11-10-1989 Katowice        Poland             0- 0     World Cup Qualifier
+ 651  15-11-1989 London          Italy              0- 0   
+ 652  13-12-1989 London          Yugoslavia         2- 1  
+
+ 653  28- 3-1990 London          Brazil             1- 0   
+ 654  25- 4-1990 London          Czechoslovakia     4- 2   
+ 655  15- 5-1990 London          Denmark            1- 0
+ 656  22- 5-1990 London          Uruguay            1- 2
+ 657   2- 6-1990 Tunis           Tunisia            1- 1   
+ 658  11- 6-1990 Cagliari        Rep. of Ireland    1- 1     World Cup
+ 659  16- 6-1990 Cagliari        Netherlands        0- 0     World Cup
+ 660  21- 6-1990 Cagliari        Egypt              1- 0     World Cup
+ 661  27- 6-1990 Bologna         Belgium            1- 0 aet World Cup
+ 662   1- 7-1990 Napoli          Cameroon           3- 2 aet World Cup
+ 663   4- 7-1990 Torino          West Germany       1- 1 [c] World Cup
+ 664   7- 7-1990 Bari            Italy              1- 2     World Cup
+ 665  12- 9-1990 London          Hungary            1- 0   
+ 666  17-10-1990 London          Poland             2- 0     European Champ. Qual.
+ 667  14-11-1990 Dublin          Rep. of Ireland    1- 1     European Champ. Qual.
+
+ 668   6- 2-1991 London          Cameroon           2- 0   
+ 669  27- 3-1991 London          Rep. of Ireland    1- 1     European Champ. Qual.
+ 670   1- 5-1991 İzmir           Turkey             1- 0     European Champ. Qual.
+ 671  21- 5-1991 London          Soviet Union       3- 1   
+ 672  25- 5-1991 London          Argentina          2- 2   
+ 673   1- 6-1991 Sydney          Australia          1- 0   
+ 674   3- 6-1991 Auckland        New Zealand        1- 0
+ 675   8- 6-1991 Wellington      New Zealand        2- 0
+ 676  12- 6-1991 Kuala Lumpur    Malaysia           4- 2   
+ 677  11- 9-1991 London          Germany            0- 1   
+ 678  16-10-1991 London          Turkey             1- 0     European Champ. Qual.
+ 679  13-11-1991 Poznań          Poland             1- 1     European Champ. Qual.
+
+ 680  17- 2-1992 London          San Marino         6- 0     World Cup Qualifier
+ 681  19- 2-1992 London          France             2- 0   
+ 682  25- 3-1992 Praha           Czechoslovakia     2- 2   
+ 683  29- 4-1992 Moskva          CIS                2- 2   
+ 684  12- 5-1992 Budapest        Hungary            1- 0  
+ 685  17- 5-1992 London          Brazil             1- 1   
+ 686   3- 6-1992 Helsinki        Finland            2- 1   
+ 687  11- 6-1992 Malmö           Denmark            0- 0     European Championship
+ 688  14- 6-1992 Malmö           France             0- 0     European Championship 
+ 689  17- 6-1992 Stockholm       Sweden             1- 2     European Championship
+ 690   9- 9-1992 Santander       Spain              0- 1
+ 691  14-10-1992 London          Norway             1- 1     World Cup Qualifier
+ 692  18-11-1992 London          Turkey             4- 0     World Cup Qualifier
+
+ 693  31- 3-1993 İzmir           Turkey             2- 0     World Cup Qualifier
+ 694  28- 4-1993 London          Netherlands        2- 2     World Cup Qualifier
+ 695  29- 5-1993 Katowice        Poland             1- 1     World Cup Qualifier
+ 696   2- 6-1993 Oslo            Norway             0- 2     World Cup Qualifier
+ 697   9- 6-1993 Boston          United States      0- 2   
+ 698  13- 6-1993 Washington      Brazil             1- 1   
+ 699  19- 6-1993 Detroit         Germany            1- 2   
+ 700   8- 9-1993 London          Poland             3- 0     World Cup Qualifier
+ 701  13-10-1993 Rotterdam       Netherlands        0- 2     World Cup Qualifier
+ 702  17-11-1993 Bologna         San Marino         7- 1     World Cup Qualifier
+
+ 703   9- 3-1994 London          Denmark            1- 0
+ 704  17- 5-1994 London          Greece             5- 0
+ 705  22- 5-1994 London          Norway             0- 0   
+ 706   7- 9-1994 London          United States      2- 0   
+ 707  12-10-1994 London          Romania            1- 1   
+ 708  16-11-1994 London          Nigeria            1- 0   
+
+ 709  15- 2-1995 Dublin          Rep. of Ireland    0- 1 [d] 
+ 710  29- 3-1995 London          Uruguay            0- 0
+ 711   3- 6-1995 London          Japan              2- 1   
+ 712   8- 6-1995 Leeds           Sweden             3- 3   
+ 713  11- 6-1995 London          Brazil             1- 3   
+ 714   6- 9-1995 London          Colombia           0- 0   
+ 715  11-10-1995 Oslo            Norway             0- 0
+ 716  15-11-1995 London          Switzerland        3- 1   
+ 717  12-12-1995 London          Portugal           1- 1   
+
+ 718  27- 3-1996 London          Bulgaria           1- 0  
+ 719  24- 4-1996 London          Croatia            0- 0 
+ 720  18- 5-1996 London          Hungary            3- 0   
+ 721  23- 5-1996 Beijing         China              3- 0
+ 722   8- 6-1996 London          Switzerland        1- 1     European Championship
+ 723  15- 6-1996 London          Scotland           2- 0     European Championship
+ 724  18- 6-1996 London          Netherlands        4- 1     European Championship
+ 725  22- 6-1996 London          Spain              0- 0 [e] European Championship
+ 726  26- 6-1996 London          Germany            1- 1 [f] European Championship
+ 727   1- 9-1996 Chişinău        Moldova            3- 0     World Cup Qualifier
+ 728   9-10-1996 London          Poland             2- 1     World Cup Qualifier
+ 729   9-11-1996 Tbilisi         Georgia            2- 0     World Cup Qualifier
+
+ 730  12- 2-1997 London          Italy              0- 1     World Cup Qualifier
+ 731  29- 3-1997 London          Mexico             2- 0  
+ 732  30- 4-1997 London          Georgia            2- 0     World Cup Qualifier
+ 733  24- 5-1997 Manchester      South Africa       2- 1   
+ 734  31- 5-1997 Chorzów         Poland             2- 0     World Cup Qualifier
+ 735   4- 6-1997 Nantes          Italy              2- 0     Tournoi de France
+ 736   7- 6-1997 Montpellier     France             1- 0     Tournoi de France
+ 737  10- 6-1997 Paris           Brazil             0- 1     Tournoi de France
+ 738  10- 9-1997 London          Moldova            4- 0     World Cup Qualifier
+ 739  11-11-1997 Roma            Italy              0- 0     World Cup Qualifier
+ 740  15-11-1997 London          Cameroon           2- 0
+
+ 741  11- 2-1998 London          Chile              0- 2   
+ 742  25- 3-1998 Bern            Switzerland        1- 1   
+ 743  22- 4-1998 London          Portugal           3- 0   
+ 744  23- 5-1998 London          Saudi Arabia       0- 0   
+ 745  27- 5-1998 Casablanca      Morocco            1- 0     King Hassan II Tournament
+ 746  29- 5-1998 Casablanca      Belgium            0- 0 [g] King Hassan II Tournament
+ 747  15- 6-1998 Marseille       Tunisia            2- 0     World Cup 
+ 748  22- 6-1998 Toulouse        Romania            1- 2     World Cup 
+ 749  26- 6-1998 Lens            Colombia           2- 0     World Cup 
+ 750  30- 6-1998 Saint Etienne   Argentina          2- 2 [c] World Cup 
+ 751   5- 9-1998 Stockholm       Sweden             1- 2     European Champ. Qual.
+ 752  10-10-1998 London          Bulgaria           0- 0     European Champ. Qual.
+ 753  14-10-1998 Luxembourg      Luxembourg         3- 0     European Champ. Qual.
+ 754  18-11-1998 London          Czech Republic     2- 0   
+
+ 755  10- 2-1999 London          France             0- 2   
+ 756  27- 3-1999 London          Poland             3- 1     European Champ. Qual.
+ 757  28- 4-1999 Budapest        Hungary            1- 1 
+ 758   5- 6-1999 London          Sweden             0- 0     European Champ. Qual.
+ 759   9- 6-1999 Sofia           Bulgaria           1- 1     European Champ. Qual.
+ 760   4- 9-1999 London          Luxembourg         6- 0     European Champ. Qual.
+ 761   8- 9-1999 Warszawa        Poland             0- 0     European Champ. Qual.
+ 762  10-10-1999 Sunderland      Belgium            2- 1
+ 763  13-11-1999 Glasgow         Scotland           2- 0     European Champ. Qual.
+ 764  17-11-1999 London          Scotland           0- 1     European Champ. Qual.
+
+ 765  23- 2-2000 London          Argentina          0- 0
+ 766  27- 5-2000 London          Brazil             1- 1 
+ 767  31- 5-2000 London          Ukraine            2- 0 
+ 768   3- 6-2000 Ta'Qali         Malta              2- 1 
+ 769  12- 6-2000 Eindhoven       Portugal           2- 3     European Championship 
+ 770  17- 6-2000 Charleroi       Germany            1- 0     European Championship 
+ 771  20- 6-2000 Charleroi       Romania            2- 3     European Championship 
+ 772   2- 9-2000 Paris           France             1- 1
+ 773   7-10-2000 London          Germany            0- 1     World Cup Qualifier
+ 774  11-10-2000 Helsinki        Finland            0- 0     World Cup Qualifier
+ 775  15-11-2000 Torino          Italy              0- 1
+
+ 776  28- 2-2001 Birmingham      Spain              3- 0
+ 777  24- 3-2001 Liverpool       Finland            2- 1     World Cup Qualifier
+ 778  28- 3-2001 Tiranë          Albania            3- 1     World Cup Qualifier
+ 779  25- 5-2001 Derby           Mexico             4- 0
+ 780   6- 6-2001 Athinai         Greece             2- 0     World Cup Qualifier
+ 781  15- 8-2001 London          Netherlands        0- 2
+ 782   1- 9-2001 München         Germany            5- 1     World Cup Qualifier
+ 783   5- 9-2001 Newcastle       Albania            2- 0     World Cup Qualifier
+ 784   6-10-2001 Manchester      Greece             2- 2     World Cup Qualifier
+ 785  10-11-2001 Manchester      Sweden             1- 1
+
+ 786  13- 2-2002 Amsterdam       Netherlands        1- 1
+ 787  27- 3-2002 Leeds           Italy              1- 2
+ 788  17- 4-2002 Liverpool       Paraguay           4- 0
+ 789  21- 5-2002 Seogwipo        South Korea        1- 1
+ 790  26- 5-2002 Kobe            Cameroon           2- 2
+ 791   2- 6-2002 Saitama         Sweden             1- 1     World Cup
+ 792   7- 6-2002 Sapporo         Argentina          1- 0     World Cup
+ 793  12- 6-2002 Ōsaka           Nigeria            0- 0     World Cup
+ 794  15- 6-2002 Niigata         Denmark            3- 0     World Cup
+ 795  21- 6-2002 Shizuoka        Brazil             1- 2     World Cup
+ 796   7- 9-2002 Birmingham      Portugal           1- 1
+ 797  12-10-2002 Bratislava      Slovakia           2- 1     European Champ. Qual.
+ 798  16-10-2002 Southampton     Macedonia          2- 2     European Champ. Qual.
+
+ 799  12- 2-2003 London          Australia          1- 3
+ 800  29- 3-2003 Vaduz           Liechtenstein      2- 0     European Champ. Qual.
+ 801   2- 4-2003 Sunderland      Turkey             2- 0     European Champ. Qual.
+ 802  22- 5-2003 Durban          South Africa       2- 1
+ 803   3- 6-2003 Leicester       Serbia/Montenegro  2- 1
+ 804  11- 6-2003 Middlesbrough   Slovakia           2- 1     European Champ. Qual.
+ 805  20- 8-2003 Ipswich         Croatia            3- 1
+ 806   6- 9-2003 Skopje          Macedonia          2- 1     European Champ. Qual.
+ 807  10- 9-2003 Manchester      Liechtenstein      2- 0     European Champ. Qual.
+ 808  11-10-2003 İstanbul        Turkey             0- 0     European Champ. Qual.
+ 809  16-11-2003 Manchester      Denmark            2- 3
+
+ 810  18- 2-2004 Faro            Portugal           1- 1
+ 811  31- 3-2004 Göteborg        Sweden             0- 1
+ 812   1- 6-2004 Manchester      Japan              1- 1
+ 813   5- 6-2004 Manchester      Iceland            6- 1
+ 814  13- 6-2004 Lisboa          France             1- 2     European Championship
+ 815  17- 6-2004 Coimbra         Switzerland        3- 0     European Championship
+ 816  21- 6-2004 Lisboa          Croatia            4- 2     European Championship
+ 817  24- 6-2004 Lisboa          Portugal           2- 2 [h] European Championship
+ 818  18- 8-2004 Newcastle       Ukraine            3- 0
+ 819   4- 9-2004 Wien            Austria            2- 2     World Cup Qualifier
+ 820   8- 9-2004 Chorzów         Poland             2- 1     World Cup Qualifier
+ 821   9-10-2004 Manchester      Wales              2- 0     World Cup Qualifier
+ 822  13-10-2004 Bakı            Azerbaijan         1- 0     World Cup Qualifier
+ 823  17-11-2004 Madrid          Spain              0- 1
+
+ 824   9- 2-2005 Birmingham      Netherlands        0- 0
+ 825  26- 3-2005 Manchester      Northern Ireland   4- 0     World Cup Qualifier
+ 826  30- 3-2005 Newcastle       Azerbaijan         2- 0     World Cup Qualifier
+ 827  28- 5-2005 Chicago         United States      2- 1
+ 828  31- 5-2005 New York        Colombia           3- 2
+ 829  17- 8-2005 København       Denmark            1- 4
+ 830   3- 9-2005 Cardiff         Wales              1- 0     World Cup Qualifier
+ 831   7- 9-2005 Belfast         Northern Ireland   0- 1     World Cup Qualifier
+ 832   8-10-2005 Manchester      Austria            1- 0     World Cup Qualifier
+ 833  12-10-2005 Manchester      Poland             2- 1     World Cup Qualifier
+ 834  12-11-2005 Genève          Argentina          3- 2
+
+ 835   1- 3-2006 Liverpool       Uruguay            2- 1
+ 836  30- 5-2006 Manchester      Hungary            3- 1
+ 837   3- 6-2006 Manchester      Jamaica            6- 0
+ 838  10- 6-2006 Frankfurt       Paraguay           1- 0     World Cup
+ 839  15- 6-2006 Nürnberg        Trinidad/Tobago    2- 0     World Cup
+ 840  20- 6-2006 Köln            Sweden             2- 2     World Cup
+ 841  25- 6-2006 Stuttgart       Ecuador            1- 0     World Cup
+ 842   1- 7-2006 Gelsenkirchen   Portugal           0- 0 [i] World Cup
+ 843  16- 8-2006 Manchester      Greece             4- 0
+ 844   2- 9-2006 Manchester      Andorra            5- 0     European Champ. Qual.
+ 845   6- 9-2006 Skopje          Macedonia          1- 0     European Champ. Qual.
+ 846   7-10-2006 Manchester      Macedonia          0- 0     European Champ. Qual.
+ 847  11-10-2006 Zagreb          Croatia            0- 2     European Champ. Qual.
+ 848  15-11-2006 Amsterdam       Netherlands        1- 1
+
+ 849   7- 2-2007 Manchester      Spain              0- 1
+ 850  24- 3-2007 Tel-Aviv        Israel             0- 0     European Champ. Qual.
+ 851  28- 3-2007 Barcelona       Andorra            3- 0     European Champ. Qual.
+ 852   1- 6-2007 London          Brazil             1- 1
+ 853   6- 6-2007 Tallinn         Estonia            3- 0     European Champ. Qual.
+ 854  22- 8-2007 London          Germany            1- 2
+ 855   8- 9-2007 London          Israel             3- 0     European Champ. Qual.
+ 856  12- 9-2007 London          Russia             3- 0     European Champ. Qual.
+ 857  13-10-2007 London          Estonia            3- 0     European Champ. Qual.
+ 858  17-10-2007 Moskva          Russia             1- 2     European Champ. Qual.
+ 859  16-11-2007 Wien            Austria            1- 0
+ 860  21-11-2007 London          Croatia            2- 3     European Champ. Qual.
+
+ 861   6- 2-2008 London          Switzerland        2- 1
+ 862  26- 3-2008 Paris           France             0- 1
+ 863  28- 5-2008 London          United States      2- 0
+ 864   1- 6-2008 Port of Spain   Trinidad/Tobago    3- 0
+ 865  20- 8-2008 London          Czech Republic     2- 2
+ 866   6- 9-2008 Barcelona       Andorra            2- 0     World Cup Qualifier
+ 867  10- 9-2008 Zagreb          Croatia            4- 1     World Cup Qualifier
+ 868  11-10-2008 London          Kazakhstan         5- 1     World Cup Qualifier
+ 869  15-10-2008 Minsk           Belarus            3- 1     World Cup Qualifier
+ 870  19-11-2008 Berlin          Germany            2- 1
+
+ 871  11- 2-2009 Sevilla         Spain              0- 2
+ 872  28- 3-2009 London          Slovakia           4- 0 
+ 873   1- 4-2009 London          Ukraine            2- 1     World Cup Qualifier
+ 874   6- 6-2009 Almaty          Kazakhstan         4- 0     World Cup Qualifier
+ 875  10- 6-2009 London          Andorra            6- 0     World Cup Qualifier
+ 876  12- 8-2009 Amsterdam       Netherlands        2- 2
+ 877   5- 9-2009 London          Slovenia           2- 1
+ 878   9- 9-2009 London          Croatia            5- 1     World Cup Qualifier
+ 879  10-10-2009 Dnipropetrovsk  Ukraine            0- 1     World Cup Qualifier
+ 880  14-10-2009 London          Belarus            3- 0     World Cup Qualifier
+ 881  14-11-2009 Doha            Brazil             0- 1
+
+ 882   3- 3-2010 London          Egypt              3- 1
+ 883  24- 5-2010 London          Mexico             3- 1
+ 884  30- 5-2010 Graz            Japan              2- 1
+ 885  12- 6-2010 Rustenburg      United States      1- 1     World Cup
+ 886  18- 6-2010 Cape Town       Algeria            0- 0     World Cup
+ 887  23- 6-2010 Port Elizabeth  Slovenia           1- 0     World Cup
+ 888  27- 6-2010 Bloemfontein    Germany            1- 4     World Cup
+ 889  11- 8-2010 London          Hungary            2- 1
+ 890   3- 9-2010 London          Bulgaria           4- 0     European Champ. Qual.
+ 891   7- 9-2010 Basel           Switzerland        3- 1     European Champ. Qual.
+ 892  12-10-2010 London          Montenegro         0- 0     European Champ. Qual.
+ 893  17-11-2010 London          France             1- 2
+
+ 894   9- 2-2011 København       Denmark            2- 1
+ 895  26- 3-2011 Cardiff         Wales              2- 0     European Champ. Qual.
+ 896  29- 3-2011 London          Ghana              1- 1
+ 897   4- 6-2011 London          Switzerland        2- 2     European Champ. Qual.
+ 898   2- 9-2011 Sofia           Bulgaria           3- 0     European Champ. Qual.
+ 899   6- 9-2011 London          Wales              1- 0     European Champ. Qual.
+ 900   7-10-2011 Podgorica       Montenegro         2- 2     European Champ. Qual.
+ 901  12-11-2011 London          Spain              1- 0
+ 902  15-11-2011 London          Sweden             1- 0 
+
+ 903  29- 2-2012 London          Netherlands        2- 3
+ 904  26- 5-2012 Oslo            Norway             1- 0
+ 905   2- 6-2012 London          Belgium            1- 0
+ 906  11- 6-2012 Donetsk         France             1- 1     European Championship
+ 907  15- 6-2012 Kyiv            Sweden             3- 2     European Championship
+ 908  19- 6-2012 Donetsk         Ukraine            1- 0     European Championship
+ 909  24- 6-2012 Kyiv            Italy              0- 0 [j] European Championship
+ 910  15- 8-2012 Bern            Italy              2- 1
+ 911   7- 9-2012 Chişinău        Moldova            5- 0     World Cup Qualifier
+ 912  11- 9-2012 London          Ukraine            1- 1     World Cup Qualifier
+ 913  12-10-2012 London          San Marino         5- 0     World Cup Qualifier
+ 914  17-10-2012 Warszawa        Poland             1- 1     World Cup Qualifier
+ 915  14-11-2012 Stockholm       Sweden             2- 4
+
+ 916   6- 2-2013 London          Brazil             2- 1
+ 917  22- 3-2013 Serravalle      San Marino         8- 0     World Cup Qualifier
+ 918  26- 3-2013 Podgorica       Montenegro         1- 1     World Cup Qualifier
+ 919  29- 5-2013 London          Rep. of Ireland    1- 1
+ 920   2- 6-2013 Rio de Janeiro  Brazil             2- 2
+ 921  14- 8-2013 London          Scotland           3- 2
+ 922   6- 9-2013 London          Moldova            4- 0     World Cup Qualifier
+ 923  10- 9-2013 Kyiv            Ukraine            0- 0     World Cup Qualifier
+ 924  11-10-2013 London          Montenegro         4- 1     World Cup Qualifier
+ 925  15-10-2013 London          Poland             2- 0     World Cup Qualifier
+ 926  15-11-2013 London          Chile              0- 2
+ 927  19-11-2013 London          Germany            0- 1
+
+ 928   5- 3-2014 London          Denmark            1- 0
+ 929  30- 5-2014 London          Peru               3- 0
+ 930   4- 6-2014 Miami           Ecuador            2- 2
+ 931   7- 6-2014 Miami           Honduras           0- 0
+ 932  14- 6-2014 Manaus          Italy              1- 2     World Cup
+ 933  19- 6-2014 São Paulo       Uruguay            1- 2     World Cup
+ 934  24- 6-2014 Belo Horizonte  Costa Rica         0- 0     World Cup
+ 935   3- 9-2014 London          Norway             1- 0
+ 936   8- 9-2014 Basel           Switzerland        2- 0     European Champ. Qual.
+ 937   9-10-2014 London          San Marino         5- 0     European Champ. Qual.
+ 938  12-10-2014 Tallinn         Estonia            1- 0     European Champ. Qual.
+ 939  15-11-2014 London          Slovenia           3- 1     European Champ. Qual.
+ 940  18-11-2014 Glasgow         Scotland           3- 1
+
+ 941  27- 3-2015 London          Lithuania          4- 0     European Champ. Qual.
+ 942  31- 3-2015 Torino          Italy              1- 1
+ 943   7- 6-2015 Dublin          Rep. of Ireland    0- 0
+ 944  14- 6-2015 Ljubljana       Slovenia           3- 2     European Champ. Qual.
+ 945   5- 9-2015 Serravalle      San Marino         6- 0     European Champ. Qual.
+ 946   8- 9-2015 London          Switzerland        2- 0     European Champ. Qual.
+ 947   9-10-2015 London          Estonia            2- 0     European Champ. Qual.
+ 948  12-10-2015 Vilnius         Lithuania          3- 0     European Champ. Qual.
+ 949  13-11-2015 Alicante        Spain              0- 2
+ 950  17-11-2015 London          France             2- 0
+
+ 951  26- 3-2016 Berlin          Germany            3- 2
+ 952  29- 3-2016 London          Netherlands        1- 2
+ 953  22- 5-2016 Manchester      Turkey             2- 1
+ 954  27- 5-2016 Sunderland      Australia          2- 1
+ 955   2- 6-2016 London          Portugal           1- 0
+ 956  11- 6-2016 Marseille       Russia             1- 1     European Championship
+ 957  16- 6-2016 Lens            Wales              2- 1     European Championship
+ 958  20- 6-2016 Saint-Etienne   Slovakia           0- 0     European Championship
+ 959  27- 6-2016 Nice            Iceland            1- 2     European Championship
+ 960   4- 9-2016 Trnava          Slovakia           1- 0     World Cup Qualifier
+ 961   8-10-2016 London          Malta              2- 0     World Cup Qualifier
+ 962  11-10-2016 Ljubljana       Slovenia           0- 0     World Cup Qualifier
+ 963  11-11-2016 London          Scotland           3- 0     World Cup Qualifier
+ 964  15-11-2016 London          Spain              2- 2    
+
+ 965  22- 3-2017 Dortmund        Germany            0- 1
+ 966  26- 3-2017 London          Lithuania          2- 0     World Cup Qualifier
+ 967  10- 6-2017 Glasgow         Scotland           2- 2     World Cup Qualifier
+ 968  13- 6-2017 Paris           France             2- 3
+ 969   1- 9-2017 Ta'Qali         Malta              4- 0     World Cup Qualifier
+ 970   4- 9-2017 London          Slovakia           2- 1     World Cup Qualifier
+ 971   5-10-2017 London          Slovenia           1- 0     World Cup Qualifier
+ 972   8-10-2017 Vilnius         Lithuania          1- 0     World Cup Qualifier
+ 973  10-11-2017 London          Germany            0- 0
+ 974  14-11-2017 London          Brazil             0- 0
+
+ 975  23- 3-2018 Amsterdam       Netherlands        1- 0
+ 976  27- 3-2018 London          Italy              1- 1
+ 977   2- 6-2018 London          Nigeria            2- 1
+ 978   7- 6-2018 Leeds           Costa Rica         2- 0
+ 979  18- 6-2018 Volgograd       Tunisia            2- 1     World Cup
+ 980  24- 6-2018 Nizhny Novgorod Panama             6- 1     World Cup
+ 981  28- 6-2018 Kaliningrad     Belgium            0- 1     World Cup
+ 982   3- 7-2018 Moskva          Colombia           1- 1 [k] World Cup
+ 983   7- 7-2018 Samara          Sweden             2- 0     World Cup
+ 984  11- 7-2018 Moskva          Croatia            1- 2 aet World Cup
+ 985  14- 7-2018 Sankt Peterburg Belgium            0- 2     World Cup
+ 986   8- 9-2018 London          Spain              1- 2     UEFA Nations League A
+ 987  11- 9-2018 Leicester       Switzerland        1- 0 
+ 988  12-10-2018 Rijeka          Croatia            0- 0     UEFA Nations League A
+ 989  15-10-2018 Sevilla         Spain              3- 2     UEFA Nations League A
+ 990  15-11-2018 London          United States      3- 0
+ 991  18-11-2018 London          Croatia            2- 1     UEFA Nations League A
+
+ 992  22- 3-2019 London          Czech Republic     5- 0     European Champ. Qual.
+ 993  25- 3-2019 Podgorica       Montenegro         5- 1     European Champ. Qual.
+ 994   6- 6-2019 Guimarães       Netherlands        1- 3 aet UEFA Nations League A
+ 995   9- 6-2019 Guimarães       Switzerland        0- 0 [l] UEFA Nations League A
+ 996   7- 9-2019 London          Bulgaria           4- 0     European Champ. Qual.
+ 997  10- 9-2019 Southampton     Kosovo             5- 3     European Champ. Qual.
+ 998  11-10-2019 Praha           Czech Republic     1- 2     European Champ. Qual.
+ 999  14-10-2019 Sofia           Bulgaria           6- 0     European Champ. Qual.
+1000  14-11-2019 London          Montenegro         7- 0     European Champ. Qual.
+1001  17-11-2019 Prishtinë       Kosovo             4- 0     European Champ. Qual.
+
+1002   5- 9-2020 Reykjavík       Iceland            1- 0     UEFA Nations League A
+1003   8- 9-2020 København       Denmark            0- 0     UEFA Nations League A
+1004   8-10-2020 London          Wales              3- 0
+1005  11-10-2020 London          Belgium            2- 1     UEFA Nations League A
+1006  14-10-2020 London          Denmark            0- 1     UEFA Nations League A
+1007  12-11-2020 London          Ireland            3- 0
+1008  15-11-2020 Heverlee        Belgium            0- 2     UEFA Nations League A
+1009  18-11-2020 London          Iceland            4- 0     UEFA Nations League A
+
+1010  25- 3-2021 London          San Marino         5- 0     World Cup Qualifier
+1011  28- 3-2021 Tiranë          Albania            2- 0     World Cup Qualifier
+1012  31- 3-2021 London          Poland             2- 1     World Cup Qualifier
+1013   2- 6-2021 Middlesbrough   Austria            1- 0
+1014   6- 6-2021 Middlesbrough   Romania            1- 0
+1015  13- 6-2021 London          Croatia            1- 0     European Championship
+1016  18- 6-2021 London          Scotland           0- 0     European Championship
+1017  22- 6-2021 London          Czech Republic     1- 0     European Championship
+1018  29- 6-2021 London          Germany            2- 0     European Championship
+1019   3- 7-2021 Roma            Ukraine            4- 0     European Championship
+1020   7- 7-2021 London          Denmark            2- 1 aet European Championship
+1021  11- 7-2021 London          Italy              1- 1 [m] European Championship
+1022   2- 9-2021 Budapest        Hungary            4- 0     World Cup Qualifier
+1023   5- 9-2021 London          Andorra            4- 0     World Cup Qualifier
+1024   8- 9-2021 Warszawa        Poland             1- 1     World Cup Qualifier
+1025   9-10-2021 Andorra La V.   Andorra            5- 0     World Cup Qualifier
+1026  12-10-2021 London          Hungary            1- 1     World Cup Qualifier
+1027  12-11-2021 London          Albania            5- 0     World Cup Qualifier
+1028  15-11-2021 Serravalle      San Marino        10- 0     World Cup Qualifier
+
+1029  26- 3-2022 London          Switzerland        2- 1
+1030  29- 3-2022 London          Ivory Coast        3- 0
+1031   4- 6-2022 Budapest        Hungary            0- 1     UEFA Nations League A
+1032   7- 6-2022 München         Germany            1- 1     UEFA Nations League A
+1033  11- 6-2022 Wolverhampton   Italy              0- 0     UEFA Nations League A
+1034  14- 6-2022 Wolverhampton   Hungary            0- 4     UEFA Nations League A
+1035  23- 9-2022 Milano          Italy              0- 1     UEFA Nations League A
+1036  26- 9-2022 London          Germany            3- 3     UEFA Nations League A
+1037  21-11-2022 Al-Rayyan       Iran               6- 2     World Cup
+1038  25-11-2022 Al-Khor         United States      0- 0     World Cup
+1039  29-11-2022 Al-Rayyan       Wales              3- 0     World Cup
+1040   4-12-2022 Al-Khor         Senegal            3- 0     World Cup
+1041  10-12-2022 Al-Khor         France             1- 2     World Cup
+
+1042  23- 3-2023 Napoli          Italy              2- 1     European Champ. Qual.
+1043  26- 3-2023 London          Ukraine            2- 0     European Champ. Qual.
+1044  16- 6-2023 Ta'Qali         Malta              4- 0     European Champ. Qual.
+1045  19- 6-2023 Manchester      North Macedonia    7- 0     European Champ. Qual.
+1046   9- 9-2023 Wrocław         Ukraine            1- 1     European Champ. Qual.
+1047  12- 9-2023 Glasgow         Scotland           3- 1
+1048  13-10-2023 London          Australia          1- 0
+1049  17-10-2023 London          Italy              3- 1     European Champ. Qual.
+1050  17-11-2023 London          Malta              2- 0     European Champ. Qual.
+1051  20-11-2023 Skopje          North Macedonia    1- 1     European Champ. Qual.
+
+1052  23- 3-2024 London          Brazil             0- 1 
+1053  26- 3-2024 London          Belgium            2- 2
+1054   3- 6-2024 Newcastle       Bosnia-Herzegovina 3- 0
+1055   7- 6-2024 London          Iceland            0- 1
+1056  16- 6-2024 Gelsenkirchen   Serbia             1- 0     European Championship
+1057  20- 6-2024 Frankfurt       Denmark            1- 1     European Championship
+1058  25- 6-2024 Köln            Slovenia           0- 0     European Championship
+1059  30- 6-2024 Gelsenkirchen   Slovakia           2- 1 aet European Championship
+1060   6- 7-2024 Düsseldorf      Switzerland        1- 1 [n] European Championship
+1061  10- 7-2024 Dortmund        Netherlands        2- 1     European Championship
+1062  14- 7-2024 Berlin          Spain              1- 2     European Championship
+1063   7- 9-2024 Dublin          Ireland            2- 0     UEFA Nations League B
+1064  10- 9-2024 London          Finland            2- 0     UEFA Nations League B
+1065  10-10-2024 London          Greece             1- 2     UEFA Nations League B
+1066  13-10-2024 Helsinki        Finland            3- 1     UEFA Nations League B
+1067  14-11-2024 Athinai         Greece             3- 0     UEFA Nations League B
+1068  17-11-2024 London          Ireland            5- 0     UEFA Nations League B
+
+Notes:
+
+[*]    match considered official by England but not by Sweden  
+[!]    match declared unofficial by FIFA in 2001 but official for England
+[1]    match both World Cup Qualifier and for the Home Championship
+[2]    match both European Champ. Qual. and for the Home Championship
+[a]    match unofficial due to Ibrox disaster which claimed 26 lives
+[b]    abandoned in 23' due to rain
+[c]    aet, England lost 3-4 on penalties
+[d]    abandoned in 27' due to crowd trouble caused by English neo-Nazis
+[e]    asd, England won 4-2 on penalties
+[f]    asd, England lost 5-6 on penalties
+[g]    England lost 3-4 on penalties (no extra time played)
+[h]    asg, England lost 5-6 on penalties
+[i]    aet, England lost 1-3 on penalties
+[j]    aet, England lost 2-4 on penalties
+[k]    aet, England won 4-3 on penalties
+[l]    aet, England won 6-5 on penalties
+[m]    aet, England lost 2-3 on penalties
+[n]    aet, England won 5-3 on penalties
+
+NB: aet = after extra time
+    asd = after sudden death extra time
+    asg = after silver goal extra time

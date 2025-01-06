@@ -1,0 +1,304 @@
+23- 2-2000 London          Argentina          0- 0
+27- 5-2000 London          Brazil             1- 1 
+31- 5-2000 London          Ukraine            2- 0 
+ 3- 6-2000 Ta'Qali         Malta              2- 1 
+12- 6-2000 Eindhoven       Portugal           2- 3     European Championship 
+17- 6-2000 Charleroi       Germany            1- 0     European Championship 
+20- 6-2000 Charleroi       Romania            2- 3     European Championship 
+ 2- 9-2000 Paris           France             1- 1
+ 7-10-2000 London          Germany            0- 1     World Cup Qualifier
+11-10-2000 Helsinki        Finland            0- 0     World Cup Qualifier
+15-11-2000 Torino          Italy              0- 1
+28- 2-2001 Birmingham      Spain              3- 0
+24- 3-2001 Liverpool       Finland            2- 1     World Cup Qualifier
+28- 3-2001 Tiranë          Albania            3- 1     World Cup Qualifier
+25- 5-2001 Derby           Mexico             4- 0
+ 6- 6-2001 Athinai         Greece             2- 0     World Cup Qualifier
+15- 8-2001 London          Netherlands        0- 2
+ 1- 9-2001 München         Germany            5- 1     World Cup Qualifier
+ 5- 9-2001 Newcastle       Albania            2- 0     World Cup Qualifier
+ 6-10-2001 Manchester      Greece             2- 2     World Cup Qualifier
+10-11-2001 Manchester      Sweden             1- 1
+13- 2-2002 Amsterdam       Netherlands        1- 1
+27- 3-2002 Leeds           Italy              1- 2
+17- 4-2002 Liverpool       Paraguay           4- 0
+21- 5-2002 Seogwipo        South Korea        1- 1
+26- 5-2002 Kobe            Cameroon           2- 2
+ 2- 6-2002 Saitama         Sweden             1- 1     World Cup
+ 7- 6-2002 Sapporo         Argentina          1- 0     World Cup
+12- 6-2002 Ōsaka           Nigeria            0- 0     World Cup
+15- 6-2002 Niigata         Denmark            3- 0     World Cup
+21- 6-2002 Shizuoka        Brazil             1- 2     World Cup
+ 7- 9-2002 Birmingham      Portugal           1- 1
+12-10-2002 Bratislava      Slovakia           2- 1     European Champ. Qual.
+16-10-2002 Southampton     Macedonia          2- 2     European Champ. Qual.
+12- 2-2003 London          Australia          1- 3
+29- 3-2003 Vaduz           Liechtenstein      2- 0     European Champ. Qual.
+ 2- 4-2003 Sunderland      Turkey             2- 0     European Champ. Qual.
+22- 5-2003 Durban          South Africa       2- 1
+ 3- 6-2003 Leicester       Serbia/Montenegro  2- 1
+11- 6-2003 Middlesbrough   Slovakia           2- 1     European Champ. Qual.
+20- 8-2003 Ipswich         Croatia            3- 1
+ 6- 9-2003 Skopje          Macedonia          2- 1     European Champ. Qual.
+10- 9-2003 Manchester      Liechtenstein      2- 0     European Champ. Qual.
+11-10-2003 İstanbul        Turkey             0- 0     European Champ. Qual.
+16-11-2003 Manchester      Denmark            2- 3
+18- 2-2004 Faro            Portugal           1- 1
+31- 3-2004 Göteborg        Sweden             0- 1
+ 1- 6-2004 Manchester      Japan              1- 1
+ 5- 6-2004 Manchester      Iceland            6- 1
+13- 6-2004 Lisboa          France             1- 2     European Championship
+17- 6-2004 Coimbra         Switzerland        3- 0     European Championship
+21- 6-2004 Lisboa          Croatia            4- 2     European Championship
+24- 6-2004 Lisboa          Portugal           2- 2 [h] European Championship
+18- 8-2004 Newcastle       Ukraine            3- 0
+ 4- 9-2004 Wien            Austria            2- 2     World Cup Qualifier
+ 8- 9-2004 Chorzów         Poland             2- 1     World Cup Qualifier
+ 9-10-2004 Manchester      Wales              2- 0     World Cup Qualifier
+13-10-2004 Bakı            Azerbaijan         1- 0     World Cup Qualifier
+17-11-2004 Madrid          Spain              0- 1
+ 9- 2-2005 Birmingham      Netherlands        0- 0
+26- 3-2005 Manchester      Northern Ireland   4- 0     World Cup Qualifier
+30- 3-2005 Newcastle       Azerbaijan         2- 0     World Cup Qualifier
+28- 5-2005 Chicago         United States      2- 1
+31- 5-2005 New York        Colombia           3- 2
+17- 8-2005 København       Denmark            1- 4
+ 3- 9-2005 Cardiff         Wales              1- 0     World Cup Qualifier
+ 7- 9-2005 Belfast         Northern Ireland   0- 1     World Cup Qualifier
+ 8-10-2005 Manchester      Austria            1- 0     World Cup Qualifier
+12-10-2005 Manchester      Poland             2- 1     World Cup Qualifier
+12-11-2005 Genève          Argentina          3- 2
+ 1- 3-2006 Liverpool       Uruguay            2- 1
+30- 5-2006 Manchester      Hungary            3- 1
+ 3- 6-2006 Manchester      Jamaica            6- 0
+10- 6-2006 Frankfurt       Paraguay           1- 0     World Cup
+15- 6-2006 Nürnberg        Trinidad/Tobago    2- 0     World Cup
+20- 6-2006 Köln            Sweden             2- 2     World Cup
+25- 6-2006 Stuttgart       Ecuador            1- 0     World Cup
+ 1- 7-2006 Gelsenkirchen   Portugal           0- 0 [i] World Cup
+16- 8-2006 Manchester      Greece             4- 0
+ 2- 9-2006 Manchester      Andorra            5- 0     European Champ. Qual.
+ 6- 9-2006 Skopje          Macedonia          1- 0     European Champ. Qual.
+ 7-10-2006 Manchester      Macedonia          0- 0     European Champ. Qual.
+11-10-2006 Zagreb          Croatia            0- 2     European Champ. Qual.
+15-11-2006 Amsterdam       Netherlands        1- 1
+ 7- 2-2007 Manchester      Spain              0- 1
+24- 3-2007 Tel-Aviv        Israel             0- 0     European Champ. Qual.
+28- 3-2007 Barcelona       Andorra            3- 0     European Champ. Qual.
+ 1- 6-2007 London          Brazil             1- 1
+ 6- 6-2007 Tallinn         Estonia            3- 0     European Champ. Qual.
+22- 8-2007 London          Germany            1- 2
+ 8- 9-2007 London          Israel             3- 0     European Champ. Qual.
+12- 9-2007 London          Russia             3- 0     European Champ. Qual.
+13-10-2007 London          Estonia            3- 0     European Champ. Qual.
+17-10-2007 Moskva          Russia             1- 2     European Champ. Qual.
+16-11-2007 Wien            Austria            1- 0
+21-11-2007 London          Croatia            2- 3     European Champ. Qual.
+ 6- 2-2008 London          Switzerland        2- 1
+26- 3-2008 Paris           France             0- 1
+28- 5-2008 London          United States      2- 0
+ 1- 6-2008 Port of Spain   Trinidad/Tobago    3- 0
+20- 8-2008 London          Czech Republic     2- 2
+ 6- 9-2008 Barcelona       Andorra            2- 0     World Cup Qualifier
+10- 9-2008 Zagreb          Croatia            4- 1     World Cup Qualifier
+11-10-2008 London          Kazakhstan         5- 1     World Cup Qualifier
+15-10-2008 Minsk           Belarus            3- 1     World Cup Qualifier
+19-11-2008 Berlin          Germany            2- 1
+11- 2-2009 Sevilla         Spain              0- 2
+28- 3-2009 London          Slovakia           4- 0 
+ 1- 4-2009 London          Ukraine            2- 1     World Cup Qualifier
+ 6- 6-2009 Almaty          Kazakhstan         4- 0     World Cup Qualifier
+10- 6-2009 London          Andorra            6- 0     World Cup Qualifier
+12- 8-2009 Amsterdam       Netherlands        2- 2
+ 5- 9-2009 London          Slovenia           2- 1
+ 9- 9-2009 London          Croatia            5- 1     World Cup Qualifier
+10-10-2009 Dnipropetrovsk  Ukraine            0- 1     World Cup Qualifier
+14-10-2009 London          Belarus            3- 0     World Cup Qualifier
+14-11-2009 Doha            Brazil             0- 1
+ 3- 3-2010 London          Egypt              3- 1
+24- 5-2010 London          Mexico             3- 1
+30- 5-2010 Graz            Japan              2- 1
+12- 6-2010 Rustenburg      United States      1- 1     World Cup
+18- 6-2010 Cape Town       Algeria            0- 0     World Cup
+23- 6-2010 Port Elizabeth  Slovenia           1- 0     World Cup
+27- 6-2010 Bloemfontein    Germany            1- 4     World Cup
+11- 8-2010 London          Hungary            2- 1
+ 3- 9-2010 London          Bulgaria           4- 0     European Champ. Qual.
+ 7- 9-2010 Basel           Switzerland        3- 1     European Champ. Qual.
+12-10-2010 London          Montenegro         0- 0     European Champ. Qual.
+17-11-2010 London          France             1- 2
+ 9- 2-2011 København       Denmark            2- 1
+26- 3-2011 Cardiff         Wales              2- 0     European Champ. Qual.
+29- 3-2011 London          Ghana              1- 1
+ 4- 6-2011 London          Switzerland        2- 2     European Champ. Qual.
+ 2- 9-2011 Sofia           Bulgaria           3- 0     European Champ. Qual.
+ 6- 9-2011 London          Wales              1- 0     European Champ. Qual.
+ 7-10-2011 Podgorica       Montenegro         2- 2     European Champ. Qual.
+12-11-2011 London          Spain              1- 0
+15-11-2011 London          Sweden             1- 0 
+29- 2-2012 London          Netherlands        2- 3
+26- 5-2012 Oslo            Norway             1- 0
+ 2- 6-2012 London          Belgium            1- 0
+11- 6-2012 Donetsk         France             1- 1     European Championship
+15- 6-2012 Kyiv            Sweden             3- 2     European Championship
+19- 6-2012 Donetsk         Ukraine            1- 0     European Championship
+24- 6-2012 Kyiv            Italy              0- 0 [j] European Championship
+15- 8-2012 Bern            Italy              2- 1
+ 7- 9-2012 Chişinău        Moldova            5- 0     World Cup Qualifier
+11- 9-2012 London          Ukraine            1- 1     World Cup Qualifier
+12-10-2012 London          San Marino         5- 0     World Cup Qualifier
+17-10-2012 Warszawa        Poland             1- 1     World Cup Qualifier
+14-11-2012 Stockholm       Sweden             2- 4
+ 6- 2-2013 London          Brazil             2- 1
+22- 3-2013 Serravalle      San Marino         8- 0     World Cup Qualifier
+26- 3-2013 Podgorica       Montenegro         1- 1     World Cup Qualifier
+29- 5-2013 London          Rep. of Ireland    1- 1
+ 2- 6-2013 Rio de Janeiro  Brazil             2- 2
+14- 8-2013 London          Scotland           3- 2
+ 6- 9-2013 London          Moldova            4- 0     World Cup Qualifier
+10- 9-2013 Kyiv            Ukraine            0- 0     World Cup Qualifier
+11-10-2013 London          Montenegro         4- 1     World Cup Qualifier
+15-10-2013 London          Poland             2- 0     World Cup Qualifier
+15-11-2013 London          Chile              0- 2
+19-11-2013 London          Germany            0- 1
+ 5- 3-2014 London          Denmark            1- 0
+30- 5-2014 London          Peru               3- 0
+ 4- 6-2014 Miami           Ecuador            2- 2
+ 7- 6-2014 Miami           Honduras           0- 0
+14- 6-2014 Manaus          Italy              1- 2     World Cup
+19- 6-2014 São Paulo       Uruguay            1- 2     World Cup
+24- 6-2014 Belo Horizonte  Costa Rica         0- 0     World Cup
+ 3- 9-2014 London          Norway             1- 0
+ 8- 9-2014 Basel           Switzerland        2- 0     European Champ. Qual.
+ 9-10-2014 London          San Marino         5- 0     European Champ. Qual.
+12-10-2014 Tallinn         Estonia            1- 0     European Champ. Qual.
+15-11-2014 London          Slovenia           3- 1     European Champ. Qual.
+18-11-2014 Glasgow         Scotland           3- 1
+27- 3-2015 London          Lithuania          4- 0     European Champ. Qual.
+31- 3-2015 Torino          Italy              1- 1
+ 7- 6-2015 Dublin          Rep. of Ireland    0- 0
+14- 6-2015 Ljubljana       Slovenia           3- 2     European Champ. Qual.
+ 5- 9-2015 Serravalle      San Marino         6- 0     European Champ. Qual.
+ 8- 9-2015 London          Switzerland        2- 0     European Champ. Qual.
+ 9-10-2015 London          Estonia            2- 0     European Champ. Qual.
+12-10-2015 Vilnius         Lithuania          3- 0     European Champ. Qual.
+13-11-2015 Alicante        Spain              0- 2
+17-11-2015 London          France             2- 0
+26- 3-2016 Berlin          Germany            3- 2
+29- 3-2016 London          Netherlands        1- 2
+22- 5-2016 Manchester      Turkey             2- 1
+27- 5-2016 Sunderland      Australia          2- 1
+ 2- 6-2016 London          Portugal           1- 0
+11- 6-2016 Marseille       Russia             1- 1     European Championship
+16- 6-2016 Lens            Wales              2- 1     European Championship
+20- 6-2016 Saint-Etienne   Slovakia           0- 0     European Championship
+27- 6-2016 Nice            Iceland            1- 2     European Championship
+ 4- 9-2016 Trnava          Slovakia           1- 0     World Cup Qualifier
+ 8-10-2016 London          Malta              2- 0     World Cup Qualifier
+11-10-2016 Ljubljana       Slovenia           0- 0     World Cup Qualifier
+11-11-2016 London          Scotland           3- 0     World Cup Qualifier
+15-11-2016 London          Spain              2- 2    
+22- 3-2017 Dortmund        Germany            0- 1
+26- 3-2017 London          Lithuania          2- 0     World Cup Qualifier
+10- 6-2017 Glasgow         Scotland           2- 2     World Cup Qualifier
+13- 6-2017 Paris           France             2- 3
+ 1- 9-2017 Ta'Qali         Malta              4- 0     World Cup Qualifier
+ 4- 9-2017 London          Slovakia           2- 1     World Cup Qualifier
+ 5-10-2017 London          Slovenia           1- 0     World Cup Qualifier
+ 8-10-2017 Vilnius         Lithuania          1- 0     World Cup Qualifier
+10-11-2017 London          Germany            0- 0
+14-11-2017 London          Brazil             0- 0
+23- 3-2018 Amsterdam       Netherlands        1- 0
+27- 3-2018 London          Italy              1- 1
+ 2- 6-2018 London          Nigeria            2- 1
+ 7- 6-2018 Leeds           Costa Rica         2- 0
+18- 6-2018 Volgograd       Tunisia            2- 1     World Cup
+24- 6-2018 Nizhny Novgorod Panama             6- 1     World Cup
+28- 6-2018 Kaliningrad     Belgium            0- 1     World Cup
+ 3- 7-2018 Moskva          Colombia           1- 1 [k] World Cup
+ 7- 7-2018 Samara          Sweden             2- 0     World Cup
+11- 7-2018 Moskva          Croatia            1- 2 aet World Cup
+14- 7-2018 Sankt Peterburg Belgium            0- 2     World Cup
+ 8- 9-2018 London          Spain              1- 2     UEFA Nations League A
+11- 9-2018 Leicester       Switzerland        1- 0 
+12-10-2018 Rijeka          Croatia            0- 0     UEFA Nations League A
+15-10-2018 Sevilla         Spain              3- 2     UEFA Nations League A
+15-11-2018 London          United States      3- 0
+18-11-2018 London          Croatia            2- 1     UEFA Nations League A
+22- 3-2019 London          Czech Republic     5- 0     European Champ. Qual.
+25- 3-2019 Podgorica       Montenegro         5- 1     European Champ. Qual.
+ 6- 6-2019 Guimarães       Netherlands        1- 3 aet UEFA Nations League A
+ 9- 6-2019 Guimarães       Switzerland        0- 0 [l] UEFA Nations League A
+ 7- 9-2019 London          Bulgaria           4- 0     European Champ. Qual.
+10- 9-2019 Southampton     Kosovo             5- 3     European Champ. Qual.
+11-10-2019 Praha           Czech Republic     1- 2     European Champ. Qual.
+14-10-2019 Sofia           Bulgaria           6- 0     European Champ. Qual.
+14-11-2019 London          Montenegro         7- 0     European Champ. Qual.
+17-11-2019 Prishtinë       Kosovo             4- 0     European Champ. Qual.
+ 5- 9-2020 Reykjavík       Iceland            1- 0     UEFA Nations League A
+ 8- 9-2020 København       Denmark            0- 0     UEFA Nations League A
+ 8-10-2020 London          Wales              3- 0
+11-10-2020 London          Belgium            2- 1     UEFA Nations League A
+14-10-2020 London          Denmark            0- 1     UEFA Nations League A
+12-11-2020 London          Ireland            3- 0
+15-11-2020 Heverlee        Belgium            0- 2     UEFA Nations League A
+18-11-2020 London          Iceland            4- 0     UEFA Nations League A
+25- 3-2021 London          San Marino         5- 0     World Cup Qualifier
+28- 3-2021 Tiranë          Albania            2- 0     World Cup Qualifier
+31- 3-2021 London          Poland             2- 1     World Cup Qualifier
+ 2- 6-2021 Middlesbrough   Austria            1- 0
+ 6- 6-2021 Middlesbrough   Romania            1- 0
+13- 6-2021 London          Croatia            1- 0     European Championship
+18- 6-2021 London          Scotland           0- 0     European Championship
+22- 6-2021 London          Czech Republic     1- 0     European Championship
+29- 6-2021 London          Germany            2- 0     European Championship
+ 3- 7-2021 Roma            Ukraine            4- 0     European Championship
+ 7- 7-2021 London          Denmark            2- 1 aet European Championship
+11- 7-2021 London          Italy              1- 1 [m] European Championship
+ 2- 9-2021 Budapest        Hungary            4- 0     World Cup Qualifier
+ 5- 9-2021 London          Andorra            4- 0     World Cup Qualifier
+ 8- 9-2021 Warszawa        Poland             1- 1     World Cup Qualifier
+ 9-10-2021 Andorra La V.   Andorra            5- 0     World Cup Qualifier
+12-10-2021 London          Hungary            1- 1     World Cup Qualifier
+12-11-2021 London          Albania            5- 0     World Cup Qualifier
+15-11-2021 Serravalle      San Marino        10- 0     World Cup Qualifier
+26- 3-2022 London          Switzerland        2- 1
+29- 3-2022 London          Ivory Coast        3- 0
+ 4- 6-2022 Budapest        Hungary            0- 1     UEFA Nations League A
+ 7- 6-2022 München         Germany            1- 1     UEFA Nations League A
+11- 6-2022 Wolverhampton   Italy              0- 0     UEFA Nations League A
+14- 6-2022 Wolverhampton   Hungary            0- 4     UEFA Nations League A
+23- 9-2022 Milano          Italy              0- 1     UEFA Nations League A
+26- 9-2022 London          Germany            3- 3     UEFA Nations League A
+21-11-2022 Al-Rayyan       Iran               6- 2     World Cup
+25-11-2022 Al-Khor         United States      0- 0     World Cup
+29-11-2022 Al-Rayyan       Wales              3- 0     World Cup
+ 4-12-2022 Al-Khor         Senegal            3- 0     World Cup
+10-12-2022 Al-Khor         France             1- 2     World Cup
+23- 3-2023 Napoli          Italy              2- 1     European Champ. Qual.
+26- 3-2023 London          Ukraine            2- 0     European Champ. Qual.
+16- 6-2023 Ta'Qali         Malta              4- 0     European Champ. Qual.
+19- 6-2023 Manchester      North Macedonia    7- 0     European Champ. Qual.
+ 9- 9-2023 Wrocław         Ukraine            1- 1     European Champ. Qual.
+12- 9-2023 Glasgow         Scotland           3- 1
+13-10-2023 London          Australia          1- 0
+17-10-2023 London          Italy              3- 1     European Champ. Qual.
+17-11-2023 London          Malta              2- 0     European Champ. Qual.
+20-11-2023 Skopje          North Macedonia    1- 1     European Champ. Qual.
+23- 3-2024 London          Brazil             0- 1 
+26- 3-2024 London          Belgium            2- 2
+ 3- 6-2024 Newcastle       Bosnia-Herzegovina 3- 0
+ 7- 6-2024 London          Iceland            0- 1
+16- 6-2024 Gelsenkirchen   Serbia             1- 0     European Championship
+20- 6-2024 Frankfurt       Denmark            1- 1     European Championship
+25- 6-2024 Köln            Slovenia           0- 0     European Championship
+30- 6-2024 Gelsenkirchen   Slovakia           2- 1 aet European Championship
+ 6- 7-2024 Düsseldorf      Switzerland        1- 1 [n] European Championship
+10- 7-2024 Dortmund        Netherlands        2- 1     European Championship
+14- 7-2024 Berlin          Spain              1- 2     European Championship
+ 7- 9-2024 Dublin          Ireland            2- 0     UEFA Nations League B
+10- 9-2024 London          Finland            2- 0     UEFA Nations League B
+10-10-2024 London          Greece             1- 2     UEFA Nations League B
+13-10-2024 Helsinki        Finland            3- 1     UEFA Nations League B
+14-11-2024 Athinai         Greece             3- 0     UEFA Nations League B
+17-11-2024 London          Ireland            5- 0     UEFA Nations League B
