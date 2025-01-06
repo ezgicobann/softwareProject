@@ -11,12 +11,14 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import json
 import os
+import res_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(917, 466)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
         self.label_toplam_kayit = QtWidgets.QLabel(self.centralwidget)
         self.label_toplam_kayit.setGeometry(QtCore.QRect(100, 50, 101, 16))
@@ -28,10 +30,42 @@ class Ui_MainWindow(object):
         self.label_erkek_kayit.setGeometry(QtCore.QRect(130, 130, 111, 16))
         self.label_erkek_kayit.setObjectName("label_erkek_kayit")
         self.pushButton_kelime_ekle = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_kelime_ekle.setGeometry(QtCore.QRect(240, 13, 71, 21))
+        self.pushButton_kelime_ekle.setGeometry(QtCore.QRect(240, 7, 61, 31))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_kelime_ekle.sizePolicy().hasHeightForWidth())
+        self.pushButton_kelime_ekle.setSizePolicy(sizePolicy)
+        self.pushButton_kelime_ekle.setMinimumSize(QtCore.QSize(0, 0))
+        self.pushButton_kelime_ekle.setStyleSheet("QPushButton {\n"
+"    border: 2px solid #8f8f8f; \n"
+"    border-radius: 10px;    \n"
+"    padding: 5px;         \n"
+"    background-color: #f0f0f0; \n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #dcdcdc; \n"
+"    \n"
+"}\n"
+"\n"
+"\n"
+"")
         self.pushButton_kelime_ekle.setObjectName("pushButton_kelime_ekle")
         self.pushButton_kelime_sil = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_kelime_sil.setGeometry(QtCore.QRect(630, 13, 71, 21))
+        self.pushButton_kelime_sil.setGeometry(QtCore.QRect(630, 7, 61, 31))
+        self.pushButton_kelime_sil.setStyleSheet("QPushButton {\n"
+"    border: 2px solid #8f8f8f; \n"
+"    border-radius: 10px;    \n"
+"    padding: 5px;         \n"
+"    background-color: #f0f0f0; \n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #dcdcdc; \n"
+"    \n"
+"}")
+        self.pushButton_kelime_sil.setDefault(False)
         self.pushButton_kelime_sil.setObjectName("pushButton_kelime_sil")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(390, 14, 81, 16))
@@ -44,21 +78,46 @@ class Ui_MainWindow(object):
         self.label_3.setObjectName("label_3")
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit.setGeometry(QtCore.QRect(90, 12, 137, 22))
+        self.lineEdit.setStyleSheet("""
+QLineEdit {
+    border: 2px solid #ddd; /* İnce gri bir kenarlık */
+    border-radius: 5px; /* Yuvarlatılmış köşeler */
+    padding: 2px; /* Daha küçük bir iç boşluk */
+    font-size: 12px; /* Daha okunabilir yazı boyutu */
+    color: #333; /* Yazı rengi */
+    background-color: #ffffff; /* Beyaz arka plan */
+}
+""")
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit_2.setGeometry(QtCore.QRect(480, 12, 137, 22))
+        self.lineEdit_2.setStyleSheet("""
+QLineEdit {
+    border: 2px solid #ddd; /* İnce gri bir kenarlık */
+    border-radius: 5px; /* Yuvarlatılmış köşeler */
+    padding: 2px; /* Daha küçük bir iç boşluk */
+    font-size: 12px; /* Daha okunabilir yazı boyutu */
+    color: #333; /* Yazı rengi */
+    background-color: #ffffff; /* Beyaz arka plan */
+}
+""")
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.treeWidget = QtWidgets.QTreeWidget(self.centralwidget)
         self.treeWidget.setGeometry(QtCore.QRect(10, 170, 891, 241))
+        self.treeWidget.setStyleSheet("QTreeWidget {\n"
+"    background-color: #ffffff; /* Beyaz arka plan rengi */\n"
+"    border: 1px solid #ccc; /* İnce gri kenarlık */\n"
+"    border-radius: 10px; /* Yuvarlatılmış köşeler */\n"
+"    font-size: 14px; /* Yazı büyüklüğü */\n"
+"    color: #333; /* Yazı rengi */\n"
+"}\n"
+"\n"
+"")
         self.treeWidget.setLineWidth(1)
         self.treeWidget.setColumnCount(10)
         self.treeWidget.setObjectName("treeWidget")
         self.treeWidget.headerItem().setTextAlignment(0, QtCore.Qt.AlignLeading|QtCore.Qt.AlignVCenter)
         self.treeWidget.header().setDefaultSectionSize(110)
-        self.label_6 = QtWidgets.QLabel(self.centralwidget)
-        self.label_6.setGeometry(QtCore.QRect(133, 41, 137, 16))
-        self.label_6.setText("")
-        self.label_6.setObjectName("label_6")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(12, 14, 70, 16))
         self.label_2.setObjectName("label_2")
@@ -66,10 +125,20 @@ class Ui_MainWindow(object):
         self.label_4.setGeometry(QtCore.QRect(10, 90, 131, 16))
         self.label_4.setObjectName("label_4")
         self.label_7 = QtWidgets.QLabel(self.centralwidget)
-        self.label_7.setGeometry(QtCore.QRect(390, 73, 71, 16))
+        self.label_7.setGeometry(QtCore.QRect(400, 65, 71, 16))
         self.label_7.setObjectName("label_7")
         self.lineEdit_3 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_3.setGeometry(QtCore.QRect(465, 70, 137, 22))
+        self.lineEdit_3.setGeometry(QtCore.QRect(480, 65, 137, 22))
+        self.lineEdit_3.setStyleSheet("""
+QLineEdit {
+    border: 2px solid #ddd; /* İnce gri bir kenarlık */
+    border-radius: 5px; /* Yuvarlatılmış köşeler */
+    padding: 2px; /* Daha küçük bir iç boşluk */
+    font-size: 12px; /* Daha okunabilir yazı boyutu */
+    color: #333; /* Yazı rengi */
+    background-color: #ffffff; /* Beyaz arka plan */
+}
+""")
         self.lineEdit_3.setObjectName("lineEdit_3")
         try:
             with open("base_path.json", "r", encoding="utf-8") as file:
@@ -86,7 +155,18 @@ class Ui_MainWindow(object):
         except Exception as e:
             print(f"Bir hata oluştu: {str(e)}")        
         self.pushButton_base_path = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_base_path.setGeometry(QtCore.QRect(617, 70, 71, 22))
+        self.pushButton_base_path.setGeometry(QtCore.QRect(630, 60, 61, 31))
+        self.pushButton_base_path.setStyleSheet("QPushButton {\n"
+"    border: 2px solid #8f8f8f; \n"
+"    border-radius: 10px;    \n"
+"    padding: 5px;         \n"
+"    background-color: #f0f0f0; \n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #dcdcdc; \n"
+"    \n"
+"}")
         self.pushButton_base_path.setObjectName("pushButton_base_path")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -355,4 +435,3 @@ if __name__ == "__main__":
     voiceshow = VoiceShow()
     voiceshow.show()
     sys.exit(app.exec_())
-
