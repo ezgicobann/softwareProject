@@ -3,6 +3,7 @@ import pandas as pd
 import re
 from datetime import datetime 
 from bs4 import BeautifulSoup
+import csv
 
 def get_match_data(country):
 
@@ -12,7 +13,8 @@ def get_match_data(country):
         "Turkey": "https://www.rsssf.org/tablest/turk-intres.html",
         "France": "https://www.rsssf.org/tablesf/fran-intres.html",
         "Germany": "https://www.rsssf.org/tablesd/duit-intres.html",
-        "Italy": "https://www.rsssf.org/tablesi/ital-intres.html"
+        "Italy": "https://www.rsssf.org/tablesi/ital-intres.html",
+        "Belgium": "https://www.rsssf.org/tablesb/belg-intres.html"
     }
 
     url = url_mapping.get(country, None)
@@ -35,11 +37,6 @@ def get_match_data(country):
                 pre_text = pre_elements[1].get_text()
             else:
                 pre_text = pre_elements[0].get_text()
-
-            # txt file is to view the data
-            txt_file = "{}_data.txt".format(country)
-            with open(txt_file, "w", encoding="utf-8") as file:
-                file.write(pre_text)
             return pre_text
         else:
             print(f"No data found for {country}")
@@ -50,7 +47,7 @@ def get_match_data(country):
 
 
 # placeholder country / will fetch from ui later
-country = "Italy"
+country = "Belgium"
 data = get_match_data(country)
 
 france_filtered_data = []
@@ -59,10 +56,10 @@ turkey_filtered_data = []
 spain_filtered_data = []
 england_filtered_data = []
 italy_filtered_data = []
+belgium_filtered_data = []
 
-
-# Filtering for France data
 if country == "France":
+    france_filtered_data.append("Date,Location,Opponent,Score,League"+"\n")
     for line in data.splitlines():
         char = '-'
         index = line.find(char)
@@ -71,16 +68,24 @@ if country == "France":
             try:
                 year = int(year_str)
                 if year >= 2000:
-                    france_filtered_data.append(line[index-2:index+80]+"\n")
+                    date = line[6:16].strip()
+                    location = line[18:38].strip()
+                    opponent = line[38:56].strip()
+                    score = line[56:59]
+                    league = line[59:].strip()
+                    if not league.strip():
+                        league = "Friendly"
+                    france_filtered_data.append(date+","+
+                                                location+","+
+                                                opponent+","+
+                                                score+","+
+                                                league+
+                                                "\n")
             except ValueError:
                 pass
-    txt_file = "{}_filterd_data.txt".format(country)
-    with open(txt_file, "w", encoding="utf-8") as file:
-            for line in france_filtered_data:
-                file.write(line)
-    print(f"Filtered data saved to {txt_file}")
 
 if country == "Germany":
+    germany_filtered_data.append("Date,Location,Opponent,Score,League"+"\n")
     for line in data.splitlines():
         char = '/'
         index = line.find(char)
@@ -89,16 +94,27 @@ if country == "Germany":
             try:
                 year = int(year_str)
                 if year >= 2000:
-                    germany_filtered_data.append(line[index-2:index+80]+"\n")
+                    date = line[6:16].strip()
+                    location = line[17:37].strip()
+                    location_abvr = location.find(',')
+                    if location_abvr:
+                        location = location[:location_abvr].strip()
+                    opponent = line[37:54].strip()
+                    score = line[54:59].strip()
+                    league = line[59:].strip()
+                    if not league.strip():
+                        league = "Friendly"
+                    germany_filtered_data.append(date+","+
+                                                location+","+
+                                                opponent+","+
+                                                score+","+
+                                                league+
+                                                "\n")
             except ValueError:
                 pass
-    txt_file = "{}_filterd_data.txt".format(country)
-    with open(txt_file, "w", encoding="utf-8") as file:
-            for line in germany_filtered_data:
-                file.write(line)
-    print(f"Filtered data saved to {txt_file}")
 
 if country == "Turkey":
+    turkey_filtered_data.append("Date,Location,Opponent,Score,League"+"\n")
     for line in data.splitlines():
         char = '.'
         index = line.find(char)
@@ -107,16 +123,24 @@ if country == "Turkey":
             try:
                 year = int(year_str)
                 if year >= 2000:
-                    turkey_filtered_data.append(line[index-2:index+80]+"\n")
+                    date = line[6:16].strip()
+                    location = line[17:32].strip()
+                    opponent = line[32:64].strip()
+                    score = line[64:67]
+                    league = line[67:].strip()
+                    if not league.strip():
+                        league = "Friendly"
+                    turkey_filtered_data.append(date+","+
+                                                location+","+
+                                                opponent+","+
+                                                score+","+
+                                                league+
+                                                "\n")
             except ValueError:
                 pass
-    txt_file = "{}_filterd_data.txt".format(country)
-    with open(txt_file, "w", encoding="utf-8") as file:
-            for line in turkey_filtered_data:
-                file.write(line)
-    print(f"Filtered data saved to {txt_file}")
 
 if country == "Spain":
+    spain_filtered_data.append("Date,Location,Opponent,Score,League"+"\n")
     for line in data.splitlines():
         char = '/'
         index = line.find(char)
@@ -125,16 +149,24 @@ if country == "Spain":
             try:
                 year = int(year_str)
                 if year >= 2000:
-                    spain_filtered_data.append(line[index-2:index+80]+"\n")
+                    date = line[4:14].strip()
+                    location = line[16:29].strip()
+                    opponent = line[29:52].strip()
+                    score = line[52:57].strip()
+                    league = line[57:].strip()
+                    if not league.strip():
+                        league = "Friendly"
+                    spain_filtered_data.append(date+","+
+                                                location+","+
+                                                opponent+","+
+                                                score+","+
+                                                league+
+                                                "\n")
             except ValueError:
                 pass
-    txt_file = "{}_filterd_data.txt".format(country)
-    with open(txt_file, "w", encoding="utf-8") as file:
-            for line in spain_filtered_data:
-                file.write(line)
-    print(f"Filtered data saved to {txt_file}")
 
 if country == "England":
+    england_filtered_data.append("Date,Location,Opponent,Score,League"+"\n")
     for line in data.splitlines():
         char = '-'
         index = line.find(char)
@@ -143,17 +175,24 @@ if country == "England":
             try:
                 year = int(year_str)
                 if year >= 2000:
-                    england_filtered_data.append(line[index-2:index+80]+"\n")
+                    date = line[6:16].strip()
+                    location = line[17:33].strip()
+                    opponent = line[33:52].strip()
+                    score = line[52:56].strip()
+                    league = line[56:].strip()
+                    if not league.strip():
+                        league = "Friendly"
+                    england_filtered_data.append(date+","+
+                                                location+","+
+                                                opponent+","+
+                                                score+","+
+                                                league+
+                                                "\n")
             except ValueError:
                 pass
-    txt_file = "{}_filterd_data.txt".format(country)
-    with open(txt_file, "w", encoding="utf-8") as file:
-            for line in england_filtered_data:
-                file.write(line)
-    print(f"Filtered data saved to {txt_file}")
-
 
 # two seperate for loops / finding the line number with the year data / writing the data between the years.
+"""
 if country == "Italy":
     year_lines = []
     year_list = []
@@ -175,32 +214,59 @@ if country == "Italy":
         for line in data.splitlines()[start+2:end-2]:
             italy_filtered_data.append(str(year_list[i]) + " " + line[7:80] + "\n")
 
-    txt_file = "{}_filterd_data.txt".format(country)
+    txt_file = "{}_filtered_data.txt".format(country)
     with open(txt_file, "w", encoding="utf-8") as file:
             for line in italy_filtered_data:
                 file.write(line)
     print(f"Filtered data saved to {txt_file}")
+"""
 
- 
-matches = []
+if country == "Belgium":
+    belgium_filtered_data.append("Date,Location,Opponent,Score,League"+"\n")
+    for line in data.splitlines():
+        char = '-'
+        index = line.find(char)
+        if index:
+            year_str = line[index+4:index+8]
+            try:
+                year = int(year_str)
+                if year >= 2000:
+                    date = line[6:15].strip()
+                    location = line[17:32].strip()
+                    opponent = line[32:51].strip()
+                    score = line[51:54]
+                    league = line[59:].strip()
+                    if not league.strip():
+                        league = "Friendly"
+                    belgium_filtered_data.append(date+","+
+                                                location+","+
+                                                opponent+","+
+                                                score+","+
+                                                league+
+                                                "\n")
+            except ValueError:
+                pass
 
-match_numbers = []
-dates = []
-locations = []
-opponents = []
-scores = []
-competitions = []
+class matches:
+    dates = []
+    locations = []
+    opponents = []
+    scores = []
+    competitions = []
 
-   
-df = pd.DataFrame({
-"Match Number": match_numbers,
-"Date": pd.to_datetime(dates, format = '%d-%m-%Y', errors="coerce"),
-"Location": locations,
-"Opponent": opponents,
-"Score": scores,
-"Competition": competitions
-})
+country_data_mapping = {
+    "England": england_filtered_data,
+    "Spain": spain_filtered_data,
+    "Turkey": turkey_filtered_data,
+    "France": france_filtered_data,
+    "Germany": germany_filtered_data,
+    "Italy": italy_filtered_data,
+    "Belgium": belgium_filtered_data   
+}
+filtered_data = country_data_mapping.get(country)
 
 csv_file = "{}_matches_standardized.csv".format(country)
-df.to_csv(csv_file, index=False)
+with open(csv_file, mode='w',  encoding="utf-8") as file:
+    for line in filtered_data:
+        file.write(line)
 print(f"Data has been standardized and saved to '{country}_matches_standardized.csv'.")
