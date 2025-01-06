@@ -83,7 +83,7 @@ class CarFilterApp(QMainWindow):
         self.table = QTableWidget()
         self.table.setColumnCount(18)
         self.table.setHorizontalHeaderLabels([
-            "Ad Date", "Brand","Series","Model","Year","Price","Kilometer","Fuel","Gear","Bodytype","Colour","Horsepower",
+            "Ad Date", "Brand","Series","Model","Year","Price (₺)","Kilometer","Fuel","Gear","Bodytype","Colour","Horsepower",
             "Engine Size","Traction","Fuel Consumption","Fuel Tank","Paint and Change","From Who"   
         ])
         # Enable sorting
