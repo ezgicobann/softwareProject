@@ -1,100 +1,181 @@
-from PyQt5.QtWidgets import (
-    QDialog, QVBoxLayout, QHBoxLayout, QComboBox, QPushButton, 
-    QLabel, QMessageBox
-)
+from PyQt5.QtWidgets import QDialog, QVBoxLayout, QPushButton, QLabel
+from PyQt5.QtCore import Qt
 import matplotlib.pyplot as plt
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
-import seaborn as sns
-from car_data_collector import CarScraper
+from collections import Counter
+import numpy as np
 
 class GraphSelectionDialog(QDialog):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle("Graph Selection")
-        self.setGeometry(200, 200, 800, 600)
-        self.collector = CarScraper()
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.parent = parent
+        self.setWindowTitle("Select Graph Type")
+        self.setGeometry(150, 150, 400, 300)
         self.initUI()
 
     def initUI(self):
         layout = QVBoxLayout()
 
-        # Graph type selection
-        type_layout = QHBoxLayout()
-        self.graph_type = QComboBox()
-        self.graph_type.addItems(["Scatter Plot", "Bar Chart", "Box Plot", "Histogram"])
-        type_layout.addWidget(QLabel("Graph Type:"))
-        type_layout.addWidget(self.graph_type)
-        layout.addLayout(type_layout)
+        # title
+        title = QLabel("Select Graph Type")
+        title.setStyleSheet("font-size: 18px;")
+        title.setAlignment(Qt.AlignCenter)
 
-        # X-axis selection
-        x_layout = QHBoxLayout()
-        self.x_axis = QComboBox()
-        self.x_axis.addItems(["Year", "Price", "Kilometer", "Horsepower", "Engine Size"])
-        x_layout.addWidget(QLabel("X-Axis:"))
-        x_layout.addWidget(self.x_axis)
-        layout.addLayout(x_layout)
+        # buttons
+        self.brand_graph_button = QPushButton("Brand Distribution")
+        self.brand_graph_button.clicked.connect(self.show_brand_distribution)
+        
+        self.fuel_graph_button = QPushButton("Fuel Type Distribution")
+        self.fuel_graph_button.clicked.connect(self.show_fuel_distribution)
+        
+        self.gear_graph_button = QPushButton("Gear Type Distribution")
+        self.gear_graph_button.clicked.connect(self.show_gear_distribution)
+        
+        self.year_graph_button = QPushButton("Year Distribution")
+        self.year_graph_button.clicked.connect(self.show_year_distribution)
+        
+        self.price_range_button = QPushButton("Price Range Distribution")
+        self.price_range_button.clicked.connect(self.show_price_distribution)
 
-        # Y-axis selection
-        y_layout = QHBoxLayout()
-        self.y_axis = QComboBox()
-        self.y_axis.addItems(["Price", "Kilometer", "Horsepower", "Engine Size", "Year"])
-        y_layout.addWidget(QLabel("Y-Axis:"))
-        y_layout.addWidget(self.y_axis)
-        layout.addLayout(y_layout)
-
-        # Generate button
-        generate_btn = QPushButton("Generate Graph")
-        generate_btn.clicked.connect(self.generate_graph)
-        layout.addWidget(generate_btn)
-
-        # Canvas for the graph
-        self.figure = plt.figure(figsize=(10, 6))
-        self.canvas = FigureCanvas(self.figure)
-        layout.addWidget(self.canvas)
+        # add buttons to layout
+        layout.addWidget(title)
+        layout.addWidget(self.brand_graph_button)
+        layout.addWidget(self.fuel_graph_button)
+        layout.addWidget(self.gear_graph_button)
+        layout.addWidget(self.year_graph_button)
+        layout.addWidget(self.price_range_button)
 
         self.setLayout(layout)
 
-    def generate_graph(self):
-        try:
-            plt.clf()
-            graph_type = self.graph_type.currentText()
-            x_feature = self.x_axis.currentText()
-            y_feature = self.y_axis.currentText()
+    def show_brand_distribution(self):
+        if not self.parent or not self.parent.table:
+            return
 
-            # Get data from collector
-            x_data = []
-            y_data = []
+        brands = []
+        for row in range(self.parent.table.rowCount()):
+            brand_item = self.parent.table.item(row, 1)  # Brand is in column 1
+            if brand_item:
+                brands.append(brand_item.text())
+
+        # Count occurrences of each brand
+        brand_counts = Counter(brands)
+        sorted_brands = sorted(brand_counts.items(), key=lambda x: x[1], reverse=True)
+        brand_names = [x[0] for x in sorted_brands]
+        counts = [x[1] for x in sorted_brands]
+
+        fig = plt.figure(figsize=(12, 8))
+        y_pos = np.arange(len(brand_names))
+        plt.barh(y_pos, counts)
+        plt.yticks(y_pos, brand_names)
+        plt.xlabel('Number of Cars')
+        plt.title('Car Brand Distribution')
+        plt.tight_layout()
+        
+        def on_close(event):
+            plt.close('all')
             
-            for car in self.collector.cars:
-                x_val = getattr(car, x_feature.lower().replace(" ", ""), None)
-                y_val = getattr(car, y_feature.lower().replace(" ", ""), None)
-                
+        fig.canvas.mpl_connect('close_event', on_close)
+        plt.show(block=False)
+        self.close()  # Close the dialog
+
+    def show_fuel_distribution(self):
+        if not self.parent or not self.parent.table:
+            return
+
+        fuels = []
+        for row in range(self.parent.table.rowCount()):
+            fuel_item = self.parent.table.item(row, 7)  # Fuel is in column 7
+            if fuel_item:
+                fuels.append(fuel_item.text())
+
+        fuel_counts = Counter(fuels)
+        fig = plt.figure(figsize=(10, 6))
+        plt.pie(fuel_counts.values(), labels=fuel_counts.keys(), autopct='%1.1f%%')
+        plt.title('Fuel Type Distribution')
+        plt.axis('equal')
+        
+        def on_close(event):
+            plt.close('all')
+            
+        fig.canvas.mpl_connect('close_event', on_close)
+        plt.show(block=False)
+        self.close()  # Close the dialog
+
+    def show_gear_distribution(self):
+        if not self.parent or not self.parent.table:
+            return
+
+        gears = []
+        for row in range(self.parent.table.rowCount()):
+            gear_item = self.parent.table.item(row, 8)  # Gear is in column 8
+            if gear_item:
+                gears.append(gear_item.text())
+
+        gear_counts = Counter(gears)
+        fig = plt.figure(figsize=(10, 6))
+        plt.pie(gear_counts.values(), labels=gear_counts.keys(), autopct='%1.1f%%')
+        plt.title('Gear Type Distribution')
+        plt.axis('equal')
+        
+        def on_close(event):
+            plt.close('all')
+            
+        fig.canvas.mpl_connect('close_event', on_close)
+        plt.show(block=False)
+        self.close()  # Close the dialog
+
+    def show_year_distribution(self):
+        if not self.parent or not self.parent.table:
+            return
+
+        years = []
+        for row in range(self.parent.table.rowCount()):
+            year_item = self.parent.table.item(row, 4)  # Year is in column 4
+            if year_item:
                 try:
-                    x_val = float(x_val)
-                    y_val = float(y_val)
-                    x_data.append(x_val)
-                    y_data.append(y_val)
-                except (ValueError, TypeError):
+                    years.append(int(year_item.text()))
+                except ValueError:
                     continue
 
-            if not x_data or not y_data:
-                QMessageBox.warning(self, "Error", "No valid data to plot")
-                return
+        fig = plt.figure(figsize=(12, 6))
+        plt.hist(years, bins=len(set(years)), edgecolor='black')
+        plt.xlabel('Year')
+        plt.ylabel('Number of Cars')
+        plt.title('Car Year Distribution')
+        plt.xticks(rotation=45)
+        plt.tight_layout()
+        
+        def on_close(event):
+            plt.close('all')
+            
+        fig.canvas.mpl_connect('close_event', on_close)
+        plt.show(block=False)
+        self.close()  # Close the dialog
 
-            if graph_type == "Scatter Plot":
-                plt.scatter(x_data, y_data, alpha=0.5)
-            elif graph_type == "Bar Chart":
-                plt.bar(x_data, y_data)
-            elif graph_type == "Box Plot":
-                plt.boxplot([y_data], labels=[y_feature])
-            elif graph_type == "Histogram":
-                plt.hist(x_data, bins=30)
+    def show_price_distribution(self):
+        if not self.parent or not self.parent.table:
+            return
 
-            plt.xlabel(x_feature)
-            plt.ylabel(y_feature)
-            plt.title(f"{graph_type} of {y_feature} vs {x_feature}")
-            plt.grid(True)
-            self.canvas.draw()
+        prices = []
+        for row in range(self.parent.table.rowCount()):
+            price_item = self.parent.table.item(row, 5)  # Price is in column 5
+            if price_item:
+                try:
+                    price = float(price_item.text().replace(' TL', '').replace('.', ''))
+                    prices.append(price)
+                except ValueError:
+                    continue
 
-        except Exception as e:
-            QMessageBox.critical(self, "Error", f"Error generating graph: {str(e)}") 
+        fig = plt.figure(figsize=(12, 6))
+        plt.hist(prices, bins=20, edgecolor='black')
+        plt.xlabel('Price (TL)')
+        plt.ylabel('Number of Cars')
+        plt.title('Car Price Distribution')
+        plt.ticklabel_format(style='plain', axis='x')
+        plt.tight_layout()
+        
+        def on_close(event):
+            plt.close('all')
+            
+        fig.canvas.mpl_connect('close_event', on_close)
+        plt.show(block=False)
+        self.close()  # Close the dialog

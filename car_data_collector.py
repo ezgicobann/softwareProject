@@ -1,6 +1,8 @@
-
-
-
+import sys
+import codecs
+from time import sleep
+sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
+sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict')
 
 from concurrent.futures import ThreadPoolExecutor
 import os
@@ -41,8 +43,18 @@ class CarScraper:
         self.base_url = 'https://www.arabam.com/ikinci-el/otomobil?view=Box'
         self.cars = []
         self.urls = []
-        self.stopThread = False
-        self.urlsFetched = False
+        self.is_paused = False
+        self.scraping_thread = None
+        self.current_page = 1
+        self.max_pages = 21
+
+    def pause(self):
+        self.is_paused = True
+        print(f"Scraping paused at page {self.current_page}")
+
+    def resume(self):
+        self.is_paused = False
+        print(f"Scraping resumed from page {self.current_page}")
 
     def setup_driver(self):
         driver_lock = threading.Lock()
@@ -71,84 +83,16 @@ class CarScraper:
                 print(f"Error setting up driver: {e}")
                 return None
             
-
-
-    """
+   
     def scrape_listings(self):
+        if self.is_paused:
+            return
         
-        urls = [
-                'https://www.arabam.com/ikinci-el/otomobil?view=Box&take=50',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=2',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=3',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=4',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=5',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=6',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=7',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=8',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=9',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=10',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=11',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=12',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=13',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=14',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=15',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=16',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=17',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=18',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=19',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=20',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=21',   
-            ]
+        if self.current_page > self.max_pages:
+            print("All pages scraped, starting over")
+            self.current_page = 1
+            return
 
-        # Function to scrape a single URL
-        def scrape_single_url(url_batch):
-            driver = self.setup_driver()
-            if not driver:
-                print("Failed to initialize driver")
-                return []
-
-            final_car_urls = []
-            car_urls = []
-
-            for url in url_batch:
-                print(f"Scraping URL: {url}")
-                try:
-                    driver.get(url)
-                    WebDriverWait(driver, 10).until(
-                        EC.presence_of_all_elements_located((By.CLASS_NAME, 'content-container'))
-                    )
-                    car_elements = WebDriverWait(driver, 20).until(
-                        EC.presence_of_all_elements_located((By.CLASS_NAME, 'content-container'))
-                    )
-                    car_urls = [elem.get_attribute('href') for elem in car_elements]
-                    car_urls = list(set(car_urls))  # Remove duplicates
-                    print(f"Scraped {len(car_urls)} car URLs from {url}")
-                except Exception as e:
-                    print(f"Error scraping {url}: {e}")
-                finally:
-                    final_car_urls.extend(car_urls)  # Remove duplicates
-            driver.quit()        
-            return final_car_urls
-
-        # Divide URLs into batches and process with ThreadPoolExecutor
-        batch_size = 5
-        url_batches = [urls[i:i + batch_size] for i in range(0, len(urls), batch_size)]
-        print(f"Divided URLs into {len(url_batches)} batches")
-
-        all_car_urls = []
-
-        with ThreadPoolExecutor(max_workers=5) as executor:
-            # Execute each batch in parallel
-            futures = executor.map(scrape_single_url, url_batches) 
-
-            # Gather results
-            for future in futures:
-                all_car_urls.extend(future)
-
-        self.urls = list(set(all_car_urls))  # Remove duplicates from final list
-        print(f"Total unique car URLs scraped: {len(self.urls)}")
-"""   
-    def scrape_listings(self):
         driver = self.setup_driver()
         driver.get(self.base_url)
         driver.maximize_window()
@@ -158,54 +102,29 @@ class CarScraper:
                 EC.element_to_be_clickable((By.ID, 'onetrust-accept-btn-handler'))
             ).click()
         except Exception as e:    
-            WebDriverWait(driver, 10).until(
-                EC.element_to_be_clickable((By.ID, 'onetrust-accept-btn-handler'))
-            ).click()
+            try:
+                WebDriverWait(driver, 10).until(
+                    EC.element_to_be_clickable((By.ID, 'onetrust-accept-btn-handler'))
+                ).click()
+            except:
+                pass  # Cookie banner might not appear
 
-        urls = [
-                'https://www.arabam.com/ikinci-el/otomobil?view=Box&take=50',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=2',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=3',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=4',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=5',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=6',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=7',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=8',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=9',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=10',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=11',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=12',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=13',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=14',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=15',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=16',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=17',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=18',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=19',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=20',
-                'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page=21',   
-            ]
-
+        url = f'https://www.arabam.com/ikinci-el/otomobil?take=50&view=Box&page={self.current_page}'
+        print(f"Scraping page {self.current_page}: {url}")
+        
         car_urls = []
-        for page in range(1, 22):  # Iterate through 21 pages
-            print(urls[page-1])
-            if self.stopThread:
-                break
-            driver.get(urls[page-1])
-            print(f"Scraping page {page}")
+        try:
+            driver.get(url)
             WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'content-container')))
 
             try:
-                # Re-fetch elements to avoid stale references
                 car_elements = WebDriverWait(driver, 20).until(
                     EC.presence_of_all_elements_located((By.CLASS_NAME, 'content-container'))
                 )
-                print(f"Found {len(car_elements)} car elements")
-                # Create a fresh list of hrefs after ensuring elements are loaded
+                print(f"Found {len(car_elements)} car elements on page {self.current_page}")
                 car_urls.extend([elem.get_attribute('href') for elem in car_elements])
             except Exception as e:
                 print("Stale element found, retrying...")
-                # Retry locating the elements
                 car_elements = WebDriverWait(driver, 20).until(
                     EC.presence_of_all_elements_located((By.CLASS_NAME, 'content-container'))
                 )
@@ -215,41 +134,51 @@ class CarScraper:
                     link_element = elem.find_element(By.TAG_NAME, 'a')
                     car_urls.append(link_element.get_attribute('href'))
             except Exception as e:
-                for elem in car_elements:
-                    link_element = elem.find_element(By.TAG_NAME, 'a')
-                    car_urls.append(link_element.get_attribute('href'))
+                print(f"Error getting URLs from page {self.current_page}: {str(e)}")
             
-                
-            print(f"Found {len(car_urls)} car URLs\n")
-            print(car_urls)
             car_urls = list(set(car_urls))  # Remove duplicates
-            print(f"Found {len(car_urls)} car URLs\n")
-            print(car_urls)                     
+            if None in car_urls:
+                car_urls.remove(None)
+                
+            print(f"Found {len(car_urls)} unique car URLs on page {self.current_page}")
             
+        except Exception as e:
+            print(f"Error in page {self.current_page}: {str(e)}")
+        finally:
+            driver.quit()
 
-        driver.quit()
-        car_urls.remove(None)
         self.urls = car_urls
-        self.urlsFetched = True
+        self.current_page += 1
 
     def scrape_car_details(self, urls_batch):
+        if self.is_paused:
+            return []
+        # Add a delay to avoid getting blocked
         driver = self.setup_driver()
         driver.maximize_window()
-        car = None  
+        
+        car = None  # Initialize the car variable to ensure it's always defined
+        
         cars = []
           
+        
+
         for url in urls_batch:
-            if self.stopThread:
-                break
             driver.get(url)
+            
             try:
                 attributes = WebDriverWait(driver, 10).until(
                     EC.presence_of_all_elements_located((By.XPATH, '//*[@id="wrapper"]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div[2]/div[2]/div[*]/div[2]'))
                 )
+                # Parse the attributes into car data
                 
                 del attributes[0]  # Remove irrelevant elements
+                
                 del attributes[13]
                 
+                
+                
+                #attributes.append(driver.find_element(By.XPATH, '//*[@id="wrapper"]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div'))  # Add price
                 attributes.append(
                     WebDriverWait(driver, 10).until(
                     EC.presence_of_element_located((By.XPATH, '//*[@id="wrapper"]/div[2]/div[3]/div/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div'))
@@ -271,17 +200,13 @@ class CarScraper:
                 enginesize = attributes[10].text
                 horsepower = attributes[11].text
                 traction = attributes[12].text
-                
-                
-                attributes = [attr for attr in attributes if attr.text != "Evet"]        
-                    
 
                 if 'lt' in attributes[13].text:
                     if 'lt' in attributes[14].text:
                         fuelConsumption = attributes[13].text
                         fuelTank = attributes[14].text
                         paintChange = attributes[15].text
-                        if 'Takasa' in attributes[16].text or '-' in attributes[16].text:
+                        if 'Takasa' in attributes[16].text:
                             fromWho = attributes[17].text
                         else:
                             fromWho = attributes[16].text    
@@ -289,7 +214,7 @@ class CarScraper:
                         fuelTank = attributes[13].text 
                         fuelConsumption = "belirtilmemiş"
                         paintChange = attributes[14].text
-                        if 'Takasa' in attributes[15].text or '-' in attributes[15].text:
+                        if 'Takasa' in attributes[15].text:
                             fromWho = attributes[16].text     
                         else:
                             fromWho = attributes[15].text
@@ -297,66 +222,98 @@ class CarScraper:
                     fuelConsumption = "belirtilmemiş"
                     fuelTank = "belirtilmemiş"
                     paintChange = attributes[13].text  
-                    if 'Takasa' in attributes[14].text or '-' in attributes[14].text:
+                    if 'Takasa' in attributes[14].text:
                         fromWho = attributes[15].text  
                     else:
                         fromWho = attributes[14].text
 
-                if not 'HP' in horsepower and not 'hp' in horsepower:
-                    raise Exception("Horsepower not found")
-                if 'İkinci El' in traction:
-                    raise Exception("Traction not found")
-
-
                 price = float(attributes[len(attributes)-1].text.replace(' TL', '').replace('.', '').replace(',', ''))
 
                 # Create a Car object
+                # Normalize fromWho value
+                if fromWho and fromWho.strip():
+                    if "Galeriden" in fromWho or "galeri" in fromWho.lower():
+                        fromWho = "Galeriden"
+                    elif "Sahibinden" in fromWho or "sahibi" in fromWho.lower():
+                        fromWho = "Sahibinden"
+                    else:
+                        fromWho = "belirtilmemiş"
+                else:
+                    fromWho = "belirtilmemiş"
+
                 car = Car(brand, series, model, year, price, kilometer, fuel, gear, bodytype, horsepower, enginesize, colour, addate, traction, fuelConsumption, fuelTank, paintChange, fromWho)
                 print(f"Scraped car: {car.brand}, {car.model}, {car.series}, {car.year}, {car.price}, {car.kilometer}, {car.fuel}, {car.gear}, {car.bodytype}, {car.horsepower}, {car.enginesize}, {car.colour}, {car.addate}, {car.traction}, {car.fuelConsumption}, {car.fuelTank}, {car.paintChange}, {car.fromWho}")
-                
                 cars.append(car)
                 
-                
             except Exception as e:
-                print(f"Error scraping {url}: {e}")
+                print(f"Error scraping {url}: {str(e)}")
                 
-
+                
+                
+        
         driver.quit()
         return cars  # Return None if scraping failed
 
 
-
-
     def run(self):
-        if not self.urlsFetched:
-            self.scrape_listings()
-        print(f"Total car URLs fetched: {len(self.urls)}")
+        while True:
+            if len(self.cars) > 1000:
+                break
 
-        # Divide the URLs into batches of 20
-        batch_size = 10
-        url_batches = [self.urls[i:i + batch_size] for i in range(0, len(self.urls), batch_size)]
-        print(f"Divided URLs into {len(url_batches)} batches")
-
-        with ThreadPoolExecutor(max_workers=5) as executor:
-            # Map each batch of URLs to a thread
-            results = executor.map(self.scrape_car_details, url_batches)
-
-            # Iterate through each batch's results and add them to self.cars
-            for batch_cars in results:
-                self.cars.extend(batch_cars)  # Add the cars of the current batch to self.cars
-                print(f"Batch completed! Cars scraped so far: {len(self.cars)}")
+            if self.is_paused:
+                sleep(1)
+                continue
                 
-        if self.stopThread:
-            print("Scraping stopped!")
-            return   
-        self.cars = list(set(self.cars))  # Remove duplicates
-        print("Scraping completed!")
-        print(f"Total cars successfully scraped: {len(self.cars)}")
+            try:
+                self.scrape_listings()
+                if not self.urls:  # If no URLs were found
+                    sleep(60)
+                    continue
+
+                print(f"Processing {len(self.urls)} car URLs from page {self.current_page-1}")
+
+                batch_size = 10
+                url_batches = [self.urls[i:i + batch_size] for i in range(0, len(self.urls), batch_size)]
+                print(f"Divided URLs into {len(url_batches)} batches")
+
+                with ThreadPoolExecutor(max_workers=5) as executor:
+                    futures = []
+                    for batch in url_batches:
+                        if not self.is_paused:
+                            future = executor.submit(self.scrape_car_details, batch)
+                            futures.append(future)
+
+                    for future in futures:
+                        if not self.is_paused:
+                            try:
+                                batch_cars = future.result()
+                                if batch_cars:
+                                    self.cars.extend(batch_cars)
+                                    print(f"Batch completed! Cars scraped so far: {len(self.cars)}")
+                            except Exception as e:
+                                print(f"Error processing batch: {e}")
+
+                print(f"Page {self.current_page-1} completed!")
+                print(f"Total cars successfully scraped: {len(self.cars)}")
+                
+                if self.is_paused:
+                    sleep(1)
+                else:
+                    sleep(10)  # Short delay between pages
+                    
+            except Exception as e:
+                print(f"Error in scraping cycle: {e}")
+                sleep(60)  # Wait 1 minute before retrying
 
     def scrapeInBackground(self):
-        thread = threading.Thread(target=self.run)
-        thread.start()
-        return thread
+        self.is_paused = False
+        if self.scraping_thread and self.scraping_thread.is_alive():
+            self.resume()
+        else:
+            self.scraping_thread = threading.Thread(target=self.run)
+            self.scraping_thread.daemon = True
+            self.scraping_thread.start()
+        return self.scraping_thread
 
 #if __name__ == "__main__":
 #    scraper = CarScraper()

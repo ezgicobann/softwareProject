@@ -12,15 +12,13 @@ import threading
 
 collector = CarScraper()
 
-
-
 # main app
 class CarFilterApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Car Filtering App")
         self.setGeometry(100, 100, 1000, 600)
-        self.pushedAgain = False
+
         # data
         self.car_data = []
 
@@ -34,29 +32,26 @@ class CarFilterApp(QMainWindow):
         top_layout.setAlignment(Qt.AlignCenter)  
 
         self.category_dropdown = QComboBox()
-        self.category_dropdown.addItems(["Brand","Series","Model","Year","Price","Fuel","Gear","Kilometer","Bodytype","Horsepower","Engine Size","Colour"])
+        self.category_dropdown.addItems(["Brand","Series","Model","Year","Price","Fuel","Gear","Kilometer","Bodytype","Horsepower","Engine Size","Colour","Traction","Fuel Consumption","Fuel Tank","Paint and Change","From Who"])
         self.category_dropdown.currentTextChanged.connect(self.update_dynamic_inputs)
 
         self.filter_button = QPushButton("Filter")
         self.filter_button.clicked.connect(self.filter_table)
+        
+        self.clear_filter_button = QPushButton("Clear Filter")
+        self.clear_filter_button.clicked.connect(self.clear_filter)
  
         self.search_button = QPushButton("Search")
+        self.pause_button = QPushButton("Pause")
+        self.pause_button.setCheckable(True)
+        self.pause_button.clicked.connect(self.toggle_scraping)
+        self.is_scraping_paused = False
 
-        
         def search():
-            if not self.pushedAgain:
-                collector.stopThread = False
-                
-                collector.scrapeInBackground()
-                thread = threading.Thread(target=self.continuous_Check_Of_Cars)
-                thread.start()
-                self.pushedAgain = True
-                self.search_button.setText("Stop")
-            else:
-                collector.stopThread = True
-                self.pushedAgain = False   
-                self.search_button.setText("Search")
-
+            collector.scrapeInBackground()
+            thread = threading.Thread(target=self.continuous_Check_Of_Cars)
+            thread.start()
+            self.pause_button.setEnabled(True)
         self.search_button.clicked.connect(search)
         
         self.dynamic_widget = QWidget()
@@ -66,15 +61,17 @@ class CarFilterApp(QMainWindow):
         top_layout.addWidget(QLabel("Search Category:"), 0, 0)
         top_layout.addWidget(self.category_dropdown, 0, 1)
         top_layout.addWidget(self.filter_button, 0, 2)
-        top_layout.addWidget(self.search_button, 0, 3)
-        top_layout.addWidget(self.dynamic_widget, 1, 0, 1, 4)
+        top_layout.addWidget(self.clear_filter_button, 0, 3)
+        top_layout.addWidget(self.search_button, 0, 4)
+        top_layout.addWidget(self.pause_button, 0, 5)
+        top_layout.addWidget(self.dynamic_widget, 1, 0, 1, 6)
 
         main_layout.addLayout(top_layout)
 
         # buttons
         button_layout = QHBoxLayout()
         self.save_csv_button = QPushButton("Save as CSV")
-        self.save_csv_button.clicked.connect(self.save_as_csv)  # csv connection
+        self.save_csv_button.clicked.connect(self.save_as_csv)
         self.get_graph_button = QPushButton("Get Graph")
         self.get_graph_button.clicked.connect(self.open_graph_dialog)
         
@@ -86,8 +83,11 @@ class CarFilterApp(QMainWindow):
         self.table = QTableWidget()
         self.table.setColumnCount(18)
         self.table.setHorizontalHeaderLabels([
-            "Brand","Series","Model","Year","Price","Kilometer","Fuel","Gear","Bodytype","Colour","Horsepower","Engine Size","Traction","Fuel Consumption","Fuel Tank","Paint and Change","From Who","Ad Date"   
+            "Ad Date", "Brand","Series","Model","Year","Price","Kilometer","Fuel","Gear","Bodytype","Colour","Horsepower",
+            "Engine Size","Traction","Fuel Consumption","Fuel Tank","Paint and Change","From Who"   
         ])
+        # Enable sorting
+        self.table.setSortingEnabled(True)
         main_layout.addWidget(self.table)
 
         central_widget.setLayout(main_layout)
@@ -99,27 +99,76 @@ class CarFilterApp(QMainWindow):
         # Resize the window to fit the table content
         self.resize(self.table.horizontalHeader().length() + 50, self.table.verticalHeader().length() + 800)
 
-        
+    def toggle_scraping(self):
+        self.is_scraping_paused = not self.is_scraping_paused
+        self.pause_button.setText("Resume" if self.is_scraping_paused else "Pause")
+        if self.is_scraping_paused:
+            collector.pause()
+        else:
+            collector.resume()
+
+    def update_dynamic_inputs(self):
+        while self.dynamic_layout.count():
+            child = self.dynamic_layout.takeAt(0)
+            if child.widget():
+                child.widget().deleteLater()
+
+        selected_category = self.category_dropdown.currentText()
+
+        if selected_category in ["Brand","Series","Model", "Fuel","Gear","Bodytype","Colour","Traction","Fuel Consumption","Fuel Tank","Paint and Change","From Who"]:
+            dropdown = QComboBox()
+            column_mapping = {
+                "Brand":1,"Series":2,"Model":3,"Fuel":7,"Gear":8,"Bodytype":9,"Colour":10,
+                "Traction":13,"Fuel Consumption":14,"Fuel Tank":15,"Paint and Change":16,"From Who":17
+            }
+            column_index = column_mapping[selected_category]
+
+            unique_values = set()
+            if selected_category == "From Who":
+                unique_values = {"Sahibinden", "Galeriden", "belirtilmemiş"}
+            else:
+                for row in range(self.table.rowCount()):
+                    item = self.table.item(row, column_index)
+                    if item and item.text().strip():
+                        unique_values.add(item.text().strip())
+            
+            dropdown.addItems(sorted(unique_values))
+            self.dynamic_layout.addWidget(QLabel(f"Choose {selected_category}:"))
+            self.dynamic_layout.addWidget(dropdown)
+            self.brand_dropdown = dropdown
+
+        elif selected_category in ["Price","Year", "Kilometer", "Horsepower","Engine Size"]:
+            self.min_input = QLineEdit()
+            self.min_input.setPlaceholderText("Min Value")
+            self.max_input = QLineEdit()
+            self.max_input.setPlaceholderText("Max Value")
+            self.dynamic_layout.addWidget(QLabel(f"{selected_category} Interval:"))
+            self.dynamic_layout.addWidget(self.min_input)
+            self.dynamic_layout.addWidget(self.max_input)
 
     def load_data(self, filtered_data=None):
         self.table.setRowCount(0) 
 
-        data_to_display = filtered_data if filtered_data else collector.cars
-        
-        for car in data_to_display:
-            # Extract the attributes from the Car object in the correct order
-            row_data = [
-                car.brand, car.series, car.model, car.year, car.price, car.kilometer,
-                car.fuel, car.gear, car.bodytype, car.colour, car.horsepower,
-                car.enginesize, car.traction, car.fuelConsumption, car.fuelTank,
-                car.paintChange, car.fromWho, car.addate
-            ]
-
-            # Add a new row to the table and populate it
-            row_index = self.table.rowCount()
-            self.table.insertRow(row_index)
-            for col_index, cell_data in enumerate(row_data):
-                self.table.setItem(row_index, col_index, QTableWidgetItem(str(cell_data)))
+        if filtered_data:
+            # Handle filtered data (which is a list of lists)
+            for row_data in filtered_data:
+                row_index = self.table.rowCount()
+                self.table.insertRow(row_index)
+                for col_index, cell_data in enumerate(row_data):
+                    self.table.setItem(row_index, col_index, QTableWidgetItem(str(cell_data)))
+        else:
+            # Handle Car objects from collector
+            for car in collector.cars:
+                row_data = [
+                    car.addate, car.brand, car.series, car.model, car.year, car.price, car.kilometer,
+                    car.fuel, car.gear, car.bodytype, car.colour, car.horsepower,
+                    car.enginesize, car.traction, car.fuelConsumption, car.fuelTank,
+                    car.paintChange, car.fromWho
+                ]
+                row_index = self.table.rowCount()
+                self.table.insertRow(row_index)
+                for col_index, cell_data in enumerate(row_data):
+                    self.table.setItem(row_index, col_index, QTableWidgetItem(str(cell_data)))
 
    # dynamic inputs
     def update_dynamic_inputs(self):
@@ -130,18 +179,47 @@ class CarFilterApp(QMainWindow):
 
         selected_category = self.category_dropdown.currentText()
 
-        if selected_category in ["Brand","Series","Model", "Fuel","Gear","Bodytype","Colour"]:
+        if selected_category == "Ad Date":
             dropdown = QComboBox()
-            column_mapping = {"Brand":0,"Series":1,"Model":2, "Fuel":5,"Gear":6,"Bodytype":8,"Colour":11}
-            column_index = column_mapping[selected_category]
-
-            unique_values = sorted(set(row[column_index] for row in self.car_data))
-            dropdown.addItems(unique_values)
-
-            self.dynamic_layout.addWidget(QLabel(f"Choose {selected_category}:"))
+            unique_dates = set()
+            for row in range(self.table.rowCount()):
+                item = self.table.item(row, 0)  # Ad Date is in first column
+                if item and item.text().strip():
+                    try:
+                        # Format the date as Month Year
+                        date_parts = item.text().split('.')
+                        if len(date_parts) >= 2:
+                            month_year = f"{date_parts[1]}.{date_parts[2]}"
+                            unique_dates.add(month_year)
+                    except (IndexError, AttributeError):
+                        continue
+            
+            dropdown.addItems(sorted(unique_dates, reverse=True))  # Most recent dates first
+            self.dynamic_layout.addWidget(QLabel("Choose Month:"))
             self.dynamic_layout.addWidget(dropdown)
             self.brand_dropdown = dropdown
 
+        elif selected_category in ["Brand","Series","Model", "Fuel","Gear","Bodytype","Colour","Traction","Fuel Consumption","Fuel Tank","Paint and Change","From Who"]:
+            dropdown = QComboBox()
+            column_mapping = {
+                "Brand":1,"Series":2,"Model":3,"Fuel":7,"Gear":8,"Bodytype":9,"Colour":10,
+                "Traction":13,"Fuel Consumption":14,"Fuel Tank":15,"Paint and Change":16,"From Who":17
+            }
+            column_index = column_mapping[selected_category]
+
+            unique_values = set()
+            if selected_category == "From Who":
+                unique_values = {"Sahibinden", "Galeriden", "belirtilmemiş"}
+            else:
+                for row in range(self.table.rowCount()):
+                    item = self.table.item(row, column_index)
+                    if item and item.text().strip():
+                        unique_values.add(item.text().strip())
+            
+            dropdown.addItems(sorted(unique_values))
+            self.dynamic_layout.addWidget(QLabel(f"Choose {selected_category}:"))
+            self.dynamic_layout.addWidget(dropdown)
+            self.brand_dropdown = dropdown
 
         elif selected_category in ["Price","Year", "Kilometer", "Horsepower","Engine Size"]:
             self.min_input = QLineEdit()
@@ -155,41 +233,69 @@ class CarFilterApp(QMainWindow):
     # filters table fro the selected features
     def filter_table(self):
         filter_category = self.category_dropdown.currentText()
-       
-        if filter_category in ["Brand","Series","Model","Fuel","Gear","Bodytype","Colour"] and hasattr(self, 'brand_dropdown'):
-            filter_text = self.brand_dropdown.currentText().lower()
-        elif filter_category in ["Year","Price","Kilometer","Horsepower","Engine Size"] and hasattr(self, 'min_input') and hasattr(self, 'max_input'):
-            try:
-                min_value = int(self.min_input.text())
-                max_value = int(self.max_input.text())
-                column_mapping = {"Year":3,"Price":4,"Kilometer":7,"Horsepower":9,"Engine Size":10}
-                filter_column = column_mapping.get(filter_category)
-
-                filtered_data = [
-                    row for row in self.car_data
-                    if min_value <= int(row[filter_column]) <= max_value
-                ]
-                self.load_data(filtered_data)
-                return
-            except ValueError:
-                QMessageBox.warning(self, "error!", "enter a valid interval")
-                return
-        else:
+        
+        if filter_category in ["Brand","Series","Model","Fuel","Gear","Bodytype","Colour","Traction","Fuel Consumption","Fuel Tank","Paint and Change","From Who"] and hasattr(self, 'brand_dropdown'):
+            filter_text = self.brand_dropdown.currentText()
+            column_mapping = {
+                "Brand":1,"Series":2,"Model":3,"Fuel":7,"Gear":8,"Bodytype":9,"Colour":10,
+                "Traction":13,"Fuel Consumption":14,"Fuel Tank":15,"Paint and Change":16,"From Who":17
+            }
+            filter_column = column_mapping.get(filter_category)
+            
+            filtered_cars = []
+            for row in range(self.table.rowCount()):
+                cell_value = self.table.item(row, filter_column).text().strip()
+                if cell_value.lower() == filter_text.lower():
+                    car_data = []
+                    for col in range(self.table.columnCount()):
+                        car_data.append(self.table.item(row, col).text())
+                    filtered_cars.append(car_data)
+            
+            self.load_data(filtered_cars)
             return
 
-        # kategoriyi column indexe eşitleme
-        column_mapping = {
-             "Brand":0,"Series":1,"Model":2,"Year":3,"Price":4,"Fuel":5,"Gear":6,"Kilometer":7,"Bodytype":8,"Horsepower":9,"Engine Size":10,"Colour":11
-        }
-        filter_column = column_mapping.get(filter_category)
+        elif filter_category in ["Year","Price","Kilometer","Horsepower","Engine Size"] and hasattr(self, 'min_input') and hasattr(self, 'max_input'):
+            try:
+                min_value = float(self.min_input.text())
+                max_value = float(self.max_input.text())
+                column_mapping = {"Year":4,"Price":5,"Kilometer":6,"Horsepower":11,"Engine Size":12}
+                filter_column = column_mapping.get(filter_category)
 
-        # filtreleme
-        filtered_data = []
-        for row in self.car_data:
-            if filter_text in row[filter_column].lower():
-                filtered_data.append(row)
+                filtered_cars = []
+                for row in range(self.table.rowCount()):
+                    try:
+                        cell_text = self.table.item(row, filter_column).text().strip()
+                        
+                        if filter_category == "Price":
+                            cell_value = float(cell_text.replace(' TL', '').replace('.', ''))
+                        elif filter_category == "Horsepower":
+                            # Handle ranges and different formats
+                            hp_text = cell_text.split(' ')[0].split('-')[0].replace('HP', '').replace('hp', '').strip()
+                            cell_value = float(hp_text) if hp_text else 0
+                        elif filter_category == "Engine Size":
+                            # Handle different engine size formats
+                            if 'cc' in cell_text:
+                                cell_value = float(cell_text.replace('cc', '').replace(' ', '').strip())
+                            elif 'cm3' in cell_text:
+                                cell_value = float(cell_text.split('cm3')[0].replace(' ', '').strip())
+                            else:
+                                cell_value = 0
+                        else:
+                            cell_value = float(cell_text.replace(',', '').replace('.', ''))
 
-        self.load_data(filtered_data)
+                        if min_value <= cell_value <= max_value:
+                            car_data = []
+                            for col in range(self.table.columnCount()):
+                                car_data.append(self.table.item(row, col).text())
+                            filtered_cars.append(car_data)
+                    except (ValueError, AttributeError):
+                        continue
+
+                self.load_data(filtered_cars)
+                return
+            except ValueError:
+                QMessageBox.warning(self, "Error", "Please enter valid numeric values for min and max")
+                return
 
     #saves as csv
     def save_as_csv(self):
@@ -217,16 +323,20 @@ class CarFilterApp(QMainWindow):
 
     # opens get graph window
     def open_graph_dialog(self):
-        dialog = GraphSelectionDialog()
+        dialog = GraphSelectionDialog(self)
         dialog.exec_()
 
     def continuous_Check_Of_Cars(self):
-        previous_lenght=0
+        previous_lenght = 0
         while True:
-            if previous_lenght<len(collector.cars):
-                previous_lenght=len(collector.cars)
+            if not self.is_scraping_paused and previous_lenght < len(collector.cars):
+                previous_lenght = len(collector.cars)
                 self.load_data()
             sleep(10)
+
+    def clear_filter(self):
+        self.load_data()  # This will reload all cars
+        self.update_dynamic_inputs()  # Update the dropdowns with all values
 
 # main program
 if __name__ == "__main__":
