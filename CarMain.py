@@ -9,7 +9,7 @@ from graph_selection import GraphSelectionDialog
 from car_data_collector import (Car, CarScraper)
 from time import sleep
 import threading
-
+from PyQt5.QtGui import QPixmap
 collector = CarScraper()
 
 # main app
@@ -95,9 +95,91 @@ class CarFilterApp(QMainWindow):
 
         self.load_data()  
         self.update_dynamic_inputs()  
+        self.image_label = QLabel()
+
+        pixmap = QPixmap("car.png") 
+        pixmap = pixmap.scaled(250, 250, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+
+        self.image_label.setPixmap(pixmap)
+        
+        self.image_label.setAlignment(Qt.AlignLeft | Qt.AlignTop)
+
+        top_layout.addWidget(self.image_label, 0, 0, 1, 1)
+
+        main_layout.addLayout(top_layout)
 
         # Resize the window to fit the table content
         self.resize(self.table.horizontalHeader().length() + 50, self.table.verticalHeader().length() + 800)
+        self.setStyleSheet("""
+            QWidget {
+                background-color: #f4f4f4;
+                font-family: Arial, sans-serif;
+            }
+
+            QLabel {
+                font-size: 14px;
+                color: #333;
+            }
+
+            QPushButton {
+                background-color: #6b6a6a;
+                border-radius: 10px;
+                color: white;
+                padding: 10px 20px;
+            }
+
+            QPushButton:hover {
+                background-color: #403f3f;
+            }
+
+            QComboBox {
+                border-radius: 5px;
+                border: 2px solid #748a75;
+                padding: 5px;
+            }
+
+            QComboBox QAbstractItemView {
+                background-color: #f4f4f4;
+                border-radius: 5px;
+            }
+
+            QComboBox::drop-down {
+                border: none;
+            }
+
+            QTableWidget {
+                border-radius: 10px;
+                border: 2px solid #ddd;
+                background-color: #f9f9f9;
+            }
+
+            QTableWidget::item {
+                padding: 5px;
+                border-radius: 5px;
+            }
+
+            QTableWidget::item:selected {
+                background-color: #748a75;
+                color: white;
+            }
+
+            QLineEdit {
+                border: 2px solid #748a75;
+                border-radius: 10px;
+                padding: 5px;
+                font-size: 14px;
+            }
+
+            QLineEdit:focus {
+                border-color: #748a75;
+            }
+
+            QComboBox {
+                border-radius: 5px;
+                border: 2px solid #748a75;
+                padding: 5px;
+            }
+        """)
 
     def toggle_scraping(self):
         self.is_scraping_paused = not self.is_scraping_paused
@@ -146,6 +228,7 @@ class CarFilterApp(QMainWindow):
             self.dynamic_layout.addWidget(self.min_input)
             self.dynamic_layout.addWidget(self.max_input)
 
+    
     def load_data(self, filtered_data=None):
         self.table.setRowCount(0) 
 
