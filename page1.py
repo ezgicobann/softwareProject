@@ -90,7 +90,6 @@ class Ui_MainWindow(object):
         self.pushButton_3.setText(_translate("MainWindow", "Voice Command Database Creation"))
 
     def car_valuation(self):
-        print("hii")
         from CarMain import CarFilterApp
         self.CarFilter_window = QtWidgets.QMainWindow()  
         self.ui = CarFilterApp()  
