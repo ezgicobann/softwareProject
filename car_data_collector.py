@@ -227,8 +227,8 @@ class CarScraper:
                     else:
                         fromWho = attributes[14].text
 
-                price = float(attributes[len(attributes)-1].text.replace(' TL', '').replace('.', '').replace(',', ''))
-
+                price = int(attributes[len(attributes)-1].text.replace(' TL', '').replace('.', '').replace(',', ''))
+                #str(price).strip()
                 # Create a Car object
                 # Normalize fromWho value
                 if fromWho and fromWho.strip():
