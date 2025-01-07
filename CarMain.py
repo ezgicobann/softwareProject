@@ -10,6 +10,7 @@ from car_data_collector import (Car, CarScraper)
 from time import sleep
 import threading
 from PyQt5.QtGui import QPixmap
+
 collector = CarScraper()
 
 # main app
