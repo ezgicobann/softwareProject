@@ -26,6 +26,7 @@ class CarFilterApp(QMainWindow):
         self.initUI()
 
     def initUI(self):
+
         central_widget = QWidget()
         main_layout = QVBoxLayout()
 
@@ -49,6 +50,14 @@ class CarFilterApp(QMainWindow):
         self.is_scraping_paused = False
 
         def search():
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Scraping Process")
+            msg.setText("Scraping Started !!!")
+
+            msg.exec_()
+
+             
             collector.scrapeInBackground()
             thread = threading.Thread(target=self.continuous_Check_Of_Cars)
             thread.start()

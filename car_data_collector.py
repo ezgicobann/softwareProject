@@ -57,9 +57,8 @@ class CarScraper:
 
     def setup_driver(self):
         driver_lock = threading.Lock()
-        user_agent = UserAgent()
         options = uc.ChromeOptions()
-        #options.add_argument(f"user-agent={user_agent.random}")
+        
         options.add_argument("--disable-blink-features=AutomationControlled")
         options.add_argument("--disable-extensions")
         options.add_argument("--disable-software-rasterizer")
@@ -255,6 +254,7 @@ class CarScraper:
 
 
     def run(self):
+
         while True:
             if len(self.cars) > 1000:
                 break
@@ -266,7 +266,7 @@ class CarScraper:
             try:
                 self.scrape_listings()
                 if not self.urls:  # If no URLs were found
-                    sleep(60)
+                    sleep(20)
                     continue
 
                 print(f"Processing {len(self.urls)} car URLs from page {self.current_page-1}")
@@ -298,11 +298,11 @@ class CarScraper:
                 if self.is_paused:
                     sleep(1)
                 else:
-                    sleep(10)  # Short delay between pages
+                    sleep(5) # Short delay between pages
                     
             except Exception as e:
                 print(f"Error in scraping cycle: {e}")
-                sleep(60)  # Wait 1 minute before retrying
+                sleep(20)  # Wait 1 minute before retrying
 
     def scrapeInBackground(self):
         self.is_paused = False
