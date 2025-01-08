@@ -79,7 +79,7 @@ class FootballData:
 
 class Ui_MainWindow(object):
     def __init__(self):
-        self.countries = ["Turkey", "Spain", "Germany", "England", "France", "Italy", "Belgium"]
+        self.countries = ["Turkey", "Spain", "Germany", "England", "France", "Belgium"]
 
     def setupUi(self, MainWindow):
         self.MainWindow = MainWindow
