@@ -1,0 +1,8 @@
+PyQt5==5.15.11
+pvrecorder==1.2.3
+numpy==2.2.1
+noisereduce==3.0.3
+requests==2.32.3
+pandas==2.2.3
+bs4==0.0.2
+undetected_chromedriver==3.5.5
