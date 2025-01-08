@@ -11,7 +11,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import json
 import os
-import res_rc
+from PyQt5.QtWidgets import QMessageBox
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -233,9 +234,8 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
             except (FileNotFoundError, json.JSONDecodeError):
                 base_paths = []  # Eğer dosya yoksa veya bozuksa, boş liste başlat
 
-            # Yeni dizini ekle (aynı dizin zaten listede yoksa)
-            if directory not in base_paths:
-                base_paths.append(directory)
+            # Yeni dizini ekle 
+            base_paths.append(directory)
 
             # Güncellenmiş listeyi dosyaya yaz
             with open("base_path.json", "w", encoding="utf-8") as file:
@@ -306,6 +306,27 @@ class VoiceShow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_kelime_ekle.clicked.connect(self.add_word)
         self.pushButton_kelime_sil.clicked.connect(self.delete_word)
         self.pushButton_base_path.clicked.connect(self.select_base_path)
+
+
+
+    def show_adding_info(self):
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Word")
+        msg.setText("Are You Sure About Adding New Word ?")
+
+        self.Yes = msg.addButton("Yes", QMessageBox.AcceptRole)
+        self.No = msg.addButton("No", QMessageBox.RejectRole)
+
+        msg.exec_()
+
+        if msg.clickedButton() == self.Yes:
+            self.add_word()
+
+        elif msg.clickedButton() == self.No:
+            return 0
+        
+
 
 
 
