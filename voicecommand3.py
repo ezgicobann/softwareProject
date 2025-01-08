@@ -14,9 +14,7 @@ import time
 import os
 import random
 import json
-
 from PyQt5 import QtCore, QtGui, QtWidgets
-import res_rc
 
     
 class Ui_MainWindow(object):
@@ -217,8 +215,13 @@ class Ui_MainWindow(object):
             self.label_kelime.setText(self.word_list[i])
 
             QtCore.QCoreApplication.processEvents()
+            
+            if len(PvRecorder.get_available_devices()) > 1:
+                recorder  = PvRecorder(device_index=1, frame_length=512)
 
-            recorder  = PvRecorder(device_index=0, frame_length=512)
+            else:
+                recorder  = PvRecorder(device_index=0, frame_length=512)
+
             audio = []
 
             recorder.start()
@@ -231,7 +234,7 @@ class Ui_MainWindow(object):
                     frame = recorder.read()
                     audio.extend(frame)
 
-                    if time.time() - start_time >= 2.5:
+                    if time.time() - start_time >= 2.5: # 2.5 saniye kayıt yap
                         print("2.5 seconds passed. Stopping")
                         break
             
@@ -246,10 +249,10 @@ class Ui_MainWindow(object):
 
                 if gender == "Female":
 
-                    target_dir = os.path.join(f"{self.base_path}/Female", self.word_list[i])
+                    target_dir = os.path.join(f"{self.base_path}\Female", self.word_list[i])
                     os.makedirs(target_dir, exist_ok=True)
 
-                    file_path = os.path.join(target_dir, f"{random_num}Female{self.word_list[i]}.wav")
+                    file_path = os.path.join(target_dir, f"{random_num}_Female_{self.word_list[i]}.wav")
 
                     with wave.open(file_path, "w") as f:
                         f.setparams((1, 2, 16000, 0, "NONE", "NONE"))
@@ -259,10 +262,10 @@ class Ui_MainWindow(object):
                 
                 elif gender == "Male":
 
-                    target_dir = os.path.join(f"{self.base_path}/Male", self.word_list[i])
+                    target_dir = os.path.join(f"{self.base_path}\Male", self.word_list[i])
                     os.makedirs(target_dir, exist_ok=True)
 
-                    file_path = os.path.join(target_dir, f"{random_num}Male{self.word_list[i]}.wav")
+                    file_path = os.path.join(target_dir, f"{random_num}_Male_{self.word_list[i]}.wav")
 
                     with wave.open(file_path, "w") as f:
                         f.setparams((1, 2, 16000, 0, "NONE", "NONE"))
