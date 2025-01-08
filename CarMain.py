@@ -2,14 +2,14 @@ import sys
 import csv  
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QPushButton, QLineEdit, QComboBox, QTableWidget, QLabel, 
-    QVBoxLayout, QHBoxLayout, QWidget, QTableWidgetItem, QFileDialog, QMessageBox, QSlider, QGridLayout, QDateEdit
+    QVBoxLayout, QHBoxLayout, QWidget, QTableWidgetItem, QFileDialog, QMessageBox, QGridLayout
 )
-from PyQt5.QtCore import Qt, QDate
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPixmap
 from graph_selection import GraphSelectionDialog  
-from car_data_collector import (Car, CarScraper)
+from car_data_collector import (CarScraper)
 from time import sleep
 import threading
-from PyQt5.QtGui import QPixmap
 
 collector = CarScraper()
 
@@ -26,7 +26,6 @@ class CarFilterApp(QMainWindow):
         self.initUI()
 
     def initUI(self):
-
         central_widget = QWidget()
         main_layout = QVBoxLayout()
 
@@ -52,12 +51,9 @@ class CarFilterApp(QMainWindow):
         def search():
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Scraping Process")
-            msg.setText("Scraping Started !!!")
-
+            msg.setWindowTitle("Scraping Initiated")
+            msg.setText("Scraping is initiated. This might take a while.")
             msg.exec_()
-
-             
             collector.scrapeInBackground()
             thread = threading.Thread(target=self.continuous_Check_Of_Cars)
             thread.start()
@@ -117,7 +113,6 @@ class CarFilterApp(QMainWindow):
         top_layout.addWidget(self.image_label, 0, 0, 1, 1)
 
         main_layout.addLayout(top_layout)
-
         # Resize the window to fit the table content
         self.resize(self.table.horizontalHeader().length() + 50, self.table.verticalHeader().length() + 800)
         self.setStyleSheet("""
@@ -190,7 +185,6 @@ class CarFilterApp(QMainWindow):
                 padding: 5px;
             }
         """)
-
     def toggle_scraping(self):
         self.is_scraping_paused = not self.is_scraping_paused
         self.pause_button.setText("Resume" if self.is_scraping_paused else "Pause")
@@ -238,7 +232,6 @@ class CarFilterApp(QMainWindow):
             self.dynamic_layout.addWidget(self.min_input)
             self.dynamic_layout.addWidget(self.max_input)
 
-    
     def load_data(self, filtered_data=None):
         self.table.setRowCount(0) 
 
@@ -399,7 +392,7 @@ class CarFilterApp(QMainWindow):
 
         if file_path:
             try:
-                with open(file_path, "w", newline='', encoding="utf-8") as file:
+                with open(file_path, "w", newline='', encoding="utf-8-sig") as file:
                     writer = csv.writer(file)
                     headers = [self.table.horizontalHeaderItem(i).text() for i in range(self.table.columnCount())]
                     writer.writerow(headers)

@@ -1,11 +1,10 @@
 import sys
 import codecs
 from time import sleep
-sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
-sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict')
+
 
 from concurrent.futures import ThreadPoolExecutor
-import os
+
 import threading
 import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
@@ -13,7 +12,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-
+sys.stdout = codecs.getwriter('utf-8')(sys.stdout.buffer, 'strict')
+sys.stderr = codecs.getwriter('utf-8')(sys.stderr.buffer, 'strict')
 
 class Car():
     def __init__(self, brand, series, model, year, price, kilometer, fuel, gear, bodytype, horsepower, enginesize, colour, addate, traction, fuelConsumption, fuelTank, paintChange, fromWho):
@@ -58,7 +58,7 @@ class CarScraper:
     def setup_driver(self):
         driver_lock = threading.Lock()
         options = uc.ChromeOptions()
-        
+        #options.add_argument(f"user-agent={user_agent.random}")
         options.add_argument("--disable-blink-features=AutomationControlled")
         options.add_argument("--disable-extensions")
         options.add_argument("--disable-software-rasterizer")
@@ -226,7 +226,7 @@ class CarScraper:
                         fromWho = attributes[14].text
 
                 price = int(attributes[len(attributes)-1].text.replace(' TL', '').replace('.', '').replace(',', ''))
-                #str(price).strip()
+
                 # Create a Car object
                 # Normalize fromWho value
                 if fromWho and fromWho.strip():
@@ -254,7 +254,6 @@ class CarScraper:
 
 
     def run(self):
-
         while True:
             if len(self.cars) > 1000:
                 break
@@ -266,7 +265,7 @@ class CarScraper:
             try:
                 self.scrape_listings()
                 if not self.urls:  # If no URLs were found
-                    sleep(20)
+                    sleep(60)
                     continue
 
                 print(f"Processing {len(self.urls)} car URLs from page {self.current_page-1}")
@@ -298,11 +297,11 @@ class CarScraper:
                 if self.is_paused:
                     sleep(1)
                 else:
-                    sleep(5) # Short delay between pages
+                    sleep(10)  # Short delay between pages
                     
             except Exception as e:
                 print(f"Error in scraping cycle: {e}")
-                sleep(20)  # Wait 1 minute before retrying
+                sleep(60)  # Wait 1 minute before retrying
 
     def scrapeInBackground(self):
         self.is_paused = False
@@ -314,9 +313,7 @@ class CarScraper:
             self.scraping_thread.start()
         return self.scraping_thread
 
-#if __name__ == "__main__":
-#    scraper = CarScraper()
-#    scraper.scrapeInBackground().join()
+
 
 
 
