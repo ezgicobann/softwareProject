@@ -88,7 +88,7 @@ class Ui_MainWindow(object):
         self.radioButton_erkek.setObjectName("radioButton_erkek")
 
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(190, 80, 171, 51))
+        self.label.setGeometry(QtCore.QRect(190, 80, 201, 51))
         self.label.setObjectName("label")
 
         self.pushButton_admin_giris = QtWidgets.QPushButton(self.centralwidget)
@@ -110,7 +110,7 @@ class Ui_MainWindow(object):
         self.pushButton_admin_giris.setObjectName("pushButton_admin_giris")
         self.pushButton_admin_giris.clicked.connect(self.open_admin_login)
         self.label_kelime = QtWidgets.QLabel(self.centralwidget)
-        self.label_kelime.setGeometry(QtCore.QRect(350, 80, 271, 51))
+        self.label_kelime.setGeometry(QtCore.QRect(390, 75, 291, 51))
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
         self.label_4.setGeometry(QtCore.QRect(232, 320, 141, 16)) # bottom
         self.label_4.setObjectName("label_4")
